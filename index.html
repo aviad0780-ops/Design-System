@@ -5385,6 +5385,64 @@ html.v2[data-step="export"] #iact{padding:14px;border-radius:14px;border:1px sol
 .v2steps li{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;background:var(--v-raise,#f3f4f7);border:1px solid var(--line)}
 .v2steps b{font:700 15px var(--f-display)}.v2steps span{font-size:13.5px;color:var(--muted)}
 html.v2 .impc{background:var(--panel);color:var(--fg)}
+
+/* ---------- virtual store ---------- */
+html.vsopen{overflow:hidden}html.vsopen .imp{z-index:1200}html.vsopen .toast{z-index:1300}
+.vstore{position:fixed;inset:0;z-index:880;background:#0F1115;color:#ECEEF3;display:grid;grid-template-columns:250px 1fr;grid-template-rows:60px 1fr;grid-template-areas:"hd hd" "side main";direction:rtl;font-family:var(--f-body,'Rubik',sans-serif)}
+.vstore[hidden]{display:none}
+.vshd{grid-area:hd;display:flex;align-items:center;gap:10px;padding:0 16px;background:#0B0C10;border-bottom:1px solid #1C1F27}
+.vshd>b{font:800 18px var(--f-display);white-space:nowrap}
+.vshd small{color:#8B92A3;font-size:12.5px;white-space:nowrap}
+.vscov{width:110px;height:8px;border-radius:9px;background:#262A33;overflow:hidden;flex:none}.vscov i{display:block;height:100%;background:linear-gradient(90deg,#1E9E5A,#7ED957)}
+.vsp{flex:1}
+.vsx{all:unset;cursor:pointer;padding:7px 12px;border-radius:10px;background:#1E222A;border:1px solid #333946;font:600 13px var(--f-display)}
+.vsx:hover{border-color:#FF3B47}
+.vsseg{display:flex;background:#15171D;border:1px solid #23262F;border-radius:11px;padding:3px}
+.vsseg button{all:unset;cursor:pointer;padding:6px 12px;border-radius:8px;font:600 13px var(--f-display);color:#A9B0BF}
+.vsseg button[aria-pressed="true"]{background:#2A2F3A;color:#fff}
+.vstore .vb{--v-raise:#1E222A;--v-line2:#333946;--fg:#ECEEF3}
+.vsside{grid-area:side;background:#13151A;border-inline-end:1px solid #22252D;overflow:auto;padding:14px 12px}
+.vsside h4{margin:2px 4px 10px;font:700 13px var(--f-display);color:#8B92A3}
+.vsdl{display:flex;flex-direction:column;gap:3px}
+.vsdl button{all:unset;cursor:pointer;display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:10px;font:600 14px var(--f-display);color:#C9CED8}
+.vsdl button:hover{background:#1B1E25}
+.vsdl button[aria-current="true"]{background:#232833;color:#fff;box-shadow:inset 0 0 0 1px #3A404D}
+.vsdl i{flex:none;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font:800 12px/1 var(--f-display);font-style:normal;color:#fff}
+.vsdl span{flex:1}
+.vsdl small{font:700 11.5px var(--f-display);color:#6F7687;background:#1E222A;border-radius:99px;padding:2px 7px}.vsdl small.ok{color:#7ED957;background:#16301F}
+.vstip{font-size:12.5px;color:#8B92A3;line-height:1.5;margin:12px 4px}.vstip.c{text-align:center}
+.vsmain{grid-area:main;min-width:0;min-height:0;overflow:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.vsmapw{width:100%;max-width:min(100%,calc((100vh - 150px)*1.78));margin:0 auto}
+.vmap{width:100%;height:auto;display:block}
+.vmap .vmd{cursor:pointer;outline:none}.vmap .vmd:hover rect:first-child,.vmap .vmd:focus rect:first-child{fill-opacity:.5;stroke:#fff}
+.vsnav{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.vsnav span{text-align:center}.vsnav b{display:block;font:800 20px var(--f-display)}.vsnav small{color:#8B92A3}
+.vsscene{width:100%;max-width:min(100%,calc((100vh - 200px)*1.78));margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 14px 50px rgba(0,0,0,.5)}
+.vsin{position:relative;aspect-ratio:16/9;background:#ddd}
+.vsin>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.vslot{all:unset;box-sizing:border-box;position:absolute;cursor:pointer;display:grid;place-items:center;border-radius:4px;transition:transform .15s,box-shadow .15s}
+.vslot:not(.on){border:2px dashed rgba(255,59,71,.9);background:rgba(255,255,255,.55);color:#C8000F;font:800 clamp(10px,1.4vw,22px)/1 var(--f-display);backdrop-filter:blur(2px)}
+.vslot:not(.on) span{display:flex;flex-direction:column;align-items:center;gap:2px}.vslot:not(.on) small{font:700 clamp(7px,.6vw,11px) var(--f-display);color:#7A0008;white-space:nowrap}
+.vslot.on{box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.vslot img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}.vslot img:not([src]){background:linear-gradient(90deg,#e9ebef 0,#fff 40%,#e9ebef 80%) 0 0/200% 100%;animation:vsld 1.2s linear infinite}@keyframes vsld{to{background-position:-200% 0}}
+.vslot:hover{transform:scale(1.04);box-shadow:0 0 0 3px #FF3B47,0 8px 24px rgba(0,0,0,.45);z-index:3}
+.vslot.pk{box-shadow:0 0 0 3px #5B9BFF,0 8px 24px rgba(0,0,0,.45);z-index:3}
+.vslot.k-screen.on img{background:#000}
+.vslot.k-talker.on,.vslot.k-tag.on{box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.vsbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.vspick{position:fixed;top:60px;left:0;bottom:0;width:340px;z-index:5;background:#16191F;border-inline-start:1px solid #262A33;box-shadow:12px 0 40px rgba(0,0,0,.45);padding:14px;display:flex;flex-direction:column;gap:8px;overflow:auto}
+.vspick[hidden]{display:none}
+.vsph{display:flex;align-items:center;justify-content:space-between}.vsph b{font:700 16px var(--f-display)}.vsph button{all:unset;cursor:pointer;font-size:18px;color:#8B92A3}
+.vspa{display:flex;gap:6px;flex-wrap:wrap}
+#vsQ{font:inherit;font-size:14px;background:#0F1115;color:#ECEEF3;border:1px solid #333946;border-radius:10px;padding:9px 12px}
+.vspl{display:flex;flex-direction:column;gap:4px}.vspl h5{margin:10px 2px 4px;font:700 12px var(--f-display);color:#8B92A3}
+.vsp{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:8px 10px;border-radius:10px;background:#1B1E25;border:1px solid transparent}
+.vsp:hover{border-color:#5B9BFF}.vsp.on{border-color:#7ED957}.vsp b{font:600 14px var(--f-display)}.vsp small{color:#8B92A3;font-size:12px}
+.vslist{max-width:680px}.vslist section{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:10px}
+.vlh{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.vlh b{font:700 15px var(--f-display)}.vlh span{flex:1;color:var(--muted);font-size:13px}
+.vslist ul{margin:8px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px 12px}.vslist li{display:flex;flex-direction:column;font-size:13px}.vslist li small{color:var(--muted)}
+.srail .vsr{color:var(--fg)!important}.srail .vsr svg{color:#FF3B47}
+@media (max-width:900px){.vstore{grid-template-columns:1fr;grid-template-rows:auto auto 1fr;grid-template-areas:"hd" "side" "main"}.vshd{flex-wrap:wrap;padding:8px}.vsside{max-height:120px}.vsdl{flex-direction:row;overflow-x:auto}.vsdl button{flex:none}.vspick{width:100%;top:auto;height:60%}}
 </style>
 </head>
 <body>
@@ -7906,6 +7964,185 @@ renderSections();buildForm();refitFonts();
   setStep(s0,true);
   try{if(!localStorage.getItem("signTour"))setTimeout(openTour,700)}catch(e){}
 })();
+
+/* =====================================================================
+   VIRTUAL STORE – full branch with departments, aisles and checkouts.
+   Sign slots per fixture; products are matched to departments and every
+   slot shows the product's sign in the format that fits that location.
+   ===================================================================== */
+const VSW=1600,VSH=900;
+const FMTN={port:"A4 לאורך",land:"A4 לרוחב",l5:"A5 מדבקה",l6:"A6 מדבקת מדף",stk:"STOCK",chk:"בודק מחיר"};
+const DEPTS=[
+ {id:"ent",n:"כניסה",fx:"entrance",c:"#E30613",kw:[]},
+ {id:"veg",n:"פירות וירקות",fx:"produce",c:"#2E9B48",kw:["בצל","עגבני","מלפפון","תפוח","בננה","גזר","פלפל","תפוז","אבטיח","ענב","חסה","תות","לימון","אבוקדו","תפוחי אדמה","תפו״א","כרוב","קישוא","חציל","אגס","אפרסק","מנגו","ירקות","פירות","שום","תירס"]},
+ {id:"bake",n:"מאפייה",fx:"bakery",c:"#B9772E",kw:["לחם","חלה","פיתה","לחמני","עוגה","עוגת","מאפה","בורקס","קרואסון","באגט","רוגלך"]},
+ {id:"deli",n:"מעדנייה",fx:"counter",c:"#C2185B",kw:["נקניק","פסטרמה","סלמי","חומוס","סלט","גבינה צהובה","גבינה מלוחה","זיתים","חמוצים"]},
+ {id:"meat",n:"בשר ועוף",fx:"counter",c:"#B71C1C",kw:["בשר","עוף","שניצל","כבד","קציצ","המבורגר","סטייק","פרגית","הודו","כרעיים","חזה","אנטריקוט","טחון"]},
+ {id:"fish",n:"דגים",fx:"counter",c:"#0277BD",kw:["דג","סלמון","אמנון","דניס","לברק","בורי","מושט","פילה"]},
+ {id:"dairy",n:"מוצרי חלב",fx:"fridge",c:"#1565C0",kw:["חלב","יוגורט","דנונה","גבינ","שמנת","קוטג","לבן","מעדן","חמאה","ביצים","ביצה","אשל","פודינג","מילקי"]},
+ {id:"frozen",n:"קפואים",fx:"freezer",c:"#00838F",kw:["קפוא","גלידה","פיצה","בצק","ארטיק","קרטיב","מלוואח","ג'חנון"]},
+ {id:"dry",n:"מזון יבש",fx:"gondola",c:"#E65100",pal:["#E30613","#F4B400","#0B6BCB","#8D5A2B","#FFFFFF","#2E7D32"],st:"box",kw:["פסטה","אורז","שמן","קמח","סוכר","שימור","טונה","רוטב","קטניות","קפה","תה","דגני","קורנפלקס","תבלין","מלח","ספגטי","פתיתים","קוסקוס","ממרח","דבש","ריבה","מיונז","קטשופ","חומץ"]},
+ {id:"snack",n:"חטיפים ומתוקים",fx:"gondola",c:"#7B2FF7",pal:["#FF7A00","#E3006D","#7B2FF7","#FFD400","#00A3FF","#E30613"],st:"bag",kw:["במבה","ביסלי","שוקולד","חטיף","עוגיות","וופל","ממתק","צ'יפס","דובונים","מסטיק","בייגלה","פופקורן"]},
+ {id:"drink",n:"משקאות",fx:"gondola",c:"#0091EA",pal:["#00A3FF","#E30613","#2E7D32","#FF7A00","#111111","#7FD0FF"],st:"bottle",kw:["מים","מיץ","קולה","משקה","בירה","יין","סודה","תרכיז","אנרגיה","נקטר","ספרייט","פאנטה"]},
+ {id:"clean",n:"ניקיון וטואלטיקה",fx:"gondola",c:"#00ACC1",pal:["#00B3E3","#7ED957","#FF5CA8","#FFFFFF","#5B2A9E","#FFD400"],st:"bottle",kw:["אקונומיקה","סבון","שמפו","נייר טואלט","מגבונ","אבקת כביסה","מרכך","משחת שיניים","דאודורנט","נוזל כלים","מטליות","מנקה","ג'ל רחצה"]},
+ {id:"baby",n:"תינוקות",fx:"gondola",c:"#F06292",pal:["#8FD3FF","#FFB6D5","#FFFFFF","#FFE07A","#B39DDB"],st:"box",kw:["חיתול","מטרנה","תינוק","סימילאק","האגיס","פמפרס","מוצץ"]},
+ {id:"chk",n:"קופות",fx:"checkout",c:"#37474F",kw:[]}];
+const DMATCH=["drink","dairy","frozen","dry","snack","clean","baby","bake","meat","fish","deli","veg"];
+const deptOf=name=>{name=String(name||"");for(const k of DMATCH){const d=DEPTS.find(x=>x.id===k);if(d.kw.some(w=>name.includes(w)))return k}return ""};
+/* ---- state ---- */
+const VS={on:false,view:"map",dept:"ent",a:{},ai:{},cache:{},q:[],busy:false,pick:null};
+try{const o=JSON.parse(localStorage.getItem("signStore")||"{}");VS.a=o.a||{};VS.ai=o.ai||{}}catch(e){}
+const vsSave=()=>{try{localStorage.setItem("signStore",JSON.stringify({a:VS.a,ai:VS.ai}))}catch(e){}};
+const vsProducts=()=>SECTIONS[0].items.filter(t=>!t.idle&&STATE[t.id]);
+const vsDeptOfP=id=>VS.ai[id]||deptOf(STATE[id]&&STATE[id].name);
+/* ---- drawing helpers ---- */
+const VR=s=>rng(s);
+function vsShelfGoods(x,y,w,h,seed,pal,st){const r=VR(seed);let s="",X=x+4;
+  while(X<x+w-14){const t=st==="mixed"?["box","bottle","bag","can"][Math.floor(r()*4)]:st,c=pal[Math.floor(r()*pal.length)],c2=pal[Math.floor(r()*pal.length)];let pw,ph;
+    if(t==="bottle"){pw=18+r()*12;ph=h*(.7+r()*.28);const y0=y+h-ph;s+=`<path d="M${X+pw*.36} ${y0}h${pw*.28}v${ph*.14}l${pw*.36} ${ph*.12}v${ph*.74}h-${pw}v-${ph*.74}l${pw*.36} -${ph*.12}z" fill="${c}"/><rect x="${X}" y="${y0+ph*.48}" width="${pw}" height="${ph*.22}" fill="${c2}" opacity=".85"/>`}
+    else if(t==="bag"){pw=34+r()*16;ph=h*(.6+r()*.32);const y0=y+h-ph;s+=`<path d="M${X} ${y0+6}q${pw/2} -10 ${pw} 0v${ph-6}h-${pw}z" fill="${c}"/><circle cx="${X+pw/2}" cy="${y0+ph*.55}" r="${pw*.22}" fill="${c2}" opacity=".9"/>`}
+    else if(t==="can"){pw=20+r()*8;ph=h*(.42+r()*.2);const y0=y+h-ph;s+=`<rect x="${X}" y="${y0}" width="${pw}" height="${ph}" rx="3" fill="${c}"/><rect x="${X}" y="${y0+ph*.3}" width="${pw}" height="${ph*.35}" fill="${c2}" opacity=".8"/>`}
+    else if(t==="carton"){pw=26+r()*10;ph=h*(.62+r()*.3);const y0=y+h-ph;s+=`<path d="M${X} ${y0+8}l${pw/2} -8 ${pw/2} 8v${ph-8}h-${pw}z" fill="${c}"/><rect x="${X+3}" y="${y0+ph*.4}" width="${pw-6}" height="${ph*.3}" fill="${c2}" opacity=".85"/>`}
+    else if(t==="cup"){pw=24+r()*6;ph=h*(.3+r()*.12);const y0=y+h-ph;s+=`<path d="M${X} ${y0}h${pw}l-3 ${ph}h-${pw-6}z" fill="${c}"/><rect x="${X-1}" y="${y0-3}" width="${pw+2}" height="4" fill="${c2}"/>`}
+    else{pw=30+r()*24;ph=h*(.55+r()*.42);const y0=y+h-ph;s+=`<rect x="${X}" y="${y0}" width="${pw}" height="${ph}" rx="2" fill="${c}"/><rect x="${X+4}" y="${y0+ph*.25}" width="${pw-8}" height="${ph*.32}" rx="2" fill="${c2}" opacity=".9"/>`}
+    X+=pw+2+r()*3}return s}
+function vsDeptSign(d){return `<path d="M640 0v22M960 0v22" stroke="#555B66" stroke-width="3"/><rect x="560" y="18" width="480" height="64" rx="14" fill="${d.c}"/><rect x="560" y="18" width="480" height="64" rx="14" fill="url(#gl)" opacity=".35"/><text x="800" y="62" text-anchor="middle" font-family="Rubik,Arial" font-weight="800" font-size="34" fill="#fff" direction="rtl">${d.n}</text>`}
+function vsBase(d,wall1,wall2){return `<defs><linearGradient id="wl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${wall1}"/><stop offset="1" stop-color="${wall2}"/></linearGradient><linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9CCD2"/><stop offset="1" stop-color="#E9EBEE"/></linearGradient><linearGradient id="gls" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset=".7" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+  <rect width="1600" height="120" fill="#2B2F37"/>${[0,1,2,3,4,5].map(i=>`<rect x="${60+i*260}" y="8" width="180" height="10" rx="5" fill="#FFFDF0" opacity=".85"/>`).join("")}
+  <rect y="110" width="1600" height="590" fill="url(#wl)"/><rect y="690" width="1600" height="210" fill="url(#fl)"/>${[...Array(13)].map((_,i)=>`<path d="M${800+(i-6)*70} 690L${800+(i-6)*260} 900" stroke="#B8BCC4" stroke-width="2"/>`).join("")}${[720,760,820,890].map(y=>`<path d="M0 ${y}H1600" stroke="#B8BCC4" stroke-width="2"/>`).join("")}<rect y="686" width="1600" height="8" fill="#8B9099"/>`+vsDeptSign(d)}
+const vsStandSVG=(cx,top,bot)=>`<rect x="${cx-5}" y="${top}" width="10" height="${bot-top}" fill="#8C939C"/><ellipse cx="${cx}" cy="${bot}" rx="70" ry="13" fill="#6E757E"/><ellipse cx="${cx}" cy="${bot+6}" rx="90" ry="12" fill="#000" opacity=".12"/>`;
+/* ---- scenes: return {svg, slots:[{k,fmt,x,y,w,h,al,lbl}]} ---- */
+function vsScene(d){const S=[],sl=(fmt,x,y,w,h,al,lbl,kind)=>S.push({fmt,x,y,w,h,al:al||"c",lbl,kind:kind||""});let g="";const seed=d.id.split("").reduce((a,c)=>a+c.charCodeAt(0),7);
+  if(d.fx==="gondola"){g=vsBase(d,"#E7EAF0","#D7DBE3");const pal=d.pal,st=d.st;
+    [80,570,1060].forEach((x0,u)=>{const w=460,y0=210;g+=`<rect x="${x0}" y="${y0}" width="${w}" height="480" fill="#C4C9D1"/><rect x="${x0-8}" y="${y0-6}" width="14" height="486" fill="#7D848E"/><rect x="${x0+w-6}" y="${y0-6}" width="14" height="486" fill="#7D848E"/><rect x="${x0-10}" y="${y0-20}" width="${w+20}" height="20" rx="4" fill="${d.c}"/>`;
+      for(let s=0;s<5;s++){const sy=y0+10+s*94;g+=vsShelfGoods(x0+6,sy,w-12,78,seed+u*10+s,pal,s===4?"mixed":st)+`<rect x="${x0}" y="${sy+78}" width="${w}" height="14" fill="#F4F5F7"/><rect x="${x0}" y="${sy+90}" width="${w}" height="3" fill="#8B929C"/>`}
+      sl("land",x0+w/2-78,92,156,112,"b","שלט עליון על המדף","header");sl(u===1?"stk":"l6",x0+40,y0+10+1*94+80,150,54,"t","מדבקת מדף","talker");sl("l6",x0+w-190,y0+10+3*94+80,150,54,"t","מדבקת מדף","talker")});
+    g+=vsStandSVG(1500,560,860);sl("port",1415,300,170,262,"b","סטנד רצפה","stand")}
+  else if(d.fx==="fridge"){g=vsBase(d,"#DCE6F2","#C9D5E4");const pal=["#FFFFFF","#0B6BCB","#8FD3FF","#FFD400","#E30613","#F5F5F5"];
+    for(let i=0;i<5;i++){const x0=110+i*276,w=266;g+=`<rect x="${x0}" y="150" width="${w}" height="540" rx="6" fill="#1D2530"/>`;for(let s=0;s<5;s++){const sy=166+s*104;g+=vsShelfGoods(x0+10,sy,w-20,86,seed+i*7+s,pal,s%2?"cup":"carton")+`<rect x="${x0+6}" y="${sy+86}" width="${w-12}" height="6" fill="#6B7684"/>`}
+      g+=`<rect x="${x0}" y="150" width="${w}" height="540" rx="6" fill="#BFE6FF" opacity=".12"/><rect x="${x0}" y="150" width="${w}" height="540" rx="6" fill="url(#gls)"/><rect x="${x0}" y="150" width="${w}" height="540" rx="6" fill="none" stroke="#AEB6C0" stroke-width="10"/><rect x="${x0+w-26}" y="330" width="8" height="150" rx="4" fill="#E5E8EC"/>`;
+      sl("l5",x0+28,372,210,101,"c","מדבקת דלת","door")}
+    g+=`<rect x="100" y="120" width="1400" height="26" rx="4" fill="${d.c}"/>`}
+  else if(d.fx==="freezer"){g=vsBase(d,"#D9F0F2","#C4E2E6");const pal=["#5AB4FF","#FFFFFF","#E30613","#FFD400","#00838F"];
+    for(let i=0;i<4;i++){const x0=130+i*340,w=330;g+=`<rect x="${x0}" y="150" width="${w}" height="380" rx="6" fill="#16202A"/>`;for(let s=0;s<3;s++){const sy=166+s*118;g+=vsShelfGoods(x0+10,sy,w-20,100,seed+i*5+s,pal,"box")+`<rect x="${x0+6}" y="${sy+100}" width="${w-12}" height="6" fill="#6B7684"/>`}
+      g+=`<rect x="${x0}" y="150" width="${w}" height="380" rx="6" fill="#DFF6FF" opacity=".18"/><rect x="${x0}" y="150" width="${w}" height="380" rx="6" fill="url(#gls)"/><rect x="${x0}" y="150" width="${w}" height="380" rx="6" fill="none" stroke="#AEB6C0" stroke-width="10"/>`;sl("l5",x0+60,300,210,101,"c","מדבקת דלת","door")}
+    for(let i=0;i<3;i++){const x0=150+i*450,w=420;g+=`<path d="M${x0} 600h${w}l-14 -40h-${w-28}z" fill="#DDE7EE"/><rect x="${x0}" y="600" width="${w}" height="150" rx="8" fill="#ECEFF3"/><rect x="${x0}" y="600" width="${w}" height="14" fill="${d.c}"/>`;sl("l6",x0+w/2-90,640,180,60,"c","מדבקה על המקפיא","talker")}}
+  else if(d.fx==="produce"){g=vsBase(d,"#E5F3DF","#CFE6C6");const C=["#E53935","#FBC02D","#43A047","#FB8C00","#8E24AA","#7CB342","#C62828","#FDD835"];
+    g+=`<rect x="0" y="180" width="1600" height="200" fill="#A8794E"/>${[0,1,2,3,4,5,6,7].map(i=>`<rect x="${i*200+8}" y="196" width="184" height="168" rx="10" fill="#8B5E34"/>`).join("")}`;
+    for(let i=0;i<8;i++){const r=VR(seed+i);for(let k=0;k<26;k++){g+=`<circle cx="${i*200+30+r()*140}" cy="${230+r()*110}" r="${12+r()*6}" fill="${C[(i+3)%8]}"/>`}}
+    for(let i=0;i<6;i++){const x0=40+i*256,w=240,r=VR(seed+40+i),c=C[i%8];g+=`<path d="M${x0} 470h${w}l-12 210h-${w-24}z" fill="#9B6B3D"/><path d="M${x0+6} 476h${w-12}l-6 30h-${w-24}z" fill="#7A522C"/>`;
+      for(let k=0;k<34;k++){g+=`<circle cx="${x0+24+r()*(w-48)}" cy="${440+r()*60}" r="${15+r()*7}" fill="${c}"/><circle cx="${x0+24+r()*(w-48)}" cy="${440+r()*60}" r="5" fill="#fff" opacity=".25"/>`}
+      g+=`<rect x="${x0+w/2-3}" y="560" width="6" height="90" fill="#555"/>`;sl("l6",x0+w/2-84,520,168,56,"c","שלט מחיר בארגז","tag")}
+    sl("land",1180,92,170,120,"b","שלט תלוי","header");g+=`<path d="M1230 0v92M1300 0v92" stroke="#555B66" stroke-width="3"/>`}
+  else if(d.fx==="bakery"){g=vsBase(d,"#F3E6D3","#E4D1B5");const B=["#C58B4A","#A8682C","#E0A85E","#8D5524","#D9A066"];
+    [90,610,1130].forEach((x0,u)=>{const w=380;g+=`<rect x="${x0}" y="200" width="${w}" height="490" rx="6" fill="#8A5A33"/>`;for(let s=0;s<4;s++){const sy=220+s*116,r=VR(seed+u*9+s);g+=`<rect x="${x0+8}" y="${sy+92}" width="${w-16}" height="10" fill="#6B4423"/>`;
+        for(let k=0;k<7;k++){const cx=x0+40+k*48+r()*6,cy=sy+70;g+=s%2?`<ellipse cx="${cx}" cy="${cy}" rx="24" ry="20" fill="${B[(k+s)%5]}"/><path d="M${cx-14} ${cy-6}q14 -8 28 0" stroke="#F5DEB3" stroke-width="3" fill="none"/>`:`<rect x="${cx-22}" y="${cy-14}" width="44" height="34" rx="14" fill="${B[(k+u)%5]}"/><path d="M${cx-12} ${cy-6}l6 14M${cx} ${cy-8}l6 14M${cx+12} ${cy-6}l4 10" stroke="#F5DEB3" stroke-width="3"/>`}}
+      sl("l6",x0+w/2-80,220+1*116+104,160,54,"t","מדבקת מדף","talker")});
+    g+=`<rect x="380" y="610" width="840" height="20" rx="6" fill="#6B4423"/>`;sl("land",640,92,320,112,"b","שלט עליון","header");g+=vsStandSVG(1500,560,860);sl("port",1415,300,170,262,"b","סטנד רצפה","stand")}
+  else if(d.fx==="counter"){g=vsBase(d,"#F5F6F8","#E4E7EC");const T=d.id==="fish"?["#F08B6E","#C7D3DD","#E8A08A","#AFC3CF"]:d.id==="meat"?["#C62828","#E57373","#B71C1C","#EF9A9A"]:["#FFD54F","#E8B4A0","#C5E1A5","#F48FB1"];
+    g+=`${[...Array(16)].map((_,i)=>`<rect x="${i*100}" y="110" width="100" height="340" fill="none" stroke="#DADDE3"/>`).join("")}<rect x="520" y="150" width="560" height="150" rx="10" fill="#1F2530"/><text x="800" y="200" text-anchor="middle" font-family="Rubik,Arial" font-weight="700" font-size="28" fill="#fff">${d.n} · שירות</text><path d="M560 230h480M560 262h360" stroke="#5C6573" stroke-width="10" stroke-linecap="round"/>
+      <rect x="80" y="430" width="1440" height="40" rx="8" fill="#DADFE6"/><path d="M90 430q0-60 60-70h1300q60 10 60 70z" fill="#E8F6FF" opacity=".55" stroke="#B9C7D3" stroke-width="3"/><rect x="80" y="470" width="1440" height="220" rx="10" fill="${d.c}"/><rect x="80" y="470" width="1440" height="16" fill="#000" opacity=".15"/>`;
+    for(let i=0;i<5;i++){const x0=130+i*276,r=VR(seed+i);g+=`<rect x="${x0}" y="392" width="240" height="40" rx="6" fill="#ECEFF2" stroke="#C9CED6"/>`;for(let k=0;k<6;k++)g+=`<ellipse cx="${x0+24+k*38+r()*4}" cy="${410+r()*4}" rx="18" ry="11" fill="${T[(k+i)%4]}"/>`;sl("l6",x0+45,494,150,50,"c","תגית במקרר","tag")}
+    sl("land",300,252,150,106,"b","שלט על הדלפק","header");sl("land",1150,252,150,106,"b","שלט על הדלפק","header")}
+  else if(d.fx==="checkout"){g=vsBase(d,"#E9EBEF","#D8DCE2");
+    for(let i=0;i<3;i++){const x0=110+i*440;g+=`<rect x="${x0+150}" y="120" width="8" height="70" fill="#555B66"/><rect x="${x0+20}" y="180" width="270" height="160" rx="10" fill="#111"/><rect x="${x0+350}" y="200" width="16" height="490" fill="#8C939C"/><circle cx="${x0+358}" cy="196" r="24" fill="#E30613"/><text x="${x0+358}" y="206" text-anchor="middle" font-family="Rubik,Arial" font-weight="800" font-size="26" fill="#fff">${i+1}</text>
+      <rect x="${x0}" y="520" width="340" height="170" rx="10" fill="#B0B6BF"/><rect x="${x0}" y="500" width="340" height="30" rx="8" fill="#2B2F37"/><rect x="${x0+260}" y="430" width="70" height="70" rx="6" fill="#3A404A"/><rect x="${x0+268}" y="438" width="54" height="40" rx="3" fill="#7FD0FF"/>
+      <rect x="${x0-6}" y="390" width="70" height="300" rx="6" fill="#D1D5DB"/>${vsShelfGoods(x0-2,400,62,60,seed+i,["#E3006D","#FFD400","#7B2FF7","#FF7A00"],"bag")}${vsShelfGoods(x0-2,470,62,60,seed+i+9,["#E30613","#00A3FF","#FFD400"],"bag")}`;
+      sl("land",x0+30,188,250,144,"c","מסך מעל הקופה","screen");sl("l5",x0+72,568,200,96,"c","שלט על הקופה","door")}
+    g+=`<rect x="1450" y="300" width="90" height="390" rx="10" fill="#9AA1AB"/><rect x="1430" y="250" width="130" height="110" rx="12" fill="#222"/>`;sl("chk",1436,256,118,74,"c","בודק מחיר","kiosk")}
+  else if(d.fx==="entrance"){g=vsBase(d,"#ECEEF2","#DDE1E7");
+    g+=`<rect x="560" y="220" width="480" height="470" rx="4" fill="#2B3440"/><rect x="570" y="230" width="226" height="460" fill="#BFE6FF" opacity=".55"/><rect x="804" y="230" width="226" height="460" fill="#BFE6FF" opacity=".55"/><rect x="570" y="230" width="460" height="460" fill="url(#gls)"/><rect x="796" y="230" width="8" height="460" fill="#2B3440"/>
+      <rect x="1180" y="560" width="300" height="130" rx="10" fill="#9AA1AB"/>${[0,1,2,3].map(k=>`<path d="M${1200+k*22} 520h150l-20 90h-110z" fill="none" stroke="#C62828" stroke-width="6"/>`).join("")}${vsStandSVG(330,600,860)}${vsStandSVG(1300,600,860)}`;
+    sl("land",660,92,280,120,"b","שלט מעל הכניסה","header");sl("port",245,330,170,272,"b","סטנד כניסה","stand");sl("port",1215,330,170,272,"b","סטנד כניסה","stand");
+    g+=`<rect x="70" y="250" width="130" height="420" rx="14" fill="#111"/><rect x="110" y="670" width="50" height="40" fill="#333"/>`;sl("port",80,262,110,396,"c","טוטם דיגיטלי","screen")}
+  return {svg:`<svg viewBox="0 0 ${VSW} ${VSH}" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">${g}</svg>`,slots:S}}
+/* ---- floor plan ---- */
+const VMAP={ent:[1290,730,230,90],veg:[1290,380,230,320],bake:[1290,80,230,270],deli:[960,80,300,120],meat:[630,80,300,120],fish:[300,80,300,120],dairy:[80,80,190,430],frozen:[80,540,190,280],dry:[330,260,150,420],snack:[520,260,150,420],drink:[710,260,150,420],clean:[900,260,150,420],baby:[1090,260,150,320],chk:[330,730,900,90]};
+const TOUR=["ent","veg","bake","deli","meat","fish","dairy","frozen","dry","snack","drink","clean","baby","chk"];
+function vsCount(id){const d=DEPTS.find(x=>x.id===id),n=vsScene(d).slots.length;let f=0;for(let i=0;i<n;i++)if(VS.a[id+":"+i]&&STATE[VS.a[id+":"+i]])f++;return {n,f}}
+function vsMapSVG(){let s=`<rect x="40" y="40" width="1520" height="820" rx="18" fill="#20242C" stroke="#3A404C" stroke-width="4"/><rect x="1330" y="852" width="150" height="16" fill="#E30613"/><text x="1405" y="895" text-anchor="middle" font-family="Rubik,Arial" font-size="22" fill="#9AA1AE">כניסה</text>`;
+  const pts=TOUR.map(id=>{const [x,y,w,h]=VMAP[id];return [x+w/2,y+h/2]});s+=`<path d="M${pts.map(p=>p.join(" ")).join(" L")}" fill="none" stroke="#FF3B47" stroke-width="4" stroke-dasharray="10 12" opacity=".55"/>`;
+  TOUR.forEach((id,i)=>{const d=DEPTS.find(x=>x.id===id),[x,y,w,h]=VMAP[id],c=vsCount(id),cur=VS.dept===id;
+    s+=`<g class="vmd" data-vd="${id}" tabindex="0" role="button" aria-label="${d.n}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="${d.c}" fill-opacity="${cur?.55:.28}" stroke="${cur?"#fff":d.c}" stroke-width="${cur?4:2}"/>`;
+    if(d.fx==="gondola")for(let k=0;k<2;k++)s+=`<rect x="${x+18+k*(w-54)}" y="${y+76}" width="18" height="${h-116}" rx="4" fill="${d.c}" opacity=".7"/>`;
+    if(id==="chk")for(let k=0;k<8;k++)s+=`<rect x="${x+40+k*108}" y="${y+46}" width="60" height="26" rx="5" fill="#37474F" stroke="#90A4AE"/>`;
+    s+=`<circle cx="${x+26}" cy="${y+26}" r="15" fill="#111" opacity=".5"/><text x="${x+26}" y="${y+32}" text-anchor="middle" font-family="Rubik,Arial" font-weight="800" font-size="16" fill="#fff">${i+1}</text><text x="${x+w/2}" y="${y+(d.fx==="gondola"?58:id==="chk"?32:h/2+6)}" text-anchor="middle" font-family="Rubik,Arial" font-weight="700" font-size="${d.fx==="gondola"?(d.n.length>8?14:18):d.n.length>10?17:21}" fill="#fff">${d.n}</text>
+      <rect x="${x+w/2-34}" y="${y+h-34}" width="68" height="24" rx="12" fill="${c.f?"#1E7A4A":"#111"}" opacity=".85"/><text x="${x+w/2}" y="${y+h-16}" text-anchor="middle" font-family="Rubik,Arial" font-weight="700" font-size="15" fill="#fff">${c.f}/${c.n}</text></g>`});
+  return `<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" class="vmap">${s}</svg>`}
+/* ---- rendering signs (queued, cached) ---- */
+const vsKey=(pid,l)=>pid+"|"+l+"|"+STYLE+"|"+(typeof theme!=="undefined"?theme:"")+"|"+JSON.stringify(STATE[pid])+"|"+JSON.stringify(OV[pid+"|"+l]||{})+"|"+(STATE[pid]&&STATE[pid].bgi||"");
+function vsImg(pid,l){const k=vsKey(pid,l);if(VS.cache[k])return Promise.resolve(VS.cache[k]);
+  return new Promise(res=>{VS.q.push({pid,l,k,res});vsPump()})}
+async function vsPump(){if(VS.busy)return;VS.busy=true;while(VS.q.length){const j=VS.q.shift();if(VS.cache[j.k]){j.res(VS.cache[j.k]);continue}
+    try{const t=BYID[j.pid],w=j.l==="port"?360:j.l==="chk"?440:520;const blob=await renderOff(`<div class="sg ${j.l}" data-l="${j.l}" data-id="${t.id}">${sign(j.l,t,STATE[t.id])}</div>`,w,w*1.6);VS.cache[j.k]=URL.createObjectURL(blob)}catch(e){console.warn("vs render",e);VS.cache[j.k]=""}
+    j.res(VS.cache[j.k])}VS.busy=false}
+/* ---- UI ---- */
+function openStore(){closeImport();let d=$("vstore");if(!d){d=document.createElement("div");d.id="vstore";d.className="vstore";document.body.appendChild(d)}VS.on=true;d.hidden=false;document.documentElement.classList.add("vsopen");vsRender()}
+function closeStore(){VS.on=false;const d=$("vstore");if(d)d.hidden=true;document.documentElement.classList.remove("vsopen")}
+function vsRender(){const d=$("vstore");if(!d||!VS.on)return;const D=DEPTS.find(x=>x.id===VS.dept)||DEPTS[0],ti=TOUR.indexOf(D.id);let tot=0,fil=0;TOUR.forEach(id=>{const c=vsCount(id);tot+=c.n;fil+=c.f});
+  d.innerHTML=`<header class="vshd"><button type="button" class="vsx" id="vsX">✕ סגירה</button><b>🏪 הסניף שלי</b><span class="vscov"><i style="width:${tot?Math.round(fil/tot*100):0}%"></i></span><small>${fil}/${tot} מקומות שילוט מאוישים</small><span class="vsp"></span>
+    <div class="vsseg"><button type="button" data-vv="map" aria-pressed="${VS.view==="map"}">🗺 מפת הסניף</button><button type="button" data-vv="aisle" aria-pressed="${VS.view==="aisle"}">🚶 סיור במחלקה</button></div>
+    <button type="button" class="vb" id="vsAuto">⚡ שיוך אוטומטי</button><button type="button" class="vb aionly" id="vsAI">✨ שיוך חכם (AI)</button><button type="button" class="vb cta" id="vsList">📋 רשימת שילוט והדפסה</button></header>
+   <aside class="vsside"><h4>מחלקות</h4><div class="vsdl">${TOUR.map((id,i)=>{const x=DEPTS.find(q=>q.id===id),c=vsCount(id);return `<button type="button" data-vd="${id}" aria-current="${id===D.id&&VS.view==="aisle"}"><i style="background:${x.c}">${i+1}</i><span>${x.n}</span><small class="${c.f?"ok":""}">${c.f}/${c.n}</small></button>`}).join("")}</div>
+    <p class="vstip">לחצו על מחלקה כדי להיכנס אליה. בכל מחלקה מסומנים המקומות לשילוט – לחיצה על מקום בוחרת מוצר, והשלט מוצג בפורמט שמתאים למקום (מדף, דלת מקרר, סטנד, מסך).</p></aside>
+   <main class="vsmain" id="vsMain">${VS.view==="map"?`<div class="vsmapw">${vsMapSVG()}</div><p class="vstip c">המסלול האדום מראה סדר הליכה מקובל בסניף: כניסה ← פירות וירקות ← מחלקות שירות ← מקררים ← מעברים ← קופות.</p>`:
+     `<div class="vsnav"><button type="button" class="vb" data-vgo="${TOUR[(ti+1)%TOUR.length]}">← ${DEPTS.find(x=>x.id===TOUR[(ti+1)%TOUR.length]).n}</button><span><b>${D.n}</b><small>מחלקה ${ti+1} מתוך ${TOUR.length}</small></span><button type="button" class="vb" data-vgo="${TOUR[(ti-1+TOUR.length)%TOUR.length]}">${DEPTS.find(x=>x.id===TOUR[(ti-1+TOUR.length)%TOUR.length]).n} →</button></div>
+      <div class="vsscene" id="vsScene"></div><div class="vsbar"><button type="button" class="vb" id="vsFillD">⚡ מילוי אוטומטי למחלקה</button><button type="button" class="vb" id="vsClearD">ניקוי המחלקה</button><button type="button" class="vb" id="vsShot">⬇ תמונה של המחלקה</button></div>`}</main>
+   <aside class="vspick" id="vsPick" hidden></aside>`;
+  if(VS.view==="aisle")vsDrawScene(D)}
+function vsDrawScene(D){const box=$("vsScene");if(!box)return;const sc=vsScene(D);let h=`<div class="vsin">${sc.svg}`;
+  sc.slots.forEach((s,i)=>{const id=D.id+":"+i,pid=VS.a[id],ok=pid&&STATE[pid];const a=ASP[s.fmt];let w=s.w,hh=s.w/a;if(hh>s.h){hh=s.h;w=s.h*a}const x=s.x+(s.w-w)/2,y=s.al==="t"?s.y:s.al==="b"?s.y+s.h-hh:s.y+(s.h-hh)/2;
+    const P=(v,t)=>(v/t*100).toFixed(3)+"%";h+=`<button type="button" class="vslot ${ok?"on":""} k-${s.kind}" data-vs="${i}" style="left:${P(x,VSW)};top:${P(y,VSH)};width:${P(w,VSW)};height:${P(hh,VSH)}" title="${s.lbl} · ${FMTN[s.fmt]}${ok?" · "+esc(STATE[pid].name):""}">${ok?`<img alt="" data-vimg="${pid}|${s.fmt}">`:`<span>+<small>${FMTN[s.fmt]}</small></span>`}</button>`});
+  box.innerHTML=h+`</div>`;box.querySelectorAll("img[data-vimg]").forEach(im=>{const [pid,l]=im.dataset.vimg.split("|");vsImg(pid,l).then(u=>{if(im.isConnected&&u)im.src=u})})}
+function vsPicker(i){const D=DEPTS.find(x=>x.id===VS.dept),s=vsScene(D).slots[i],id=D.id+":"+i,cur=VS.a[id];VS.pick=i;const P=$("vsPick");
+  const all=vsProducts(),gen=D.id==="ent"||D.id==="chk",mine=all.filter(t=>gen?isPromo(t):vsDeptOfP(t.id)===D.id),rest=all.filter(t=>!mine.includes(t));
+  const row=t=>`<button type="button" class="vsp${t.id===cur?" on":""}" data-vp="${t.id}"><b>${esc(STATE[t.id].name)}</b><small>${esc(capOf(t))}${isPromo(t)?" · מבצע":""}</small></button>`;
+  P.innerHTML=`<div class="vsph"><b>${s.lbl}</b><button type="button" id="vsPX" aria-label="סגירה">✕</button></div><p class="vstip">פורמט מתאים למקום: <b>${FMTN[s.fmt]}</b>. השלט של המוצר יוצג אוטומטית בפורמט הזה.</p>
+    ${cur&&STATE[cur]?`<div class="vspa"><button type="button" class="vb" id="vsEdit">🎨 עריכת השלט (${FMTN[s.fmt]})</button><button type="button" class="vb" id="vsRm">הסרה מהמקום</button></div>`:""}
+    <input type="search" id="vsQ" placeholder="חיפוש מוצר…" autocomplete="off"><div class="vspl" id="vsPL">${mine.length?`<h5>${gen?"מבצעים מומלצים ל"+D.n:"מתאימים ל"+D.n}</h5>${mine.map(row).join("")}`:`<p class="vstip">אין מוצרים שזוהו כשייכים ל${D.n}. אפשר לבחור כל מוצר מהרשימה.</p>`}${rest.length?`<h5>כל המוצרים</h5>${rest.map(row).join("")}`:""}</div>`;P.hidden=false;setTimeout(()=>{const q=$("vsQ");if(q)q.focus()},40)}
+function vsAutoFill(ids,overwrite){const all=vsProducts();let n=0;
+  ids.forEach(did=>{const D=DEPTS.find(x=>x.id===did),sl=vsScene(D).slots;let pool;
+    if(did==="ent"||did==="chk"){pool=all.filter(isPromo);if(!pool.length)pool=all}else pool=all.filter(t=>vsDeptOfP(t.id)===did);
+    if(!pool.length)return;const big=pool.filter(isPromo).concat(pool.filter(t=>!isPromo(t)));let bi=0,si=0;
+    sl.forEach((s,i)=>{const id=did+":"+i;if(VS.a[id]&&STATE[VS.a[id]]&&!overwrite)return;const large=["port","land","chk"].includes(s.fmt);const list=large?big:pool;const t=list[(large?bi++:si++)%list.length];if(t){VS.a[id]=t.id;n++}})});
+  vsSave();return n}
+async function vsAI(btn){if(!AI)return;btn.disabled=true;const o=btn.textContent;btn.textContent="✨ משייך…";
+  try{const list=vsProducts().map(t=>({id:t.id,name:STATE[t.id].name}));const ds=DEPTS.filter(d=>!["ent","chk"].includes(d.id)).map(d=>({id:d.id,n:d.n}));
+    const r=await AI.json(`אתה מנהל סניף סופרמרקט בישראל. שייך כל מוצר למחלקה המתאימה בסניף.\nמחלקות: ${JSON.stringify(ds)}\nמוצרים: ${JSON.stringify(list)}\nהחזר JSON: {"map":{"<id מוצר>":"<id מחלקה>"}}`,{modelTier:"quick"});
+    let n=0;if(r&&r.map)for(const k in r.map){if(STATE[k]&&DEPTS.some(d=>d.id===r.map[k])){VS.ai[k]=r.map[k];n++}}vsSave();const f=vsAutoFill(TOUR,false);vsRender();toast(`AI שייך ${n} מוצרים למחלקות ומילא ${f} מקומות`)}
+  catch(e){toast(aiErr(e))}finally{btn.disabled=false;btn.textContent=o}}
+function vsList(){closeImport();const by={};TOUR.forEach(did=>{const D=DEPTS.find(x=>x.id===did);vsScene(D).slots.forEach((s,i)=>{const pid=VS.a[did+":"+i];if(pid&&STATE[pid]){(by[s.fmt]=by[s.fmt]||[]).push({pid,d:D.n,lbl:s.lbl})}})});
+  const d=document.createElement("div");d.className="imp";d.id="impDlg";d.setAttribute("role","dialog");const fm=Object.keys(by);
+  d.innerHTML=`<div class="impc vslist"><div class="imph"><h3>📋 רשימת שילוט לסניף</h3><button type="button" class="iclose" id="impX" style="display:block" aria-label="סגירה">✕</button></div>
+   ${fm.length?`<p class="imps">כל השלטים שמוקמו בסניף, לפי פורמט הדפסה. "סימון לייצוא" מסמן את המוצרים בגודל המתאים ומעביר לשלב ההדפסה.</p>`+fm.map(f=>{const u=[...new Set(by[f].map(x=>x.pid))];return `<section><div class="vlh"><b>${FMTN[f]}</b><span>${by[f].length} מקומות · ${u.length} שלטים שונים</span><button type="button" class="vb cta" data-vexp="${f}">סימון לייצוא ←</button></div><ul>${by[f].map(x=>`<li><b>${esc(STATE[x.pid].name)}</b><small>${x.d} · ${x.lbl}</small></li>`).join("")}</ul></section>`}).join(""):`<p class="imps">עוד לא מוקמו שלטים. היכנסו למחלקה ולחצו על מקום מסומן, או השתמשו ב"שיוך אוטומטי".</p>`}</div>`;
+  document.body.appendChild(d);d.addEventListener("click",e=>{if(e.target===d||e.target.closest("#impX")){closeImport();return}const b=e.target.closest("[data-vexp]");if(!b)return;const f=b.dataset.vexp,sec=SECTIONS.find(x=>x.l===f&&!x.plat);if(!sec)return;
+    closeImport();closeStore();setSec(sec.id);SEL.clear();by[f].forEach(x=>SEL.add(x.pid));renderSections();updSelUI();const st=document.querySelector('.srail .stp[data-step="export"]');if(st)st.click();toast(`סומנו ${new Set(by[f].map(x=>x.pid)).size} שלטים ב־${FMTN[f]} – לחצו "ייצוא"`)})}
+async function vsShot(btn){const n=$("vsScene");if(!n||!window.htmlToImage)return;btn.disabled=true;try{const blob=await window.htmlToImage.toBlob(n.firstElementChild,{pixelRatio:1.5,cacheBust:false});await saveBlob(blob,`הסניף שלי - ${DEPTS.find(x=>x.id===VS.dept).n}.png`);toast("התמונה נשמרה")}catch(e){if(!e||e.code!=="cancelled")toast("לא הצלחתי לשמור תמונה")}finally{btn.disabled=false}}
+document.addEventListener("click",e=>{const t=e.target;if(t.closest("[data-openstore]")){openStore();return}if(!t.closest("#vstore"))return;
+  if(t.closest("#vsX"))return closeStore();
+  const vv=t.closest("[data-vv]");if(vv){VS.view=vv.dataset.vv;return vsRender()}
+  const vd=t.closest("[data-vd]");if(vd){VS.dept=vd.dataset.vd;VS.view="aisle";return vsRender()}
+  const vg=t.closest("[data-vgo]");if(vg){VS.dept=vg.dataset.vgo;return vsRender()}
+  if(t.closest("#vsAuto")){const n=vsAutoFill(TOUR,false);vsRender();toast(n?`מולאו ${n} מקומות לפי התאמה בין שם המוצר למחלקה`:"כל המקומות שאפשר להתאים כבר מלאים");return}
+  if(t.closest("#vsAI"))return vsAI(t.closest("#vsAI"));
+  if(t.closest("#vsList"))return vsList();
+  if(t.closest("#vsFillD")){const n=vsAutoFill([VS.dept],false);vsRender();toast(n?`מולאו ${n} מקומות`:"לא נמצאו מוצרים מתאימים למחלקה – לחצו על מקום ובחרו ידנית");return}
+  if(t.closest("#vsClearD")){const D=VS.dept,old={};Object.keys(VS.a).forEach(k=>{if(k.startsWith(D+":")){old[k]=VS.a[k];delete VS.a[k]}});vsSave();vsRender();toastUndo("המחלקה נוקתה",()=>{Object.assign(VS.a,old);vsSave();vsRender()},"השילוט הוחזר");return}
+  if(t.closest("#vsShot"))return vsShot(t.closest("#vsShot"));
+  const sl=t.closest("[data-vs]");if(sl){vsPicker(+sl.dataset.vs);document.querySelectorAll(".vslot.pk").forEach(x=>x.classList.remove("pk"));sl.classList.add("pk");return}
+  if(t.closest("#vsPX")){$("vsPick").hidden=true;return}
+  const vp=t.closest("[data-vp]");if(vp){VS.a[VS.dept+":"+VS.pick]=vp.dataset.vp;vsSave();$("vsPick").hidden=true;vsRender();return}
+  if(t.closest("#vsRm")){delete VS.a[VS.dept+":"+VS.pick];vsSave();$("vsPick").hidden=true;vsRender();return}
+  if(t.closest("#vsEdit")){const D=DEPTS.find(x=>x.id===VS.dept),s=vsScene(D).slots[VS.pick],pid=VS.a[VS.dept+":"+VS.pick];$("vsPick").hidden=true;openStudio(pid,s.fmt);return}});
+document.addEventListener("keydown",e=>{const g=e.target.closest&&e.target.closest("#vstore .vmd");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();VS.dept=g.dataset.vd;VS.view="aisle";vsRender()}});
+document.addEventListener("input",e=>{if(e.target.id!=="vsQ")return;const q=e.target.value.trim();document.querySelectorAll("#vsPL [data-vp]").forEach(b=>{b.hidden=q&&!b.textContent.includes(q)})});
+document.addEventListener("keydown",e=>{const d=$("vstore");if(!d||d.hidden||STU.on)return;if(e.target.matches&&e.target.matches("input,textarea"))return;
+  if(e.key==="Escape"){e.stopPropagation();if($("vsPick")&&!$("vsPick").hidden)$("vsPick").hidden=true;else closeStore()}
+  else if(VS.view==="aisle"&&(e.key==="ArrowLeft"||e.key==="ArrowRight")){e.preventDefault();e.stopPropagation();const i=TOUR.indexOf(VS.dept);VS.dept=TOUR[(i+(e.key==="ArrowLeft"?1:-1)+TOUR.length)%TOUR.length];vsRender()}},true);
+const _closeStudioVs=closeStudio;closeStudio=function(){const r=_closeStudioVs.apply(this,arguments);if(VS.on)setTimeout(vsRender,80);return r};
+
+(function(){const r=$("srail");if(!r)return;const b=document.createElement("button");b.type="button";b.className="ritem vsr";b.setAttribute("data-openstore","");b.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M9 20v-6h6v6"/></svg>הסניף שלי`;b.title="סניף וירטואלי: מחלקות, מדפים וקופות עם השילוט שלכם";const sep=document.createElement("span");sep.className="rsep";r.insertBefore(sep,r.querySelector(".rsp"));r.insertBefore(b,r.querySelector(".rsp"))})();
+
 
 function logoUI(){if(!$("logoLbl"))return;$("logoLbl").textContent=BRAND.logo?"הלוגו נטען ✓ (לחיצה להחלפה)":"העלאת קובץ הלוגו הרשמי (PNG שקוף או SVG)";$("logoClr").hidden=!BRAND.logo}
 $("logoUp")&&$("logoUp").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const im=new Image();im.onload=()=>{BRAND.logo=rd.result;BRAND.ratio=im.naturalWidth&&im.naturalHeight?+(im.naturalWidth/im.naturalHeight).toFixed(3):3;try{localStorage.setItem("rlLogo",BRAND.logo);localStorage.setItem("rlLogoR",BRAND.ratio)}catch(err){}logoUI();renderSections()};im.onerror=()=>toast("לא הצלחתי לקרוא את קובץ הלוגו");im.src=rd.result};rd.readAsDataURL(f)});
