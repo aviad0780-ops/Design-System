@@ -5127,6 +5127,82 @@ html.stopen .imp{z-index:1200}html.stopen .toast{z-index:1300}
 .fsp-glass{background:radial-gradient(circle at 20% 25%,#fff8 0 18%,transparent 19%),linear-gradient(160deg,#E30613,#0047BB)}.fsp-mini{background:#fff;box-shadow:inset 0 0 0 4px #E30613}
 .pfel{display:grid;gap:8px}.pfstk{display:flex;flex-wrap:wrap;gap:4px;align-items:center;font-size:13px}.pfstk button{width:34px;height:34px;border:1px solid var(--line,#DDE1E8);border-radius:7px;background:#fff;padding:2px;cursor:pointer}.pfstk button img{width:100%;height:100%;object-fit:contain}
 .pfstk button[aria-pressed="true"]{outline:2px solid #2F7BFF}.pfstk .nost{width:auto;padding:0 8px;font:inherit;font-size:12px}
+
+/* ---------- photo editor ---------- */
+html.phopen{overflow:hidden}
+html.phopen .toast{z-index:1300}
+.phed{position:fixed;inset:0;z-index:1100;background:#1B1D22;color:#E9ECF2;display:grid;grid-template-columns:320px 1fr;grid-template-rows:56px 1fr;grid-template-areas:"hd hd" "side main";direction:rtl;font-family:var(--f-body,'Rubik',sans-serif)}
+.phed[hidden]{display:none}
+.phhd{grid-area:hd;display:flex;align-items:center;gap:8px;padding:0 14px;background:#111317;border-bottom:1px solid #2A2D35}
+.phhd b{font-size:16px}.phsp{flex:1}
+.phhd button{font:inherit;font-size:13.5px;font-weight:600;border:1px solid #3A3E48;background:#23262D;color:#E9ECF2;border-radius:9px;padding:7px 12px;cursor:pointer;min-height:36px}
+.phhd button:hover:not(:disabled){border-color:#8AB4FF}
+.phhd button:disabled{opacity:.4;cursor:default}
+.phhd button.pri{background:#E30613;border-color:#E30613;color:#fff}
+.phhd button.warn{background:#7A1A10;border-color:#C8000F}
+.phside{grid-area:side;background:#22252C;border-left:1px solid #2A2D35;display:flex;flex-direction:column;min-height:0}
+.phtabs{display:flex;flex-wrap:wrap;gap:4px;padding:10px;border-bottom:1px solid #2F333B}
+.phtabs button{flex:1 1 auto;font:inherit;font-size:12.5px;font-weight:600;border:0;background:#2C3038;color:#C9CED8;border-radius:8px;padding:7px 8px;cursor:pointer}
+.phtabs button[aria-selected="true"]{background:#E9ECF2;color:#111}
+.phbody{padding:12px 14px 30px;overflow:auto;flex:1}
+.phbody h5{margin:14px 0 8px;font-size:12px;color:#9AA1AE;font-weight:700}
+.phbody .sttip{color:#9AA1AE}
+.phbody .tbtn{background:#2C3038;color:#E9ECF2;border-color:#3A3E48;display:block;margin:6px 0}
+.phbody .tbtn.wide{width:100%}
+.phbody .tbtn.pri2{background:#E9ECF2;color:#111;border-color:#E9ECF2}
+.phbody .tbtn:disabled{opacity:.45}
+.phbody .bgact{display:flex;flex-direction:column;gap:2px}
+.phbody .tgb,.phbody .tpat button{background:#2C3038;color:#E9ECF2;border-color:#3A3E48}
+.phbody .tgb[aria-pressed="true"],.phbody .tpat button[aria-pressed="true"]{background:#E9ECF2;color:#111;border-color:#E9ECF2}
+.phbody .toggle{color:#C9CED8;font-size:12.5px;display:flex;gap:6px;align-items:center;margin:6px 0}
+.phbody input[type=color]{width:44px;height:32px;border:1px solid #3A3E48;border-radius:8px;background:#2C3038;padding:2px;margin-top:6px}
+.phsl{display:block;margin:10px 0}
+.phsl span{display:flex;justify-content:space-between;font-size:12.5px;color:#C9CED8;margin-bottom:3px}
+.phsl output{font-variant-numeric:tabular-nums;color:#fff}
+.phsl input{width:100%;accent-color:#E30613}
+.phflt{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.phflt button{border:1px solid #3A3E48;background:#2C3038;border-radius:10px;padding:5px;cursor:pointer;color:#E9ECF2;font:inherit;font-size:11.5px;display:flex;flex-direction:column;gap:4px;align-items:center}
+.phflt button:hover{border-color:#8AB4FF}
+.phflt img{width:100%;aspect-ratio:1;object-fit:contain;border-radius:6px;background:repeating-conic-gradient(#3a3d44 0 25%,#2c2f35 0 50%) 0 0/12px 12px}
+.phmain{grid-area:main;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:0;overflow:hidden;padding:20px}
+.phwrap{position:relative;background:repeating-conic-gradient(#d9dbe0 0 25%,#fff 0 50%) 0 0/18px 18px;box-shadow:0 10px 40px rgba(0,0,0,.5);touch-action:none}
+.phwrap canvas{display:block;width:100%;height:100%}
+.phov{position:absolute;inset:0;pointer-events:none}
+.phov.tool{cursor:crosshair}
+.phcrop{position:absolute;border:2px dashed #fff;outline:1px solid #000;box-shadow:0 0 0 9999px rgba(0,0,0,.5)}
+.phinfo{font-size:12.5px;color:#9AA1AE}
+@media (max-width:760px){.phed{grid-template-columns:1fr;grid-template-rows:auto 1fr 46%;grid-template-areas:"hd" "main" "side"}.phhd{flex-wrap:wrap;padding:6px 8px}.phhd b{display:none}.phside{border-left:0;border-top:1px solid #2A2D35}}
+.phedb{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.upwrap .phedb{margin-top:6px;width:100%}.phedb[hidden]{display:none!important}html:not(.hasaiimg) #aiRec{display:none!important}
+
+/* ---------- AI ---------- */
+html:not(.hasai) .aionly{display:none!important}
+.sthd button.aib,.aib{background:linear-gradient(135deg,#7B2FF7,#E30613)!important;color:#fff!important;border-color:transparent!important}
+.stai{position:fixed;top:56px;bottom:0;left:0;width:380px;max-width:100vw;z-index:960;background:#fff;border-right:1px solid #DDE1E8;box-shadow:12px 0 40px rgba(0,0,0,.12);display:flex;flex-direction:column;direction:rtl;font-family:var(--f-body,'Rubik',sans-serif);color:#16181D}
+.stai[hidden]{display:none}
+.staih{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #EEF0F4}
+.staih b{flex:1;font-size:15px}
+.staih button{border:0;background:none;font-size:18px;cursor:pointer;color:#6B7280}
+.ailog{flex:1;overflow:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.aim{max-width:92%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.5;white-space:pre-wrap}
+.aim.u{align-self:flex-start;background:#14161B;color:#fff;border-bottom-right-radius:4px}
+.aim.a{align-self:flex-end;background:#F2F3F7;border-bottom-left-radius:4px}
+.aim.a small{display:block;color:#6B7280;font-size:12px;margin-top:4px}
+.aim.err{background:#FFF1F0;color:#A8071A}
+.aim.think{color:#6B7280;font-style:italic}
+.aisug{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 8px}
+.aisug button{border:1px solid #E3E6EC;background:#fff;border-radius:999px;padding:5px 10px;font:inherit;font-size:12.5px;cursor:pointer}
+.aisug button:hover{border-color:#7B2FF7;color:#7B2FF7}
+.aiin{display:flex;gap:8px;padding:10px 14px 14px;border-top:1px solid #EEF0F4;align-items:flex-end}
+.aiin textarea{flex:1;resize:none;border:1px solid #DDE1E8;border-radius:12px;padding:9px 11px;font:inherit;font-size:14px;min-height:44px;max-height:140px}
+.aiin button{border:0;border-radius:12px;padding:0 14px;height:44px;font:inherit;font-weight:700;cursor:pointer;background:#14161B;color:#fff}
+.aiin button.stop{background:#E30613}
+.aihl{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.aihl button{border:1px solid #E3E6EC;background:#fff;border-radius:10px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer;text-align:right}
+.aihl button:hover{border-color:#7B2FF7}
+.aitone{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.aitone select{font:inherit;font-size:13px;border:1px solid var(--line,#ddd);border-radius:8px;padding:6px 8px}
+@media (max-width:760px){.stai{width:100vw}}
 </style>
 </head>
 <body>
@@ -5702,7 +5778,7 @@ $("mhead").addEventListener("click",e=>{const k=e.target.closest("button[data-k]
   const all=e.target.closest("button[data-all]");if(all)exportAll(all.dataset.all,all)});
 $("inspClose").addEventListener("click",closeInsp);$("scrim").addEventListener("click",closeInsp);
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("root").classList.contains("insp-open"))closeInsp()});
-$("setBtn").addEventListener("click",e=>exportSet(e.currentTarget));$("capBtn").addEventListener("click",openCaption);
+$("setBtn").addEventListener("click",e=>exportSet(e.currentTarget));$("capBtn").addEventListener("click",()=>openCaption());
 $("apv").addEventListener("click",e=>{const b=e.target.closest("[data-apv]");if(!b||!STATE[cur])return;STATE[cur].apv=b.dataset.apv;refreshItem(cur);updApv();toast(b.dataset.apv==="ok"?"השלט סומן כמאושר":b.dataset.apv==="rev"?"השלט נשלח לאישור":"השלט חזר לטיוטה")});
 $("root").classList.toggle("nosafe",!PFS.safe);
 $("iact").addEventListener("click",e=>{const b=e.target.closest("button[data-x]");if(b)exportOne($("stage").querySelector(".sg"),ACT,b.dataset.x,b)});
@@ -5819,7 +5895,7 @@ function buildForm(){
   }
   h+=inp("slogan","כיתוב רשת (אופציונלי)",true);
   h+=inp("qr","קישור לקוד QR (אופציונלי, מופיע ב־A4 ובבודק המחיר)",true,"https://");
-  h+=`<label class="toggle sm rmbg"><input type="checkbox" id="rmbgT"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית (לתמונות מוצר על רקע לבן)</label><label class="upload" for="upl"><input type="file" id="upl" accept="image/png,image/jpeg,image/webp"><span>${s.up?"תמונה הועלתה ✓ (לחיצה להחלפה)":"העלאת תמונת מוצר משלך"}</span></label>`;
+  h+=`<label class="toggle sm rmbg"><input type="checkbox" id="rmbgT"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית (לתמונות מוצר על רקע לבן)</label><label class="upload" for="upl"><input type="file" id="upl" accept="image/png,image/jpeg,image/webp"><span>${s.up?"תמונה הועלתה ✓ (לחיצה להחלפה)":"העלאת תמונת מוצר משלך"}</span></label><div class="upwrap"><button type="button" class="tbtn phedb" id="phEdProd">🎨 עריכת תמונת המוצר (רקע, חיתוך, צבעים)</button><button type="button" class="tbtn phedb aib aionly" id="aiRec"${s.up?"":" hidden"}>✨ זיהוי שם המוצר מהתמונה</button></div>`;
   if(s.up&&s.upInfo){const q=s.upInfo,msg={good:["ok","איכות טובה להדפסה"],ok:["warn","איכות בינונית: טובה למדבקות ולמסך, פחות חדה ב־A4"],low:["err","איכות נמוכה: התמונה תיראה מטושטשת בהדפסה. מומלץ קובץ ברוחב 1000 פיקסלים ומעלה"]}[q.quality];
     h+=`<p class="imgq ${msg[0]}"><b>${q.srcW}×${q.srcH} px</b> · ${msg[1]}${q.removed?" · הרקע הלבן הוסר":q.transp?" · רקע שקוף":q.chosenKeep?" · הרקע נשמר":""}${q.outW?` · נשמרה ב־${q.outW}×${q.outH}`:""}</p>${!q.removed&&!q.transp&&!q.chosenKeep?`<p class="imgq warn">לא זוהה רקע לבן אחיד, לכן הרקע לא הוסר. לתוצאה נקייה העלו PNG עם רקע שקוף או צילום על רקע לבן.</p>`:""}<button type="button" class="linkbtn" id="upClear">חזרה לתמונה מהספרייה</button>`}
   $("fields").innerHTML=h;
@@ -6504,7 +6580,7 @@ function stProps(){const P=$("stProps");if(!P)return;const el=STU.sel;
     <div class="prow">${col("stc",f.stc,"קו מתאר","#ffffff")}${rng("stw",f.stw,"עובי",0,.2,.005,0)}</div></section>`}
   if(shape||(free&&k==="line")){h+=`<section><h5>מילוי וקו</h5><div class="tsw sm">${SWS.map(c=>`<button type="button" data-sw2="${c}" style="background:${c}" title="${c}"></button>`).join("")}</div><div class="prow">${col("c",f.c,"מילוי","#E30613")}${col("bc",f.bc,"מסגרת","#111111")}</div><div class="prow">${col("g1",f.g1,"מעבר 1","#FFD400")}${col("g2",f.g2,"מעבר 2","#E30613")}</div>${rng("bw",f.bw,"עובי מסגרת",0,3,.1,0)}${k==="box"?rng("r",f.r,"עיגול פינות",0,20,.5,0):""}</section>`}
   if(free&&k==="qr")h+=`<section><h5>קוד QR</h5><label class="pf2">קישור / טקסט<input data-p="t" value="${pEsc(f.t)}" dir="ltr"></label>${num("w",f.w,"גודל",.5,3)}<p class="sttip">סרקו בטלפון לבדיקה לפני הדפסה.</p></section>`;
-  if(img){h+=`<section><h5>תמונה</h5>${sel("fl",IFN,f.fl||"none","פילטר")}${free?rng("rad",f.rad,"עיגול פינות",0,30,.5,0)+`<div class="prow">${col("bc",f.bc,"מסגרת","#ffffff")}${rng("bw",f.bw,"עובי",0,3,.1,0)}</div>`:""}<label class="tbtn wide">החלפת תמונה…<input type="file" id="stRep" accept="image/*" hidden></label></section>`}
+  if(img){h+=`<section><h5>תמונה</h5>${sel("fl",IFN,f.fl||"none","פילטר")}${free?rng("rad",f.rad,"עיגול פינות",0,30,.5,0)+`<div class="prow">${col("bc",f.bc,"מסגרת","#ffffff")}${rng("bw",f.bw,"עובי",0,3,.1,0)}</div>`:""}<button type="button" class="tbtn wide pri2 phedb" id="stPhEd">🎨 עריכת תמונה מתקדמת</button><label class="tbtn wide">החלפת תמונה…<input type="file" id="stRep" accept="image/*" hidden></label></section>`}
   h+=`<section><h5>אפקטים</h5><div class="prow">${sel("sh",SHN,typeof f.sh==="string"?f.sh:"none","צל / זוהר")}${col("shc",f.shc,"צבע האפקט","#FFD400")}</div>${rng(free?"op":"op",f.op,"שקיפות",.05,1,.05,1)}${rng("bl",f.bl,"טשטוש",0,12,.5,0)}${sel("bm",BLN,f.bm||"normal","מיזוג")}</section>`;
   h+=`<section><h5>אנימציה <small>(למסכים, וידאו ומצגת)</small></h5>${sel("an",ANI,f.an||"none","כניסה")}<div class="prow">${num("ad",f.ad||.8,"משך (שנ׳)",.1,.1)}${num("adl",f.adl||0,"השהיה (שנ׳)",.1,0)}</div>${sel("lp",LPI,f.lp||"none","תנועה מתמשכת")}${f.lp&&f.lp!=="none"?num("lpd",f.lpd||1.6,"מהירות (שנ׳ לסבב)",.1,.2):""}<button type="button" class="tbtn wide" data-pa="play">▶ הפעלה</button></section>`;
   const H=100/ASP[STU.l];
@@ -7032,6 +7108,244 @@ function toastUndo(m,fn,um){toast(m);const el=document.querySelector(".toast");i
 $("resetSignBtn").addEventListener("click",()=>openResetSign(cur));
 $("verBtn").addEventListener("click",e=>{e.target.closest("details").open=false;openVersions()});
 $("sections").addEventListener("keydown",e=>{const rs=e.target.closest&&e.target.closest("[data-rs]");if(rs&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openResetSign(rs.dataset.rs)}});
+
+/* =====================================================================
+   PHOTO EDITOR ("פוטושופ") – adjustments, filters, crop, background tools, effects
+   ===================================================================== */
+const PH={};
+const mkCanvas=(w,h)=>{const c=document.createElement("canvas");c.width=Math.max(1,Math.round(w));c.height=Math.max(1,Math.round(h));return c};
+const cloneCanvas=c=>{const n=mkCanvas(c.width,c.height);n.getContext("2d").drawImage(c,0,0);return n};
+const ADJ0={br:0,ct:0,sat:0,hue:0,temp:0,exp:0,sharp:0,blur:0,vig:0,sep:0,gray:0};
+const ADJN={br:["בהירות",-100,100],ct:["ניגודיות",-100,100],exp:["חשיפה",-100,100],sat:["רוויה",-100,100],temp:["חום / קור",-100,100],hue:["גוון",-180,180],sharp:["חדות",0,100],blur:["טשטוש",0,20],vig:["וינייטה",0,100]};
+const PHF=[["none","מקור",{}],["auto","שיפור אוטומטי",null],["vivid","חי",{sat:35,ct:12,br:3}],["fresh","טרי",{sat:25,temp:-12,br:6,sharp:25}],["warm","חמים",{temp:35,sat:10}],["cool","קריר",{temp:-35}],["bright","בהיר",{br:15,exp:10}],["drama","דרמטי",{ct:35,sat:-10,vig:45}],["bw","שחור־לבן",{gray:100,ct:15}],["vintage","וינטג׳",{sep:45,ct:-8,vig:30,sat:-15}],["crisp","חד",{sharp:60,ct:10}],["soft","רך",{blur:1.2,br:6,ct:-10}]];
+function loadSrcToCanvas(src){return new Promise((ok,no)=>{const im=new Image();im.onload=()=>{let w=im.naturalWidth||1200,h=im.naturalHeight||1200;
+  if(/^data:image\/svg/.test(src)||w<400){const k=Math.max(1,1400/Math.max(w,h));w*=k;h*=k}const k2=Math.min(1,3000/Math.max(w,h));w*=k2;h*=k2;const c=mkCanvas(w,h);const x=c.getContext("2d");x.imageSmoothingQuality="high";x.drawImage(im,0,0,c.width,c.height);ok(c)};im.onerror=no;im.src=src})}
+function filterStr(a){const br=1+(a.br+a.exp*.6)/100;return [`brightness(${br.toFixed(3)})`,`contrast(${(1+a.ct/100).toFixed(3)})`,`saturate(${Math.max(0,1+a.sat/100).toFixed(3)})`,a.hue?`hue-rotate(${a.hue}deg)`:"",a.gray?`grayscale(${a.gray/100})`:"",a.sep?`sepia(${a.sep/100})`:"",a.blur?`blur(${a.blur}px)`:""].filter(Boolean).join(" ")}
+/* render base with adjustments into a canvas of size w×h */
+function phRender(base,a,w,h){const o=mkCanvas(w,h),x=o.getContext("2d");x.imageSmoothingQuality="high";const sc=w/base.width;
+  const f=filterStr(Object.assign({},a,{blur:a.blur*sc}));x.filter=f||"none";x.drawImage(base,0,0,w,h);x.filter="none";
+  if(a.temp){x.globalCompositeOperation="overlay";x.fillStyle=a.temp>0?`rgba(255,140,30,${Math.abs(a.temp)/260})`:`rgba(30,120,255,${Math.abs(a.temp)/260})`;x.fillRect(0,0,w,h)}
+  if(a.vig){x.globalCompositeOperation="multiply";const g=x.createRadialGradient(w/2,h/2,Math.min(w,h)*.25,w/2,h/2,Math.hypot(w,h)/2);g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(1,`rgba(0,0,0,${a.vig/100*.85})`);x.fillStyle=g;x.fillRect(0,0,w,h)}
+  if(a.temp||a.vig){x.globalCompositeOperation="destination-in";x.drawImage(base,0,0,w,h)}x.globalCompositeOperation="source-over";
+  if(a.sharp>0){const amt=a.sharp/100*1.2,r=Math.max(.6,w/1400);const b=mkCanvas(w,h),bx=b.getContext("2d");bx.filter=`blur(${r.toFixed(2)}px)`;bx.drawImage(o,0,0);const A=x.getImageData(0,0,w,h),B=bx.getImageData(0,0,w,h).data,P=A.data;
+    for(let q=0;q<P.length;q+=4){if(P[q+3]<8)continue;for(let c=0;c<3;c++){const v=P[q+c]+(P[q+c]-B[q+c])*amt;P[q+c]=v<0?0:v>255?255:v}}x.putImageData(A,0,0)}
+  return o}
+function autoLevels(base){const s=mkCanvas(200,200*base.height/base.width),x=s.getContext("2d");x.drawImage(base,0,0,s.width,s.height);const d=x.getImageData(0,0,s.width,s.height).data,L=[];let sat=0,n=0;
+  for(let q=0;q<d.length;q+=4){if(d[q+3]<128)continue;const l=d[q]*.3+d[q+1]*.59+d[q+2]*.11;L.push(l);const mx=Math.max(d[q],d[q+1],d[q+2]),mn=Math.min(d[q],d[q+1],d[q+2]);sat+=mx?(mx-mn)/mx:0;n++}
+  if(!L.length)return {};L.sort((a,b)=>a-b);const lo=L[Math.floor(L.length*.02)],hi=L[Math.floor(L.length*.98)],mid=L[Math.floor(L.length*.5)];sat/=n;
+  return {ct:Math.round(Math.max(-10,Math.min(40,(255/(hi-lo||1)-1)*35))),br:Math.round(Math.max(-15,Math.min(25,(128-mid)/4))),sat:Math.round(sat<.35?20:sat>.6?-5:8),sharp:20}}
+/* ---- background tools (destructive on base) ---- */
+function phWand(x0,y0,tol,global){const c=PH.base,x=c.getContext("2d"),W=c.width,H=c.height,id=x.getImageData(0,0,W,H),p=id.data;const i0=(y0*W+x0)*4;if(p[i0+3]<10)return false;const r=p[i0],g=p[i0+1],b=p[i0+2],T=tol*4.4;
+  const near=q=>{const dr=p[q*4]-r,dg=p[q*4+1]-g,db=p[q*4+2]-b;return Math.sqrt(dr*dr+dg*dg+db*db)};const m=new Uint8Array(W*H);
+  if(global){for(let q=0;q<W*H;q++)if(p[q*4+3]>10&&near(q)<T)m[q]=1}
+  else{const st=new Int32Array(W*H);let sp=0;st[sp++]=y0*W+x0;m[y0*W+x0]=1;while(sp){const q=st[--sp],X=q%W;for(const n of [X>0?q-1:-1,X<W-1?q+1:-1,q-W,q+W]){if(n<0||n>=W*H||m[n]||p[n*4+3]<10)continue;if(near(n)<T){m[n]=1;st[sp++]=n}}}}
+  for(let q=0;q<W*H;q++){if(m[q]){const d=near(q),a=Math.min(1,Math.max(0,(d-T*.55)/(T*.45)));p[q*4+3]=Math.round(p[q*4+3]*a)}}
+  x.putImageData(id,0,0);return true}
+function phAutoBg(){const c=PH.base,x=c.getContext("2d"),W=c.width,H=c.height,id=x.getImageData(0,0,W,H),p=id.data,N=W*H;
+  const ring=[];for(let i=0;i<W;i++){ring.push(i,(H-1)*W+i)}for(let j=0;j<H;j++){ring.push(j*W,j*W+W-1)}
+  let r=0,g=0,b=0,n=0;ring.forEach(q=>{if(p[q*4+3]>200){r+=p[q*4];g+=p[q*4+1];b+=p[q*4+2];n++}});if(!n)return "transparent";r/=n;g/=n;b/=n;
+  const dist=q=>Math.sqrt((p[q*4]-r)**2+(p[q*4+1]-g)**2+(p[q*4+2]-b)**2);let dev=0;ring.forEach(q=>dev+=dist(q));dev/=ring.length;if(dev>55)return "busy";
+  const T_HI=60,T_LO=18,bg=new Uint8Array(N),st=new Int32Array(N);let sp=0;ring.forEach(q=>{if(!bg[q]&&dist(q)<T_HI){bg[q]=1;st[sp++]=q}});
+  while(sp){const q=st[--sp],X=q%W;for(const nb of [X>0?q-1:-1,X<W-1?q+1:-1,q-W,q+W]){if(nb<0||nb>=N||bg[nb])continue;if(dist(nb)<T_HI){bg[nb]=1;st[sp++]=nb}}}
+  const C=[r,g,b];for(let q=0;q<N;q++){if(!bg[q])continue;const i=q*4,d=dist(q);if(d<=T_LO){p[i+3]=0;continue}const a=Math.min(1,(d-T_LO)/(T_HI-T_LO));p[i+3]=Math.round(p[i+3]*a);for(let k=0;k<3;k++){const v=(p[i+k]-(1-a)*C[k])/a;p[i+k]=v<0?0:v>255?255:v}}
+  x.putImageData(id,0,0);return "ok"}
+function phTrim(pad){const c=PH.base,x=c.getContext("2d"),W=c.width,H=c.height,d=x.getImageData(0,0,W,H).data;let x0=W,y0=H,x1=-1,y1=-1;
+  for(let y=0;y<H;y++)for(let X=0;X<W;X++)if(d[(y*W+X)*4+3]>16){if(X<x0)x0=X;if(X>x1)x1=X;if(y<y0)y0=y;if(y>y1)y1=y}
+  if(x1<0)return;const pd=Math.round(Math.max(x1-x0,y1-y0)*(pad??.03));phCropTo(Math.max(0,x0-pd),Math.max(0,y0-pd),Math.min(W,x1+pd+1)-Math.max(0,x0-pd),Math.min(H,y1+pd+1)-Math.max(0,y0-pd))}
+function phCropTo(x,y,w,h){for(const k of ["base","pristine"]){const c=PH[k],n=mkCanvas(w,h);n.getContext("2d").drawImage(c,x,y,w,h,0,0,w,h);PH[k]=n}}
+function phRotate(deg){for(const k of ["base","pristine"]){const c=PH[k],r=deg%180!==0,n=mkCanvas(r?c.height:c.width,r?c.width:c.height),x=n.getContext("2d");x.translate(n.width/2,n.height/2);x.rotate(deg*Math.PI/180);x.drawImage(c,-c.width/2,-c.height/2);PH[k]=n}}
+function phFlip(h){for(const k of ["base","pristine"]){const c=PH[k],n=mkCanvas(c.width,c.height),x=n.getContext("2d");if(h){x.translate(c.width,0);x.scale(-1,1)}else{x.translate(0,c.height);x.scale(1,-1)}x.drawImage(c,0,0);PH[k]=n}}
+function phPad(c,p){const n=mkCanvas(c.width+p*2,c.height+p*2);n.getContext("2d").drawImage(c,p,p);return n}
+function phOutline(px,col){const b=PH.base,p=Math.ceil(px)+2,n=mkCanvas(b.width+p*2,b.height+p*2),x=n.getContext("2d");const sil=mkCanvas(b.width,b.height),sx=sil.getContext("2d");sx.drawImage(b,0,0);sx.globalCompositeOperation="source-in";sx.fillStyle=col;sx.fillRect(0,0,b.width,b.height);
+  for(let a=0;a<32;a++){const t=a/32*Math.PI*2;x.drawImage(sil,p+Math.cos(t)*px,p+Math.sin(t)*px)}x.drawImage(b,p,p);PH.base=n;PH.pristine=phPad(PH.pristine,p)}
+function phShadow(strength){const b=PH.base,p=Math.round(Math.max(b.width,b.height)*.08),n=mkCanvas(b.width+p*2,b.height+p*2.4),x=n.getContext("2d");
+  x.save();x.globalAlpha=.35*strength;x.filter=`blur(${Math.round(p*.35)}px)`;x.fillStyle="#000";x.beginPath();x.ellipse(n.width/2,p+b.height-b.height*.01,b.width*.42,Math.max(6,b.height*.05),0,0,Math.PI*2);x.fill();x.restore();
+  x.shadowColor=`rgba(0,0,0,${.28*strength})`;x.shadowBlur=p*.45;x.shadowOffsetY=p*.18;x.drawImage(b,p,p);PH.base=n;const q=mkCanvas(n.width,n.height);q.getContext("2d").drawImage(PH.pristine,p,p);PH.pristine=q}
+function phReflect(){const b=PH.base,h2=Math.round(b.height*.35),n=mkCanvas(b.width,b.height+h2),x=n.getContext("2d");x.drawImage(b,0,0);x.save();x.translate(0,b.height*2);x.scale(1,-1);x.globalAlpha=.35;x.drawImage(b,0,0);x.restore();
+  x.globalCompositeOperation="destination-out";const g=x.createLinearGradient(0,b.height,0,n.height);g.addColorStop(0,"rgba(0,0,0,.2)");g.addColorStop(1,"rgba(0,0,0,1)");x.fillStyle=g;x.fillRect(0,b.height,b.width,h2);PH.base=n;const q=mkCanvas(n.width,n.height);q.getContext("2d").drawImage(PH.pristine,0,0);PH.pristine=q}
+function phFillBg(col){const b=PH.base,n=mkCanvas(b.width,b.height),x=n.getContext("2d");x.fillStyle=col;x.fillRect(0,0,n.width,n.height);x.drawImage(b,0,0);PH.base=n}
+/* ---- history ---- */
+function phSnap(){PH.hist.push({b:cloneCanvas(PH.base),p:cloneCanvas(PH.pristine),a:Object.assign({},PH.adj)});if(PH.hist.length>20)PH.hist.shift();PH.fut=[];phHistUI()}
+function phUndo(){if(!PH.hist.length)return;PH.fut.push({b:PH.base,p:PH.pristine,a:Object.assign({},PH.adj)});const s=PH.hist.pop();PH.base=s.b;PH.pristine=s.p;PH.adj=s.a;phDraw();phPanel();phHistUI()}
+function phRedo(){if(!PH.fut.length)return;PH.hist.push({b:PH.base,p:PH.pristine,a:Object.assign({},PH.adj)});const s=PH.fut.pop();PH.base=s.b;PH.pristine=s.p;PH.adj=s.a;phDraw();phPanel();phHistUI()}
+function phHistUI(){const u=$("phUndo"),r=$("phRedo");if(u)u.disabled=!PH.hist.length;if(r)r.disabled=!PH.fut.length}
+/* ---- UI ---- */
+async function openPhotoEd(src,onApply,title){if(!src){toast("אין תמונה לעריכה");return}let base;try{base=await loadSrcToCanvas(src)}catch(e){toast("לא הצלחתי לפתוח את התמונה");return}
+  Object.assign(PH,{base,pristine:cloneCanvas(base),orig:cloneCanvas(base),adj:Object.assign({},ADJ0),hist:[],fut:[],tab:"adj",mode:null,onApply,crop:null,ratio:0,brush:40,tol:28,wandAll:false,cmp:false});
+  let d=$("phed");if(!d){d=document.createElement("div");d.id="phed";d.className="phed";document.body.appendChild(d)}
+  d.innerHTML=`<header class="phhd"><button type="button" class="phx" id="phCancel">✕ ביטול</button><b>${esc(title||"עריכת תמונה")}</b><span class="phsp"></span>
+   <button type="button" id="phUndo" title="ביטול (Ctrl+Z)">↶</button><button type="button" id="phRedo" title="חזרה (Ctrl+Y)">↷</button><button type="button" id="phCmp" title="לחיצה ממושכת – השוואה למקור">◐ לפני / אחרי</button><button type="button" id="phReset">איפוס הכל</button><button type="button" class="pri" id="phApply">✓ שמירת התמונה</button></header>
+   <aside class="phside"><div class="phtabs">${[["adj","התאמות"],["flt","פילטרים"],["crop","חיתוך וסיבוב"],["bg","רקע ומחיקה"],["fx","אפקטים"]].map(([k,n])=>`<button type="button" data-pht="${k}">${n}</button>`).join("")}</div><div class="phbody" id="phBody"></div></aside>
+   <main class="phmain" id="phMain"><div class="phwrap" id="phWrap"><canvas id="phCv"></canvas><div class="phov" id="phOv"></div></div><div class="phinfo" id="phInfo"></div></main>`;
+  d.hidden=false;document.documentElement.classList.add("phopen");phPanel();requestAnimationFrame(()=>{phDraw();phHistUI()})}
+function closePhotoEd(){const d=$("phed");if(d)d.hidden=true;document.documentElement.classList.remove("phopen");PH.base=PH.pristine=PH.orig=null;PH.hist=[];PH.fut=[]}
+function phView(){const m=$("phMain").getBoundingClientRect(),b=PH.base,k=Math.min((m.width-40)/b.width,(m.height-70)/b.height,1.5);return {k,w:Math.round(b.width*k),h:Math.round(b.height*k)}}
+function phDraw(){const cv=$("phCv");if(!cv||!PH.base)return;const v=phView();cv.width=v.w;cv.height=v.h;const x=cv.getContext("2d");x.clearRect(0,0,v.w,v.h);
+  if(PH.cmp){const o=PH.orig,k=Math.min(v.w/o.width,v.h/o.height),w=o.width*k,h=o.height*k;x.drawImage(o,(v.w-w)/2,(v.h-h)/2,w,h)}else x.drawImage(phRender(PH.base,PH.adj,v.w,v.h),0,0,v.w,v.h);PH.view=v;
+  $("phWrap").style.width=v.w+"px";$("phWrap").style.height=v.h+"px";$("phInfo").textContent=`${PH.base.width}×${PH.base.height} פיקסלים${PH.mode==="erase"?" · מחק: גררו על התמונה":PH.mode==="restore"?" · שחזור: גררו על אזור שנמחק":PH.mode==="wand"?" · מטה קסם: לחצו על צבע הרקע להסרה":PH.mode==="crop"?" · גררו מלבן לחיתוך":""}`;phOverlay()}
+function phOverlay(){const o=$("phOv");if(!o)return;let h="";if(PH.mode==="crop"&&PH.crop){const k=PH.view.k,c=PH.crop;h=`<div class="phcrop" style="left:${c.x*k}px;top:${c.y*k}px;width:${c.w*k}px;height:${c.h*k}px"></div>`}o.innerHTML=h;o.classList.toggle("tool",!!PH.mode)}
+const phSl=(k,v,lbl,min,max,step)=>`<label class="phsl"><span>${lbl}<output>${v}</output></span><input type="range" data-adj="${k}" min="${min}" max="${max}" step="${step||1}" value="${v}"></label>`;
+function phPanel(){const B=$("phBody");if(!B)return;document.querySelectorAll("[data-pht]").forEach(b=>b.setAttribute("aria-selected",b.dataset.pht===PH.tab));const a=PH.adj;let h="";
+  if(PH.tab==="adj")h=`<button type="button" class="tbtn wide pri2" data-pha="auto">✨ שיפור אוטומטי</button>`+Object.entries(ADJN).map(([k,[n,mn,mx]])=>phSl(k,a[k],n,mn,mx,k==="blur"?.5:1)).join("")+`<button type="button" class="tbtn wide" data-pha="adjreset">איפוס ההתאמות</button>`;
+  else if(PH.tab==="flt"){const th=phRender(PH.base,ADJ0,120,Math.round(120*PH.base.height/PH.base.width));h=`<div class="phflt">${PHF.map(([k,n,v])=>{let u="";try{u=phRender(th,v||autoLevels(th),th.width,th.height).toDataURL("image/jpeg",.7)}catch(e){}return `<button type="button" data-phf="${k}"><img src="${u}" alt=""><span>${n}</span></button>`}).join("")}</div><p class="sttip">פילטר מחליף את ההתאמות. אפשר לכוונן אחריו בלשונית "התאמות".</p>`}
+  else if(PH.tab==="crop")h=`<h5>יחס חיתוך</h5><div class="tpat">${[[0,"חופשי"],[1,"1:1"],[4/3,"4:3"],[3/4,"3:4"],[16/9,"16:9"]].map(([r,n])=>`<button type="button" data-phr="${r}" aria-pressed="${PH.ratio==r&&PH.mode==="crop"}">${n}</button>`).join("")}</div>
+     <p class="sttip">בחרו יחס וגררו מלבן על התמונה.</p><div class="bgact"><button type="button" class="tbtn pri2" data-pha="docrop"${PH.crop?"":" disabled"}>✂ החלת החיתוך</button><button type="button" class="tbtn" data-pha="trim">חיתוך אוטומטי לגבולות המוצר</button></div>
+     <h5>סיבוב והיפוך</h5><div class="tgrow"><button type="button" class="tgb" data-pha="rotl">⟲ 90°</button><button type="button" class="tgb" data-pha="rotr">⟳ 90°</button><button type="button" class="tgb" data-pha="fliph">⇋ אופקי</button><button type="button" class="tgb" data-pha="flipv">⇵ אנכי</button></div>`;
+  else if(PH.tab==="bg")h=`<button type="button" class="tbtn wide pri2" data-pha="autobg">✨ הסרת רקע אוטומטית</button><p class="sttip">מתאים לצילום מוצר על רקע אחיד (לבן / בהיר).</p>
+     <h5>כלים ידניים</h5><div class="tgrow"><button type="button" class="tgb" data-phm="wand" aria-pressed="${PH.mode==="wand"}">🪄 מטה קסם</button><button type="button" class="tgb" data-phm="erase" aria-pressed="${PH.mode==="erase"}">🧽 מחק</button><button type="button" class="tgb" data-phm="restore" aria-pressed="${PH.mode==="restore"}">🖌 שחזור</button></div>
+     ${PH.mode==="wand"?`<label class="phsl"><span>רגישות<output>${PH.tol}</output></span><input type="range" data-pho="tol" min="4" max="80" value="${PH.tol}"></label><label class="toggle sm"><input type="checkbox" data-pho="wandAll"${PH.wandAll?" checked":""}> הסרת הצבע מכל התמונה (לא רק אזור מחובר)</label>`:""}
+     ${PH.mode==="erase"||PH.mode==="restore"?`<label class="phsl"><span>גודל מברשת<output>${PH.brush}</output></span><input type="range" data-pho="brush" min="4" max="200" value="${PH.brush}"></label>`:""}
+     <h5>מילוי רקע</h5><div class="tsw">${["#FFFFFF","#F3F4F6","#FFF4D6","#111111","#E30613","#0047BB"].map(c=>`<button type="button" data-phfill="${c}" style="background:${c}" title="${c}"></button>`).join("")}</div><p class="sttip">ממלא את האזורים השקופים בצבע.</p>`;
+  else if(PH.tab==="fx")h=`<h5>אפקטים למוצר</h5><div class="bgact"><button type="button" class="tbtn" data-pha="shadow">🌑 צל מוצר רך</button><button type="button" class="tbtn" data-pha="outline">⬜ מסגרת מדבקה לבנה</button><button type="button" class="tbtn" data-pha="outlinec">🟥 מסגרת מדבקה בצבע</button><button type="button" class="tbtn" data-pha="reflect">🪞 השתקפות</button></div>
+     <label class="phsl"><span>עובי מסגרת<output>${PH.olw||14}</output></span><input type="range" data-pho="olw" min="3" max="60" value="${PH.olw||14}"></label><input type="color" id="phOlc" value="${PH.olc||"#E30613"}" aria-label="צבע מסגרת">
+     <p class="sttip">האפקטים מתאימים לתמונה עם רקע שקוף – הסירו קודם את הרקע.</p>`;
+  B.innerHTML=h}
+function phToBase(e){const r=$("phCv").getBoundingClientRect(),k=PH.view.k;return {x:Math.round((e.clientX-r.left)/k),y:Math.round((e.clientY-r.top)/k)}}
+function phBrush(p,erase){const b=PH.base.getContext("2d"),R=PH.brush/PH.view.k/2;if(erase){b.save();b.globalCompositeOperation="destination-out";const g=b.createRadialGradient(p.x,p.y,R*.5,p.x,p.y,R);g.addColorStop(0,"rgba(0,0,0,1)");g.addColorStop(1,"rgba(0,0,0,0)");b.fillStyle=g;b.beginPath();b.arc(p.x,p.y,R,0,Math.PI*2);b.fill();b.restore()}
+  else{b.save();b.beginPath();b.arc(p.x,p.y,R,0,Math.PI*2);b.clip();b.globalCompositeOperation="destination-over";b.drawImage(PH.pristine,0,0);b.restore()}}
+let phDrag=null;
+document.addEventListener("pointerdown",e=>{if(!PH.base||!e.target.closest("#phWrap"))return;const p=phToBase(e);
+  if(PH.mode==="wand"){phSnap();if(phWand(Math.max(0,Math.min(PH.base.width-1,p.x)),Math.max(0,Math.min(PH.base.height-1,p.y)),PH.tol,PH.wandAll))phDraw();else toast("האזור כבר שקוף");return}
+  if(PH.mode==="erase"||PH.mode==="restore"){phSnap();phDrag={mode:PH.mode,last:p};phBrush(p,PH.mode==="erase");phDraw();e.preventDefault();return}
+  if(PH.mode==="crop"){phDrag={mode:"crop",s:p};PH.crop={x:p.x,y:p.y,w:1,h:1};e.preventDefault()}});
+document.addEventListener("pointermove",e=>{if(!phDrag)return;const p=phToBase(e);
+  if(phDrag.mode==="crop"){let w=p.x-phDrag.s.x,h=p.y-phDrag.s.y;if(PH.ratio){const hh=Math.abs(w)/PH.ratio;h=Math.sign(h||1)*hh}let x=w<0?phDrag.s.x+w:phDrag.s.x,y=h<0?phDrag.s.y+h:phDrag.s.y;x=Math.max(0,x);y=Math.max(0,y);w=Math.min(Math.abs(w),PH.base.width-x);h=Math.min(Math.abs(h),PH.base.height-y);PH.crop={x,y,w,h};phOverlay();return}
+  const l=phDrag.last,dist=Math.hypot(p.x-l.x,p.y-l.y),step=Math.max(1,PH.brush/PH.view.k/5);for(let t=step;t<=dist;t+=step)phBrush({x:l.x+(p.x-l.x)*t/dist,y:l.y+(p.y-l.y)*t/dist},phDrag.mode==="erase");phDrag.last=p;clearTimeout(phDraw.t);phDraw.t=setTimeout(phDraw,16)});
+document.addEventListener("pointerup",()=>{if(!phDrag)return;const m=phDrag.mode;phDrag=null;if(m==="crop"){if(PH.crop&&PH.crop.w>8&&PH.crop.h>8)phPanel();else PH.crop=null;phOverlay()}else phDraw()});
+document.addEventListener("click",async e=>{if(!PH.base||!e.target.closest("#phed"))return;const t=e.target;
+  if(t.closest("#phCancel")){if(!PH.hist.length&&JSON.stringify(PH.adj)===JSON.stringify(ADJ0)){closePhotoEd();return}const cb=t.closest("#phCancel");if(cb.dataset.sure){closePhotoEd();return}cb.dataset.sure=1;cb.textContent="לחצו שוב ליציאה בלי שמירה";cb.classList.add("warn");setTimeout(()=>{if(cb.isConnected){delete cb.dataset.sure;cb.textContent="✕ ביטול";cb.classList.remove("warn")}},3500);return}
+  if(t.closest("#phUndo"))return phUndo();if(t.closest("#phRedo"))return phRedo();
+  if(t.closest("#phReset")){phSnap();PH.base=cloneCanvas(PH.orig);PH.pristine=cloneCanvas(PH.orig);PH.adj=Object.assign({},ADJ0);PH.crop=null;phDraw();phPanel();return}
+  if(t.closest("#phApply")){const b=t.closest("#phApply");b.disabled=true;b.textContent="שומר…";await new Promise(r=>setTimeout(r,20));try{const out=phRender(PH.base,PH.adj,PH.base.width,PH.base.height);let hasA=false;{const s=mkCanvas(64,64),sx=s.getContext("2d");sx.drawImage(out,0,0,64,64);const dd=sx.getImageData(0,0,64,64).data;for(let q=3;q<dd.length;q+=4)if(dd[q]<250){hasA=true;break}}
+      const url=hasA?out.toDataURL("image/png"):out.toDataURL("image/jpeg",.93);const cb=PH.onApply;closePhotoEd();cb&&cb(url);toast("התמונה עודכנה")}catch(err){console.error(err);toast("לא הצלחתי לשמור את התמונה");b.disabled=false;b.textContent="✓ שמירת התמונה"}return}
+  const tab=t.closest("[data-pht]");if(tab){PH.tab=tab.dataset.pht;if(PH.tab!=="bg"&&PH.mode!=="crop")PH.mode=null;if(PH.tab==="crop"){PH.mode="crop"}else if(PH.mode==="crop"){PH.mode=null;PH.crop=null}phPanel();phDraw();return}
+  const f=t.closest("[data-phf]");if(f){phSnap();const F=PHF.find(x=>x[0]===f.dataset.phf);PH.adj=Object.assign({},ADJ0,F[2]||autoLevels(PH.base));phDraw();return}
+  const m=t.closest("[data-phm]");if(m){PH.mode=PH.mode===m.dataset.phm?null:m.dataset.phm;phPanel();phDraw();return}
+  const r=t.closest("[data-phr]");if(r){PH.mode="crop";PH.ratio=+r.dataset.phr;PH.crop=null;phPanel();phDraw();return}
+  const fill=t.closest("[data-phfill]");if(fill){phSnap();phFillBg(fill.dataset.phfill);phDraw();return}
+  const a=t.closest("[data-pha]");if(!a)return;const k=a.dataset.pha;
+  if(k==="auto"){phSnap();PH.adj=Object.assign({},PH.adj,autoLevels(PH.base));phPanel();phDraw();return}
+  if(k==="adjreset"){phSnap();PH.adj=Object.assign({},ADJ0);phPanel();phDraw();return}
+  phSnap();
+  if(k==="docrop"&&PH.crop){phCropTo(PH.crop.x,PH.crop.y,PH.crop.w,PH.crop.h);PH.crop=null}
+  if(k==="trim")phTrim();if(k==="rotl")phRotate(-90);if(k==="rotr")phRotate(90);if(k==="fliph")phFlip(true);if(k==="flipv")phFlip(false);
+  if(k==="autobg"){a.disabled=true;a.textContent="מסיר רקע…";await new Promise(r=>setTimeout(r,30));const res=phAutoBg();a.disabled=false;if(res==="ok"){phTrim(.03);toast("הרקע הוסר – אפשר לדייק עם המחק והשחזור")}else{PH.hist.pop();toast(res==="busy"?"הרקע לא אחיד – השתמשו במטה הקסם או במחק":"הרקע כבר שקוף")}}
+  if(k==="shadow")phShadow(1);if(k==="outline")phOutline(PH.olw||14,"#FFFFFF");if(k==="outlinec")phOutline(PH.olw||14,PH.olc||"#E30613");if(k==="reflect")phReflect();
+  phPanel();phDraw()});
+document.addEventListener("input",e=>{if(!PH.base||!e.target.closest("#phed"))return;const i=e.target;const o=i.closest("label")&&i.closest("label").querySelector("output");if(o)o.textContent=i.value;
+  if(i.dataset.adj){if(!i._s){phSnap();i._s=1}PH.adj[i.dataset.adj]=+i.value;clearTimeout(phDraw.t);phDraw.t=setTimeout(phDraw,30);return}
+  if(i.dataset.pho==="tol")PH.tol=+i.value;if(i.dataset.pho==="brush")PH.brush=+i.value;if(i.dataset.pho==="olw")PH.olw=+i.value;if(i.id==="phOlc")PH.olc=i.value});
+document.addEventListener("change",e=>{if(!PH.base||!e.target.closest("#phed"))return;const i=e.target;i._s=0;if(i.dataset.pho==="wandAll")PH.wandAll=i.checked});
+document.addEventListener("pointerdown",e=>{if(e.target.closest&&e.target.closest("#phCmp")){PH.cmp=true;phDraw()}});
+document.addEventListener("pointerup",()=>{if(PH.cmp){PH.cmp=false;phDraw()}});
+document.addEventListener("keydown",e=>{const d=$("phed");if(!d||d.hidden||!PH.base)return;e.stopPropagation();const mod=e.ctrlKey||e.metaKey;
+  if(mod&&e.key.toLowerCase()==="z"){e.preventDefault();e.shiftKey?phRedo():phUndo()}else if(mod&&e.key.toLowerCase()==="y"){e.preventDefault();phRedo()}else if(e.key==="Escape"){e.preventDefault();$("phCancel").click()}},true);
+window.addEventListener("resize",()=>{if(PH.base&&$("phed")&&!$("phed").hidden)phDraw()});
+
+
+/* ---------- photo editor entry points ---------- */
+document.addEventListener("click",e=>{
+  if(e.target.closest("#stPhEd")){const el=STU.sel;if(!el)return;const key=selKey();const im=el.tagName==="IMG"?el:el.querySelector("img");const src=im&&(im.currentSrc||im.src);
+    openPhotoEd(src,url=>{STU.sel=findSel(key)||STU.sel;setP({src:url})},"עריכת תמונה");return}
+  if(e.target.closest("#phEdProd")){const id=cur,s=STATE[id];openPhotoEd(s.up||IMG[s.img],url=>{const info=s.upInfo?Object.assign({},s.upInfo,{removed:false,transp:false,chosenKeep:true}):null;Object.assign(STATE[id],{up:url,upInfo:info});persistState();if(id===cur)buildForm();refreshItem(id)},"עריכת תמונת המוצר · "+(s.name||""));return}
+});
+
+/* =====================================================================
+   AI (Claude sample capability) – available only inside Claude
+   ===================================================================== */
+var AI=null,AIL=null;const AIS={busy:null,log:[],turns:[]};
+if(window.claude&&typeof claude.use==="function"){claude.use("sample").then(s=>{if(!s)return;AI=s;document.documentElement.classList.add("hasai");
+  s.limits().then(l=>{AIL=l;if(l&&l.images)document.documentElement.classList.add("hasaiimg")}).catch(()=>{});
+  if(STU.on){const b=$("stAiB");if(!b)injectAiBtn()}}).catch(()=>{})}
+function aiErr(e){const c=e&&e.code;if(c==="not_granted"||c==="sampling_disabled"){AI=null;document.documentElement.classList.remove("hasai");const p=$("stAi");if(p)p.hidden=true;return "AI לא זמין בחשבון הזה – כלי ה־AI הוסתרו"}
+  return ({cancelled:"הבקשה בוטלה",rate_limited:"יותר מדי בקשות – נסו שוב בעוד דקה",invalid_json:"התשובה לא הגיעה בפורמט תקין – נסו לנסח שוב",images_unavailable:"שליחת תמונות לא זמינה כאן",image_rejected:"התמונה לא נתמכת – נסו PNG או JPG",too_large:"הבקשה גדולה מדי – נסו עם פחות רכיבים"})[c]||("שגיאת AI: "+((e&&e.message)||"לא ידועה"))}
+const AILBL={".word":"כותרת",".name":"שם מוצר",".sub":"ארץ גידול / תיאור",".rw":"מחיר",".prod":"תמונת מוצר",".gift":"מתנה",".was":"מחיר רגיל",".pill":"תג מבצע",".post":"שורת מחיר",".slogo":"לוגו",".chips>span":"תגית מידע",".foot>span":"שורת תוקף",".txt":"עמודת טקסט"};
+const AIFREEK=["t","x","y","w","h","fs","c","hb","ff","fw","rot","an","lp","sh","shc","stc","stw","g1","g2","r","op","al","k"];
+const AIBUILTK=["text","color","bg","fw","ff","s","dx","dy","r","op","hide","sh"];
+const r1=v=>typeof v==="number"?Math.round(v*10)/10:v;
+function aiContext(){const sg=stSg(),s=STATE[STU.id],t=BYID[STU.id],H=+(100/ASP[STU.l]).toFixed(1);
+  const built=[...sg.querySelectorAll("[data-e]")].filter(el=>el.dataset.free==null).map(el=>{const o=getOv(el),r=el.getBoundingClientRect(),R=sg.getBoundingClientRect(),k=100/R.width;
+    return {ref:"e:"+el.dataset.e,type:AILBL[el.dataset.e.split("#")[0]]||"רכיב",text:el.tagName==="IMG"?"[תמונה]":(el.innerText||"").replace(/\s+/g," ").trim().slice(0,80),box:[r1((r.left-R.left)*k),r1((r.top-R.top)*k),r1(r.width*k),r1(r.height*k)],ov:Object.fromEntries(Object.entries(o).filter(([q])=>AIBUILTK.includes(q)))}}).filter(x=>x.box[2]>0);
+  const free=stList().map((f,i)=>{const o={ref:"f:"+i};for(const q in f){if(q==="src")o.src="[תמונה]";else if(typeof f[q]!=="object")o[q]=r1(f[q])}return o});
+  return {sign:{name:s.name,kind:tk(t),caption:tk(t)==="blank"?"עיצוב חופשי":capOf(t),layout:LNAME[STU.l]||STU.l,width:100,height:H,price:s.price||"",bg:s.bgi||""},builtIn:built,free}}
+const AISYS=`אתה מעצב גרפי בכיר במחלקת שילוט של רשת סופרמרקטים בישראל, ועוזר בתוך עורך שלטים. כל הטקסטים בעברית.
+קואורדינטות: השלט ברוחב 100 יחידות וגובה height יחידות (מוגדר בהקשר). x,y הם מרחק מהשמאל ומהלמעלה של הפינה השמאלית-עליונה של הרכיב. fs = גובה הגופן ביחידות (כותרת גדולה 8-14, טקסט 3-6). w,h ביחידות.
+מותר רק הפעולות האלה (JSON):
+{"op":"add","props":{...}} – רכיב חופשי חדש. k אחד מ: txt,price,box,rbox,circ,star,burst,tri,arrow,tag,ribbon,heart,line. לטקסט: t,x,y,fs,c,hb(רקע הדגשה),ff,fw(300-900),al(right|center|left),sh,shc,stc,stw,an,lp,rot. לצורה: x,y,w,h,c,g1,g2(מעבר צבע),r(עיגול פינות),op(0-1),rot. ל-price: t בפורמט "9.90", x,y,fs,c.
+{"op":"update","ref":"f:N או e:...","props":{...}} – עדכון. לרכיב e: (רכיב מובנה של השלט) מותר רק: text,color,bg,fw,ff,s(קנה מידה 0.5-2),dx,dy(הזזה ביחידות),r(סיבוב במעלות),op,hide(true להסתרה),sh. לרכיב f: אותם מפתחות כמו ב-add.
+{"op":"delete","ref":"f:N"} – מחיקת רכיב חופשי (רכיב e: מסתירים עם hide).
+{"op":"bg","bgi":"lib:<id> או ריק להסרה","bgov":-0.6..0.6 (שכבת כהות/בהירות)} – רקע לשלט.
+ערכים מותרים: ff מתוך FONTS, an מתוך ANIM, lp מתוך LOOP, sh מתוך SHADOW, bgi מתוך BGS. צבעים בפורמט #RRGGBB. צבע המותג אדום #E30613, צהוב #FFD400.
+כללים: שמרו על הרכיבים בתוך השלט, בלי חפיפה בין טקסטים, ניגודיות גבוהה וקריאות. לא להמציא מחירים – השתמשו במחיר שבהקשר או בשדה {מחיר}. אפשר שדות דינמיים בטקסט: {שם},{מחיר},{מחיר_רגיל},{ליחידה},{תוקף},{מבצע}. אל תוסיפו לוגו או סלוגן של הרשת.
+החזירו רק JSON: {"reply":"משפט או שניים בעברית שמסבירים מה עשית","actions":[...]}. אם הבקשה היא שאלה בלבד – actions ריק.`;
+function aiCatalog(){return `FONTS: ${Object.keys(FFN).join(",")}\nANIM: ${Object.keys(ANI).join(",")}\nLOOP: ${Object.keys(LPI).join(",")}\nSHADOW: ${Object.keys(SHN).join(",")}\nBGS: ${BGLIB.map(b=>"lib:"+b[0]+"("+b[1]+")").join(", ")}`}
+function aiApply(actions){if(!Array.isArray(actions)||!actions.length)return 0;const sg=stSg(),k=stKey();snapS();OV[k]=OV[k]||{};const A=stList(),del=[];let n=0,bg=null;
+  const H=100/ASP[STU.l],clampF=p=>{if(p.x!=null)p.x=Math.max(-5,Math.min(100,+p.x));if(p.y!=null)p.y=Math.max(-5,Math.min(H,+p.y));return p};
+  const pick=(o,keys)=>{const r={};for(const q of keys)if(o&&o[q]!==undefined)r[q]=o[q];return r};
+  for(const a of actions){try{
+    if(a.op==="add"&&a.props){const p=clampF(pick(a.props,AIFREEK));p.k=p.k||"txt";if(p.k==="rbox"){p.k="box";p.r=p.r||3}if(p.k==="txt"&&!p.t)continue;if(p.k==="txt"||p.k==="price")p.fs=+p.fs||5;else{p.w=+p.w||20;if(p.h==null&&p.k!=="line")p.h=p.w}A.push(p);n++}
+    else if(a.op==="update"&&a.ref&&a.props){if(a.ref.startsWith("f:")){const f=A[+a.ref.slice(2)];if(!f)continue;const p=clampF(pick(a.props,AIFREEK));delete p.k;for(const q in p){if(p[q]==null||p[q]==="")delete f[q];else f[q]=p[q]}n++}
+      else if(a.ref.startsWith("e:")){const e=a.ref.slice(2);const p=pick(a.props,AIBUILTK);if(p.hide===false){p.hide=null}const o=OV[k][e]=Object.assign(OV[k][e]||{},p);for(const q in o)if(o[q]==null||o[q]==="")delete o[q];n++}}
+    else if(a.op==="delete"&&a.ref){if(a.ref.startsWith("f:"))del.push(+a.ref.slice(2));else if(a.ref.startsWith("e:")){const e=a.ref.slice(2);OV[k][e]=Object.assign(OV[k][e]||{},{hide:true})}n++}
+    else if(a.op==="bg"){bg={bgi:a.bgi&&(BGURI[a.bgi]||a.bgi==="")?a.bgi:(a.bgi?null:""),bgov:a.bgov!=null?Math.max(-.6,Math.min(.6,+a.bgov)):null};if(bg.bgi===null)bg=null;else n++}
+  }catch(err){console.warn("ai action",a,err)}}
+  del.filter((v,i,s)=>s.indexOf(v)===i).sort((a,b)=>b-a).forEach(i=>{if(A[i])A.splice(i,1)});
+  saveOV();STU.sel=null;if(bg)setSignBg({bgi:bg.bgi,bgov:bg.bgov});else stRender();setTimeout(()=>{syncTw(stSg());stLayers();stProps()},80);return n}
+function injectAiBtn(){const anchor=$("stFit");if(!anchor||$("stAiB"))return;const b=document.createElement("button");b.type="button";b.id="stAiB";b.className="aib aionly";b.title="עוזר עיצוב חכם";b.textContent="✨ AI";anchor.before(b)}
+const _studioHTML=studioHTML;studioHTML=function(){return _studioHTML().replace('<button type="button" id="stFit"','<button type="button" id="stAiB" class="aib aionly" title="עוזר עיצוב חכם – כתבו מה לשנות">✨ AI</button><button type="button" id="stFit"')};
+const AISUG=["תעצב לי את השלט מחדש בסגנון חגיגי","תגדיל את המחיר ותדגיש אותו","תוסיף תגית 'מוגבל במלאי' בפינה","רקע קיצי עם צבעים חמים","תסדר את הרכיבים שלא יחפפו","תוסיף אנימציה לכותרת ולמחיר"];
+function openAiPanel(){let p=$("stAi");if(!p){p=document.createElement("aside");p.id="stAi";p.className="stai";$("studio").appendChild(p)}
+  p.innerHTML=`<div class="staih"><b>✨ עוזר עיצוב AI</b><button type="button" id="aiClr" title="שיחה חדשה">🗑</button><button type="button" id="aiX" title="סגירה">✕</button></div><div class="ailog" id="aiLog"></div><div class="aisug" id="aiSug">${AISUG.map(x=>`<button type="button" data-aisug="${esc(x)}">${esc(x)}</button>`).join("")}</div>
+   <div class="aiin"><textarea id="aiQ" rows="3" placeholder="מה לשנות בשלט? למשל: תעשה כותרת אדומה גדולה 'סוף עונה' ותוסיף כוכב צהוב עם 50%"></textarea><button type="button" id="aiGo">שליחה</button></div>`;
+  p.hidden=false;aiLogR();setTimeout(()=>$("aiQ").focus(),50)}
+function aiLogR(){const L=$("aiLog");if(!L)return;L.innerHTML=AIS.log.length?AIS.log.map(m=>`<div class="aim ${m.c}">${esc(m.t)}${m.n?`<small>${m.n}</small>`:""}</div>`).join(""):`<div class="aim a">שלום! אני יכול לשנות את העיצוב לפי בקשה: להוסיף טקסטים וצורות, להחליף צבעים, גופנים, רקע ואנימציות. כל שינוי אפשר לבטל עם ↶.</div>`;
+  if(AIS.busy)L.insertAdjacentHTML("beforeend",`<div class="aim a think">חושב על העיצוב…</div>`);L.scrollTop=L.scrollHeight;const g=$("aiGo");if(g){g.textContent=AIS.busy?"עצירה":"שליחה";g.classList.toggle("stop",!!AIS.busy)}const sg=$("aiSug");if(sg)sg.hidden=AIS.log.length>0}
+async function aiSend(q){q=(q||"").trim();if(!q||!AI)return;if(AIS.busy)return;AIS.log.push({c:"u",t:q});const ctl=new AbortController();AIS.busy=ctl;aiLogR();const id=STU.id,l=STU.l;
+  const ctx=`${aiCatalog()}\n\nמצב השלט הנוכחי (JSON):\n${JSON.stringify(aiContext())}\n\nהבקשה: ${q}`;
+  const turns=[...AIS.turns.slice(-6),{role:"user",content:AISYS+"\n\n"+ctx}];
+  try{const r=await AI.json(turns,{signal:ctl.signal,modelTier:"default",cache:false});if(!STU.on||STU.id!==id||STU.l!==l){AIS.log.push({c:"a err",t:"השלט הוחלף לפני שהתשובה הגיעה – השינויים לא הוחלו"});return}
+    const n=aiApply(r&&r.actions);AIS.log.push({c:"a",t:(r&&r.reply)||"בוצע",n:n?`${n} שינויים הוחלו · ↶ לביטול`:""});AIS.turns.push({role:"user",content:q},{role:"assistant",content:JSON.stringify({reply:r&&r.reply,actions:r&&r.actions}).slice(0,3000)})}
+  catch(e){AIS.log.push({c:"a err",t:aiErr(e)})}finally{AIS.busy=null;aiLogR()}}
+document.addEventListener("click",e=>{const t=e.target;
+  if(t.closest("#stAiB")){const p=$("stAi");if(p&&!p.hidden)p.hidden=true;else openAiPanel();return}
+  if(t.closest("#aiX")){$("stAi").hidden=true;return}
+  if(t.closest("#aiClr")){if(AIS.busy)AIS.busy.abort();AIS.log=[];AIS.turns=[];aiLogR();return}
+  if(t.closest("#aiGo")){if(AIS.busy){AIS.busy.abort();return}const q=$("aiQ");aiSend(q.value);q.value="";return}
+  const sg=t.closest("[data-aisug]");if(sg){aiSend(sg.dataset.aisug);return}
+  if(t.closest("#aiHlGo"))return aiHeadlines(t.closest("#aiHlGo"));
+  const hl=t.closest("[data-aihl]");if(hl){const txt=hl.dataset.aihl,el=STU.sel;
+    if(el&&el.dataset.free!=null&&isTxtK((stList()[+el.dataset.free]||{}).k||"txt"))setP({t:txt});
+    else if(el&&el.dataset.free==null&&el.tagName!=="IMG")setP({text:txt});
+    else{const P=placePos();addFree({k:"txt",t:txt,x:8,y:P.y,fs:+(P.H*.07).toFixed(1),fw:"900",c:"#E30613",an:"pop"})}return}
+  if(t.closest("#aiCap"))return aiCaption(t.closest("#aiCap"));
+  if(t.closest("#aiRec"))return aiRecognize(t.closest("#aiRec"));
+});
+document.addEventListener("keydown",e=>{if(e.target&&e.target.id==="aiQ"&&e.key==="Enter"&&!e.shiftKey){e.preventDefault();e.stopPropagation();aiSend(e.target.value);e.target.value=""}},true);
+const _closeStudioAi=closeStudio;closeStudio=function(){if(AIS.busy)AIS.busy.abort();const p=$("stAi");if(p)p.hidden=true;return _closeStudioAi.apply(this,arguments)};
+
+/* headline suggestions in the studio text tab */
+const _stToolsAi=stTools;stTools=function(){_stToolsAi.apply(this,arguments);if(STU.tab!=="txt")return;const B=document.querySelector("#stTools .stbody");if(!B)return;
+  B.insertAdjacentHTML("afterbegin",`<div class="aionly"><h5>✨ כותרות בעזרת AI</h5><button type="button" class="tbtn wide aib" id="aiHlGo">הצעות לכותרות ולמשפטי מכירה</button><div class="aihl" id="aiHl"></div><p class="sttip">לחיצה על הצעה מחליפה את הטקסט הנבחר, או מוסיפה טקסט חדש.</p></div>`)};
+async function aiHeadlines(btn){if(!AI||btn.disabled)return;const s=STATE[STU.id],t=BYID[STU.id];btn.disabled=true;const o=btn.textContent;btn.textContent="חושב…";
+  try{const r=await AI.json(`אתה קופירייטר של רשת סופרמרקטים בישראל. הצע 8 כותרות קצרות וקולעות בעברית לשלט מבצע (2-5 מילים כל אחת, בלי אימוג'י, בלי מחירים מומצאים, בלי שם הרשת).\nמוצר: ${s.name||"מוצר"}\nסוג השלט: ${tk(t)==="blank"?"עיצוב חופשי":capOf(t)}\n${s.price?"מחיר: "+s.price+" ₪\n":""}גוון: מגוון – חגיגי, דחיפות, טריות, חיסכון.\nהחזר JSON: {"items":["...", "..."]}`,{modelTier:"quick"});
+    const items=(r&&r.items||[]).filter(x=>typeof x==="string").slice(0,10);$("aiHl").innerHTML=items.map(x=>`<button type="button" data-aihl="${esc(x)}">${esc(x)}</button>`).join("")||`<p class="sttip">לא התקבלו הצעות</p>`}
+  catch(e){toast(aiErr(e))}finally{btn.disabled=false;btn.textContent=o}}
+
+/* AI caption writer */
+const _openCaptionAi=openCaption;openCaption=function(){_openCaptionAi.apply(this,arguments);const a=document.querySelector("#impDlg .impa");if(!a)return;
+  a.insertAdjacentHTML("afterbegin",`<span class="aitone aionly"><select id="aiTone" aria-label="סגנון"><option value="חגיגי ומזמין">חגיגי</option><option value="קצר וקולע, עד 2 שורות">קצר</option><option value="הומוריסטי וקליל">מצחיק</option><option value="לאינסטגרם עם אימוג'ים מתאימים ו-5 האשטגים">אינסטגרם</option><option value="לוואטסאפ ללקוחות, אישי וחם">וואטסאפ</option><option value="ענייני ומקצועי">ענייני</option></select><button type="button" class="tbtn aib" id="aiCap">✨ ניסוח עם AI</button></span>`)};
+async function aiCaption(btn){if(!AI)return;if(aiCaption.ctl){aiCaption.ctl.abort();return}const ta=$("capTxt");if(!ta)return;const base=ta.value,tone=$("aiTone").value;const ctl=new AbortController();aiCaption.ctl=ctl;btn.textContent="■ עצירה";
+  try{await AI(`כתוב טקסט לפוסט ברשתות חברתיות של סופרמרקט בישראל, בעברית, בסגנון: ${tone}.\nהשתמש רק בפרטים שבטקסט הבסיס (מחיר, מחיר רגיל, יחידה, תוקף, הגבלות) – אל תמציא מחירים, תאריכים או תנאים, ואל תוסיף שם רשת או סלוגן.\nטקסט הבסיס:\n${base}\n\nהחזר רק את הטקסט הסופי.`,{signal:ctl.signal,modelTier:"quick",cache:false,onText:({text})=>{ta.value=text}})}
+  catch(e){if(e&&e.text)ta.value=e.text;if(e&&e.code!=="cancelled")toast(aiErr(e));if(!e||!e.text)ta.value=base}finally{aiCaption.ctl=null;if(btn.isConnected)btn.textContent="✨ ניסוח עם AI"}}
+
+/* product recognition from image */
+function dataUrlToJpegBlob(src,max){return new Promise((ok,no)=>{const im=new Image();im.onload=()=>{const k=Math.min(1,(max||1024)/Math.max(im.naturalWidth||1,im.naturalHeight||1)),c=mkCanvas((im.naturalWidth||800)*k,(im.naturalHeight||800)*k),x=c.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error("blob")),"image/jpeg",.88)};im.onerror=no;im.src=src})}
+async function aiRecognize(btn){const s=STATE[cur],id=cur;if(!AI||!s.up){toast("העלו קודם תמונת מוצר");return}btn.disabled=true;const o=btn.textContent;btn.textContent="מזהה…";
+  try{const blob=await dataUrlToJpegBlob(s.up,1024);const r=await AI.json(`בתמונה מוצר שנמכר בסופרמרקט בישראל. זהה אותו והחזר JSON: {"name":"שם מוצר קצר בעברית כפי שיופיע על שלט (כולל מותג ונפח/משקל אם נראים)","fresh":true/false (פרי/ירק/בשר/דג טרי),"confidence":"high|medium|low"}. אם לא ברור – תן ניחוש סביר עם confidence low.`,{images:blob,modelTier:"quick"});
+    if(r&&r.name&&STATE[id]){const prev=STATE[id].name;STATE[id].name=String(r.name).slice(0,60);persistState();if(id===cur)buildForm();refreshItem(id);
+      toastUndo(`זוהה: ${STATE[id].name}${r.confidence==="low"?" (ניחוש – כדאי לבדוק)":""}`,()=>{STATE[id].name=prev;persistState();if(id===cur)buildForm();refreshItem(id)},"השם הקודם הוחזר")}else toast("לא הצלחתי לזהות את המוצר")}
+  catch(e){toast(aiErr(e))}finally{if(btn.isConnected){btn.disabled=false;btn.textContent=o}}}
+
 renderSections();buildForm();refitFonts();
 function logoUI(){if(!$("logoLbl"))return;$("logoLbl").textContent=BRAND.logo?"הלוגו נטען ✓ (לחיצה להחלפה)":"העלאת קובץ הלוגו הרשמי (PNG שקוף או SVG)";$("logoClr").hidden=!BRAND.logo}
 $("logoUp")&&$("logoUp").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const im=new Image();im.onload=()=>{BRAND.logo=rd.result;BRAND.ratio=im.naturalWidth&&im.naturalHeight?+(im.naturalWidth/im.naturalHeight).toFixed(3):3;try{localStorage.setItem("rlLogo",BRAND.logo);localStorage.setItem("rlLogoR",BRAND.ratio)}catch(err){}logoUI();renderSections()};im.onerror=()=>toast("לא הצלחתי לקרוא את קובץ הלוגו");im.src=rd.result};rd.readAsDataURL(f)});
