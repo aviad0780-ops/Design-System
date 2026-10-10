@@ -5173,7 +5173,7 @@ html.phopen .toast{z-index:1300}
 .phinfo{font-size:12.5px;color:#9AA1AE}
 @media (max-width:760px){.phed{grid-template-columns:1fr;grid-template-rows:auto 1fr 46%;grid-template-areas:"hd" "main" "side"}.phhd{flex-wrap:wrap;padding:6px 8px}.phhd b{display:none}.phside{border-left:0;border-top:1px solid #2A2D35}}
 .phedb{display:inline-flex;align-items:center;justify-content:center;gap:6px}
-.upwrap .phedb{margin-top:6px;width:100%}.phedb[hidden]{display:none!important}html:not(.hasaiimg) #aiRec{display:none!important}
+.upwrap{grid-column:1/-1;display:flex;flex-direction:column;gap:6px}.upwrap .phedb{width:100%}.phedb[hidden]{display:none!important}html:not(.hasaiimg) #aiRec{display:none!important}
 
 /* ---------- AI ---------- */
 html:not(.hasai) .aionly{display:none!important}
@@ -5203,6 +5203,59 @@ html:not(.hasai) .aionly{display:none!important}
 .aitone{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}
 .aitone select{font:inherit;font-size:13px;border:1px solid var(--line,#ddd);border-radius:8px;padding:6px 8px}
 @media (max-width:760px){.stai{width:100vw}}
+
+/* ---------- design pack ---------- */
+.free.farc{white-space:pre;line-height:1.24}
+.free.farc>span{position:absolute;display:block;height:1.24em;line-height:1.24em;text-align:center;white-space:pre}
+.kitg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.kitg button{border:2px solid transparent;background:#fff;border-radius:10px;padding:3px;cursor:pointer;font:inherit;font-size:11.5px;display:flex;flex-direction:column;gap:3px;align-items:stretch;box-shadow:0 0 0 1px #E3E6EC}
+.kitg button[aria-pressed="true"]{border-color:#14161B}
+.kitg i{display:block;aspect-ratio:4/5;border-radius:7px;background-size:cover;background-position:center}
+.kitg span{padding:0 2px 2px;text-align:center}
+.kitd{margin-top:8px;border-top:1px solid #EEF0F4}
+.kitd .bgact{display:flex;flex-direction:column;gap:4px}
+.icog{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.icog button{border:1px solid #E3E6EC;background:#fff;border-radius:10px;padding:6px 2px 4px;cursor:pointer;font:inherit;display:flex;flex-direction:column;align-items:center;gap:3px}
+.icog button:hover{border-color:#14161B}
+.icog img{width:34px;height:34px}
+.icog small{font-size:10.5px;color:#6B7280}
+.tsw button[aria-pressed="true"]{outline:2px solid #14161B;outline-offset:2px}
+.a11yf.lv-err{outline:3px dashed #E30613!important;outline-offset:2px}
+.a11yf.lv-warn{outline:3px dashed #FF9F1C!important;outline-offset:2px}
+.a11ys{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:#F2F3F7}
+.a11ys b{font-size:34px;font-weight:900;min-width:64px;text-align:center}
+.a11ys.ok b{color:#1E7A4A}.a11ys.warn b{color:#C77700}.a11ys.err b{color:#C8000F}
+.a11ys small{color:#6B7280}
+.a11yi{border:1px solid #EEF0F4;border-radius:12px;padding:9px 11px}
+.a11yh{display:flex;flex-direction:column}.a11yh small{color:#6B7280;font-size:12px}
+.a11yi p{margin:5px 0;font-size:13px}.a11yi .lv-err{color:#A8071A}.a11yi .lv-warn{color:#8A5300}
+.a11ya{display:flex;gap:6px;margin-top:4px}
+.mock .phmain{padding:16px}
+.mkst{width:100%;max-width:min(100%,calc((100vh - 110px)*1.5));aspect-ratio:3/2;position:relative;box-shadow:0 10px 40px rgba(0,0,0,.5);border-radius:6px;overflow:hidden}
+.mkin{position:absolute;inset:0;overflow:hidden;background:#ddd}
+.mkbg,.mkph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mksign{position:absolute;cursor:grab;touch-action:none;transform-origin:50% 0;user-select:none;-webkit-user-drag:none}
+.mksign.sh{filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.mksign.mkscr{filter:none}
+.mktape{position:absolute;width:6.6%;height:3.4%;background:rgba(255,248,210,.75);box-shadow:0 1px 2px rgba(0,0,0,.15);rotate:-4deg}
+.mkclip{position:absolute;width:2.4%;height:3.6%;background:#9AA3AD;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.mkframe{position:absolute;background:linear-gradient(135deg,#B8BEC6,#7D858F);border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.mkglass{position:absolute;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.18) 0 18%,rgba(255,255,255,0) 30% 60%,rgba(255,255,255,.12) 70%,rgba(255,255,255,0) 85%)}
+.mkscn{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mkscn button{font:inherit;font-size:13px;border:1px solid #3A3E48;background:#2C3038;color:#E9ECF2;border-radius:9px;padding:8px;cursor:pointer}
+.mkscn button[aria-pressed="true"]{background:#E9ECF2;color:#111}
+.mock .tbtn{display:block;text-align:center}.mock .toggle{background:#2C3038!important;color:#E9ECF2!important;border-color:#3A3E48!important}
+
+.uimp{max-width:640px}
+.uirow{display:flex;gap:8px;margin:10px 0}
+.uirow input{flex:1;font:inherit;font-size:15px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:0}
+.uimsg{font-size:13.5px;margin:8px 0;color:var(--muted,#555);min-height:1.2em}.uimsg.err{color:#C8000F}
+.uig{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;max-height:46vh;overflow:auto}
+.uig button{position:relative;border:1px solid var(--line);background:#fff;border-radius:10px;padding:6px;cursor:pointer;aspect-ratio:1}
+.uig button:hover{border-color:var(--accent,#E30613);box-shadow:0 0 0 2px var(--accent,#E30613)}
+.uig button.busy{opacity:.5}
+.uig img{width:100%;height:100%;object-fit:contain}
+.uig button[data-sz]::after{content:attr(data-sz);position:absolute;bottom:3px;left:4px;font-size:10.5px;background:rgba(0,0,0,.6);color:#fff;border-radius:4px;padding:0 4px}
 </style>
 </head>
 <body>
@@ -5895,7 +5948,7 @@ function buildForm(){
   }
   h+=inp("slogan","כיתוב רשת (אופציונלי)",true);
   h+=inp("qr","קישור לקוד QR (אופציונלי, מופיע ב־A4 ובבודק המחיר)",true,"https://");
-  h+=`<label class="toggle sm rmbg"><input type="checkbox" id="rmbgT"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית (לתמונות מוצר על רקע לבן)</label><label class="upload" for="upl"><input type="file" id="upl" accept="image/png,image/jpeg,image/webp"><span>${s.up?"תמונה הועלתה ✓ (לחיצה להחלפה)":"העלאת תמונת מוצר משלך"}</span></label><div class="upwrap"><button type="button" class="tbtn phedb" id="phEdProd">🎨 עריכת תמונת המוצר (רקע, חיתוך, צבעים)</button><button type="button" class="tbtn phedb aib aionly" id="aiRec"${s.up?"":" hidden"}>✨ זיהוי שם המוצר מהתמונה</button></div>`;
+  h+=`<label class="toggle sm rmbg"><input type="checkbox" id="rmbgT"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית (לתמונות מוצר על רקע לבן)</label><label class="upload" for="upl"><input type="file" id="upl" accept="image/png,image/jpeg,image/webp"><span>${s.up?"תמונה הועלתה ✓ (לחיצה להחלפה)":"העלאת תמונת מוצר משלך"}</span></label><div class="upwrap"><button type="button" class="tbtn phedb" id="urlImgProd">🔗 ייבוא תמונה מקישור (דף מוצר באתר)</button><button type="button" class="tbtn phedb" id="phEdProd">🎨 עריכת תמונת המוצר (רקע, חיתוך, צבעים)</button><button type="button" class="tbtn phedb aib aionly" id="aiRec"${s.up?"":" hidden"}>✨ זיהוי שם המוצר מהתמונה</button></div>`;
   if(s.up&&s.upInfo){const q=s.upInfo,msg={good:["ok","איכות טובה להדפסה"],ok:["warn","איכות בינונית: טובה למדבקות ולמסך, פחות חדה ב־A4"],low:["err","איכות נמוכה: התמונה תיראה מטושטשת בהדפסה. מומלץ קובץ ברוחב 1000 פיקסלים ומעלה"]}[q.quality];
     h+=`<p class="imgq ${msg[0]}"><b>${q.srcW}×${q.srcH} px</b> · ${msg[1]}${q.removed?" · הרקע הלבן הוסר":q.transp?" · רקע שקוף":q.chosenKeep?" · הרקע נשמר":""}${q.outW?` · נשמרה ב־${q.outW}×${q.outH}`:""}</p>${!q.removed&&!q.transp&&!q.chosenKeep?`<p class="imgq warn">לא זוהה רקע לבן אחיד, לכן הרקע לא הוסר. לתוצאה נקייה העלו PNG עם רקע שקוף או צילום על רקע לבן.</p>`:""}<button type="button" class="linkbtn" id="upClear">חזרה לתמונה מהספרייה</button>`}
   $("fields").innerHTML=h;
@@ -6538,7 +6591,7 @@ function stTools(){const T=$("stTools");if(!T)return;const tabs=[["txt","טקס�
   if(STU.tab==="txt")body=`<h5>שדות דינמיים <small>(מתמלאים לפי המוצר)</small></h5><div class="ttok">${TOK.map(([k,l])=>`<button type="button" data-tok="${k}" title="${l}">{${k}}</button>`).join("")}</div><h5>הוספת טקסט</h5><div class="tpre">${TPRE.map((x,i)=>`<button type="button" data-tp="${i}"><span style="${x.prev}">${esc(x.p.t)}</span><small>${x.n}</small></button>`).join("")}</div>
      <h5>גופן משלכם</h5><label class="tbtn wide">העלאת קובץ גופן (TTF / OTF / WOFF)…<input type="file" id="stFont" accept=".ttf,.otf,.woff,.woff2,font/*" hidden></label>${UFONTS.length?`<p class="sttip">גופנים שהועלו: ${UFONTS.map(f=>esc(f.n)).join(" · ")}</p>`:""}<h5>סגנון לטקסט הנבחר</h5><div class="tsty">${TSTY.map((x,i)=>`<button type="button" data-ts="${i}"><span style="${x.prev}">אבג 12</span><small>${x.n}</small></button>`).join("")}</div>`;
   else if(STU.tab==="shp")body=`<h5>צורות</h5><div class="tshp">${SHAPEL.map(([k,n])=>`<button type="button" data-sh="${k}"><i class="sp sp-${k}" style="${CLIPS[k]?`clip-path:${CLIPS[k]}`:""}"></i><small>${n}</small></button>`).join("")}</div><p class="sttip">צבע, מילוי מדורג, מסגרת ופינות – בפאנל המאפיינים אחרי הבחירה.</p>`;
-  else if(STU.tab==="img")body=`<h5>תמונה מהמחשב</h5><label class="tbtn wide">העלאת תמונה…<input type="file" id="stImg" accept="image/*" hidden></label><label class="toggle sm"><input type="checkbox" id="stRmbg"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית</label><p class="sttip">התמונה נשמרת ברזולוציה מלאה (עד 2400 פיקסלים), נחתכת לגבולות המוצר ומקבלת חידוד עדין. לתמונה חדה ב־A4 – קובץ של 1000 פיקסלים ומעלה.</p>
+  else if(STU.tab==="img")body=`<h5>תמונה מהמחשב</h5><label class="tbtn wide">העלאת תמונה…<input type="file" id="stImg" accept="image/*" hidden></label><button type="button" class="tbtn wide" id="stUrlImg">🔗 ייבוא תמונה מקישור…</button><label class="toggle sm"><input type="checkbox" id="stRmbg"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית</label><p class="sttip">התמונה נשמרת ברזולוציה מלאה (עד 2400 פיקסלים), נחתכת לגבולות המוצר ומקבלת חידוד עדין. לתמונה חדה ב־A4 – קובץ של 1000 פיקסלים ומעלה.</p>
      <h5>הלוגו שלכם</h5>${PFS.logo?`<button type="button" class="tbtn wide" id="stLogo"><img src="${PFS.logo}" alt="" style="height:22px;max-width:90px;object-fit:contain"> הוספת הלוגו לשלט</button>`:""}<label class="tbtn wide">${PFS.logo?"החלפת לוגו…":"העלאת לוגו…"}<input type="file" id="stLogoUp" accept="image/*" hidden></label>
      <label class="toggle sm"><input type="checkbox" id="stLogoAll"${PFS.slogo?" checked":""}> הלוגו על כל השלטים</label>
      <h5>מדבקות ותגיות</h5><div class="tstk">${STK.map(([k,n,s],i)=>`<button type="button" data-stk="${i}" title="${n}"><img src="${svgURI(s)}" alt="${n}"></button>`).join("")}</div><h5>קוד QR</h5><button type="button" class="tbtn wide" id="stQR">הוספת קוד QR (קישור לאתר / מבצע)</button><h5>תמונות מוצרים</h5><div class="tlib">${["onionv","tomato","cucumber","apple","banana","juice","yogurt","pasta","oil","water","cart","gift"].filter(k=>IMG[k]).map(k=>`<button type="button" data-im="${k}"><img src="${IMG[k]}" alt=""></button>`).join("")}</div>`;
@@ -6574,13 +6627,13 @@ function stProps(){const P=$("stProps");if(!P)return;const el=STU.sel;
   if(free&&k==="price")h+=`<section><h5>מחיר</h5><label class="pf2">סכום<input data-p="t" value="${pEsc(f.t)}" inputmode="decimal"></label></section>`;
   if(txt&&!img){h+=`<section><h5>גופן</h5>${sel("ff",Object.assign({"":"ברירת מחדל"},FFN),f.ff||"","משפחה")}<div class="prow">${sel("fw",{"":"רגיל",300:"דק",400:"רגיל",500:"בינוני",600:"חצי מודגש",700:"מודגש",800:"עבה",900:"שחור"},f.fw||"","משקל")}${free?num("fs",f.fs,"גודל",.5,.5):num("s",f.s||1,"קנה מידה",.05,.2)}</div>
     <div class="tgrow">${tg("it",f.it,"<i>I</i>","נטוי")}${tg("ul",f.ul,"<u>U</u>","קו תחתון")}${tg("sk",f.sk,"<s>S</s>","קו חוצה")}<span class="tgsp"></span>${["right","center","left"].map(a=>`<button type="button" class="tgb" data-al="${a}" aria-pressed="${f.al===a}" title="${{right:"ימין",center:"מרכז",left:"שמאל"}[a]}">${{right:"⇥",center:"≡",left:"⇤"}[a]}</button>`).join("")}</div>
-    ${rng("ls",f.ls,"מרווח אותיות",-.1,.5,.01,0)}${rng("lh",f.lh,"גובה שורה",.7,2,.05,1.1)}${free&&k==="txt"?num("wb",f.wb,"רוחב תיבה (לגלישת שורות)",1,5):""}</section>`}
+    ${rng("ls",f.ls,"מרווח אותיות",-.1,.5,.01,0)}${rng("lh",f.lh,"גובה שורה",.7,2,.05,1.1)}${free&&k==="txt"?num("wb",f.wb,"רוחב תיבה (לגלישת שורות)",1,5):""}${free&&k==="txt"?rng("arc",f.arc,"קשת – טקסט מעוקל",-100,100,1,0):""}</section>`}
   if(txt&&!img){h+=`<section><h5>צבע</h5><div class="tsw sm">${SWS.map(c=>`<button type="button" data-sw2="${c}" style="background:${c}" title="${c}"></button>`).join("")}</div><div class="prow">${col(free?"c":"color",free?f.c:f.color,"צבע טקסט","#111111")}${col(free?"hb":"bg",free?f.hb:f.bg,"רקע / הדגשה","#FFE14D")}</div>
     ${free?`<div class="prow">${col("g1",f.g1,"מעבר – צבע 1","#FFD400")}${col("g2",f.g2,"מעבר – צבע 2","#E30613")}</div>${f.g1&&f.g2?rng("ga",f.ga,"זווית המעבר",0,360,5,180):""}`:""}
     <div class="prow">${col("stc",f.stc,"קו מתאר","#ffffff")}${rng("stw",f.stw,"עובי",0,.2,.005,0)}</div></section>`}
   if(shape||(free&&k==="line")){h+=`<section><h5>מילוי וקו</h5><div class="tsw sm">${SWS.map(c=>`<button type="button" data-sw2="${c}" style="background:${c}" title="${c}"></button>`).join("")}</div><div class="prow">${col("c",f.c,"מילוי","#E30613")}${col("bc",f.bc,"מסגרת","#111111")}</div><div class="prow">${col("g1",f.g1,"מעבר 1","#FFD400")}${col("g2",f.g2,"מעבר 2","#E30613")}</div>${rng("bw",f.bw,"עובי מסגרת",0,3,.1,0)}${k==="box"?rng("r",f.r,"עיגול פינות",0,20,.5,0):""}</section>`}
   if(free&&k==="qr")h+=`<section><h5>קוד QR</h5><label class="pf2">קישור / טקסט<input data-p="t" value="${pEsc(f.t)}" dir="ltr"></label>${num("w",f.w,"גודל",.5,3)}<p class="sttip">סרקו בטלפון לבדיקה לפני הדפסה.</p></section>`;
-  if(img){h+=`<section><h5>תמונה</h5>${sel("fl",IFN,f.fl||"none","פילטר")}${free?rng("rad",f.rad,"עיגול פינות",0,30,.5,0)+`<div class="prow">${col("bc",f.bc,"מסגרת","#ffffff")}${rng("bw",f.bw,"עובי",0,3,.1,0)}</div>`:""}<button type="button" class="tbtn wide pri2 phedb" id="stPhEd">🎨 עריכת תמונה מתקדמת</button><label class="tbtn wide">החלפת תמונה…<input type="file" id="stRep" accept="image/*" hidden></label></section>`}
+  if(img){h+=`<section><h5>תמונה</h5>${sel("fl",IFN,f.fl||"none","פילטר")}${free?rng("rad",f.rad,"עיגול פינות",0,30,.5,0)+`<div class="prow">${col("bc",f.bc,"מסגרת","#ffffff")}${rng("bw",f.bw,"עובי",0,3,.1,0)}</div>`:""}<button type="button" class="tbtn wide pri2 phedb" id="stPhEd">🎨 עריכת תמונה מתקדמת</button><label class="tbtn wide">החלפת תמונה…<input type="file" id="stRep" accept="image/*" hidden></label><button type="button" class="tbtn wide" id="stUrlRep">🔗 החלפה מקישור…</button></section>`}
   h+=`<section><h5>אפקטים</h5><div class="prow">${sel("sh",SHN,typeof f.sh==="string"?f.sh:"none","צל / זוהר")}${col("shc",f.shc,"צבע האפקט","#FFD400")}</div>${rng(free?"op":"op",f.op,"שקיפות",.05,1,.05,1)}${rng("bl",f.bl,"טשטוש",0,12,.5,0)}${sel("bm",BLN,f.bm||"normal","מיזוג")}</section>`;
   h+=`<section><h5>אנימציה <small>(למסכים, וידאו ומצגת)</small></h5>${sel("an",ANI,f.an||"none","כניסה")}<div class="prow">${num("ad",f.ad||.8,"משך (שנ׳)",.1,.1)}${num("adl",f.adl||0,"השהיה (שנ׳)",.1,0)}</div>${sel("lp",LPI,f.lp||"none","תנועה מתמשכת")}${f.lp&&f.lp!=="none"?num("lpd",f.lpd||1.6,"מהירות (שנ׳ לסבב)",.1,.2):""}<button type="button" class="tbtn wide" data-pa="play">▶ הפעלה</button></section>`;
   const H=100/ASP[STU.l];
@@ -6607,7 +6660,7 @@ function stLayers(){const box=$("stLayers");if(!box)return;const sg=stSg();if(!s
   ${bi.length?`<h5>רכיבי התבנית (${bi.length})</h5><ul class="lyr">${bi.map(e=>`<li class="${e.dataset.e===se?"on":""}" data-lye="${esc(e.dataset.e)}"><span class="lyn">${esc((e.innerText||"").replace(/\s+/g," ").trim().slice(0,22)||({".prod":"תמונת מוצר",".gift":"מתנה",".slogo":"לוגו",".qr":"QR",".foot>b":"פס תחתון",".foot>span":"שורת תוקף"})[e.dataset.e.split("#")[0]]||e.dataset.e.split("#")[0])}</span></li>`).join("")}</ul>`:""}`}
 /* ---------- inline text editing ---------- */
 function stText(el){if(!el||el.dataset.free==null)return;const f=stList()[+el.dataset.free];if(!f||!isTxtK(f.k||"txt"))return;stopText2();
-  if(el.isContentEditable)return;if(f.k==="price"||hasTok(f.t))el.textContent=f.t;el.contentEditable="true";el.classList.add("editing");el.focus();const rg=document.createRange();rg.selectNodeContents(el);const sl=getSelection();sl.removeAllRanges();sl.addRange(rg);
+  if(el.isContentEditable)return;if(f.k==="price"||hasTok(f.t)||f.arc){el.textContent=f.t;el.classList.remove("farc");el.style.width="";el.style.height=""}el.contentEditable="true";el.classList.add("editing");el.focus();const rg=document.createRange();rg.selectNodeContents(el);const sl=getSelection();sl.removeAllRanges();sl.addRange(rg);
   const done=()=>{el.contentEditable="false";el.classList.remove("editing");let v=el.innerText.replace(/ /g," ").replace(/\n{2,}/g,"\n").trim();
     if(f.k==="price"){const m=v.match(/(\d+)\D*(\d{0,2})/);v=m?m[1]+"."+(m[2]||"00").padEnd(2,"0"):f.t}STU.sel=el;setP({t:v});stProps()};
   let fin=false;const done1=()=>{if(fin)return;fin=true;el.removeEventListener("keydown",kd);if(!el.isConnected)return;done()};const kd=ev=>{if(ev.key==="Enter"&&!ev.shiftKey){ev.preventDefault();el.blur()}if(ev.key==="Escape"){ev.preventDefault();el.blur()}};el.addEventListener("blur",done1,{once:true});el.addEventListener("keydown",kd)}
@@ -7345,6 +7398,312 @@ async function aiRecognize(btn){const s=STATE[cur],id=cur;if(!AI||!s.up){toast("
     if(r&&r.name&&STATE[id]){const prev=STATE[id].name;STATE[id].name=String(r.name).slice(0,60);persistState();if(id===cur)buildForm();refreshItem(id);
       toastUndo(`זוהה: ${STATE[id].name}${r.confidence==="low"?" (ניחוש – כדאי לבדוק)":""}`,()=>{STATE[id].name=prev;persistState();if(id===cur)buildForm();refreshItem(id)},"השם הקודם הוחזר")}else toast("לא הצלחתי לזהות את המוצר")}
   catch(e){toast(aiErr(e))}finally{if(btn.isConnected){btn.disabled=false;btn.textContent=o}}}
+
+
+/* =====================================================================
+   DESIGN PACK: curved text, holiday & season kits, icon library,
+   readability checker, in-store mockup
+   ===================================================================== */
+/* ---------- curved text ---------- */
+const ARC_CV=document.createElement("canvas").getContext("2d");
+function visOrder(s){const heb=/[֐-׿]/.test(s);if(!heb)return [...s];const runs=s.match(/[0-9A-Za-z][0-9A-Za-z.,%:\/+\-]*|[\s\S]/gu)||[];
+  const mir={"(":")",")":"(","[":"]","]":"[","{":"}","}":"{","<":">",">":"<"};return runs.reverse().flatMap(r=>r.length>1?[...r]:[mir[r]||r])}
+function arcify(d,f,text){const a=Math.max(-100,Math.min(100,+f.arc||0));if(Math.abs(a)<1)return;text=String(text??f.t??"").replace(/\s*\n\s*/g," ").trim();if(!text)return;
+  const fam=d.style.fontFamily||"Rubik, sans-serif",fw=d.style.fontWeight||f.fw||700;ARC_CV.font=`${fw} 100px ${fam}`;const ls=+f.ls||0;
+  const ch=visOrder(text),w=ch.map(c=>Math.max(.12,ARC_CV.measureText(c).width/100+ls)),L=w.reduce((s,x)=>s+x,0);
+  const th=Math.max(.05,Math.PI*1.25*Math.abs(a)/100),R=L/th,pad=.62,W=(th>=Math.PI?2*R:2*R*Math.sin(th/2))+1.2,H=R*(1-Math.cos(Math.min(th,Math.PI*1.9)/2))+1.3;
+  d.classList.add("farc");d.textContent="";d.setAttribute("aria-label",text);d.style.width=W.toFixed(3)+"em";d.style.height=H.toFixed(3)+"em";
+  const up=a>0,cx=W/2,cy=up?R+pad:H-pad-R;let s=0;
+  ch.forEach((c,i)=>{const phi=-th/2+(s+w[i]/2)/R;s+=w[i];const x=cx+R*Math.sin(phi),y=up?cy-R*Math.cos(phi):cy+R*Math.cos(phi);const sp=document.createElement("span");sp.textContent=c;
+    sp.style.cssText=`left:${(x-w[i]/2).toFixed(3)}em;top:${(y-pad).toFixed(3)}em;width:${w[i].toFixed(3)}em;rotate:${(up?phi:-phi).toFixed(4)}rad`;d.appendChild(sp)})}
+const _freeElArc=freeEl;freeEl=function(f,n){const d=_freeElArc(f,n);if((f.k||"txt")==="txt"&&f.arc&&!hasTok(f.t))arcify(d,f);return d};
+const _applyTokArc=applyTokens;applyTokens=function(sg){_applyTokArc(sg);const A=(OV[ovKey(sg)]||{})._add;if(!A)return;sg.querySelectorAll(".free.tok").forEach(el=>{const f=A[+el.dataset.free];if(f&&f.arc&&(f.k||"txt")==="txt"&&el.style.display!=="none")arcify(el,f,el.innerText)})};
+Object.assign(SHP,{sticker:".05em 0 0 #fff,-.05em 0 0 #fff,0 .05em 0 #fff,0 -.05em 0 #fff,.035em .035em 0 #fff,-.035em -.035em 0 #fff,.035em -.035em 0 #fff,-.035em .035em 0 #fff,0 .1em .14em rgba(0,0,0,.4)",
+  retro:".05em .05em 0 var(--shc,#FFD400),.1em .1em 0 color-mix(in srgb,var(--shc,#FFD400) 55%,#000)",lift:"0 .02em 0 rgba(0,0,0,.25),0 .18em .25em rgba(0,0,0,.35)",
+  emboss:"0 -.025em 0 rgba(255,255,255,.75),0 .03em .02em rgba(0,0,0,.45)",double:".04em .04em 0 #fff,.08em .08em 0 var(--shc,#E30613)"});
+Object.assign(SHN,{sticker:"מדבקה (לבן עבה)",retro:"רטרו כפול",lift:"מורם",emboss:"מובלט",double:"קו כפול צבעוני"});
+TSTY.splice(TSTY.length-1,0,
+ {n:"קשת חגיגית",p:{arc:45,c:"#E30613",sh:"sticker",hb:null,g1:null,g2:null,stw:0},prev:"color:#E30613;text-shadow:1px 0 #fff,-1px 0 #fff,0 1px #fff,0 -1px #fff;background:#FFE14D;padding:2px 8px;border-radius:30px 30px 6px 6px"},
+ {n:"רטרו",p:{c:"#FFFFFF",sh:"retro",shc:"#E30613",hb:null,g1:null,g2:null,stw:0},prev:"color:#fff;text-shadow:1.5px 1.5px 0 #E30613,3px 3px 0 #7a0008;background:#0B1F4D;padding:2px 8px;border-radius:6px"},
+ {n:"חלול",p:{c:"transparent",stw:.035,stc:"#111111",sh:"none",hb:null,g1:null,g2:null},prev:"color:transparent;-webkit-text-stroke:1px #111"},
+ {n:"מדבקה עבה",p:{c:"#0047BB",sh:"sticker",hb:null,g1:null,g2:null,stw:0,rot:-3},prev:"color:#0047BB;text-shadow:1px 0 #fff,-1px 0 #fff,0 1px #fff,0 -1px #fff,0 2px 3px rgba(0,0,0,.4);background:#9ad;padding:2px 8px;border-radius:6px"},
+ {n:"חיוך (קשת הפוכה)",p:{arc:-40,c:"#111111",sh:"lift",hb:null,g1:null,g2:null,stw:0},prev:"color:#111;text-shadow:0 2px 3px rgba(0,0,0,.3)"});
+
+/* ---------- motifs (200×200 inner markup) ---------- */
+const MOT={
+ pom:`<path d="M84 52l6 16h20l6-16-10 7-6-12-6 12z" fill="#7A0C26"/><circle cx="100" cy="118" r="62" fill="#B3123A"/><path d="M100 64c4 8 4 14 0 20" stroke="#7A0C26" stroke-width="5" fill="none"/><ellipse cx="78" cy="98" rx="14" ry="22" fill="#fff" opacity=".2"/><path d="M118 60c18-20 40-18 46-10-14 12-30 14-46 10z" fill="#2E7D32"/>`,
+ apple:`<path d="M100 66c-16-12-62-14-62 34 0 40 26 74 44 74 8 0 10-5 18-5s10 5 18 5c18 0 44-34 44-74 0-48-46-46-62-34z" fill="#D7192D"/><path d="M100 66c0-16 6-28 20-36" stroke="#6B3E1E" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M106 52c10-22 36-24 44-16-12 16-30 20-44 16z" fill="#3FA34D"/><ellipse cx="72" cy="96" rx="10" ry="20" fill="#fff" opacity=".25"/>`,
+ honey:`<rect x="52" y="70" width="96" height="104" rx="22" fill="#F2A900"/><rect x="58" y="52" width="84" height="24" rx="8" fill="#8D5A2B"/><path d="M52 98h96v24H52z" fill="#FFD25A"/><rect x="70" y="112" width="60" height="34" rx="6" fill="#fff" opacity=".85"/><path d="M78 130h44" stroke="#C07A00" stroke-width="5"/>`,
+ lemon:`<ellipse cx="100" cy="112" rx="66" ry="50" fill="#F5D000" transform="rotate(-18 100 112)"/><path d="M40 136l-12 6 6-14z" fill="#E0B800"/><path d="M118 62c14-24 42-26 50-18-14 16-32 20-50 18z" fill="#3FA34D"/><ellipse cx="80" cy="100" rx="16" ry="8" fill="#fff" opacity=".35" transform="rotate(-18 80 100)"/>`,
+ palm:`<path d="M100 186V30" stroke="#5B8C2A" stroke-width="8" stroke-linecap="round"/>${[0,1,2,3,4,5].map(i=>`<path d="M100 ${50+i*20}c-${30-i*3} -6 -${40-i*4} -18 -${44-i*4} -30M100 ${50+i*20}c${30-i*3} -6 ${40-i*4} -18 ${44-i*4} -30" stroke="#3FA34D" stroke-width="6" fill="none" stroke-linecap="round"/>`).join("")}`,
+ donut:`<ellipse cx="100" cy="112" rx="78" ry="62" fill="#D89A4E"/><path d="M28 104c8-34 38-52 72-52s64 18 72 52c-8 10-22 4-30 12s-20 6-28-2-24 6-34 0-22-4-28 4-18-4-24-14z" fill="#F06EAA"/>${[[60,80,"#fff"],[90,70,"#FFD400"],[120,78,"#38B6FF"],[140,96,"#fff"],[72,100,"#38B6FF"],[110,96,"#7ED957"],[96,84,"#FF5757"]].map(([x,y,c])=>`<rect x="${x}" y="${y}" width="12" height="4" rx="2" fill="${c}" transform="rotate(${(x*7)%90} ${x} ${y})"/>`).join("")}<ellipse cx="100" cy="102" rx="12" ry="8" fill="#B5762F"/>`,
+ candle:`<rect x="84" y="80" width="32" height="100" rx="4" fill="#3A7BD5"/><path d="M84 100h32M84 124h32M84 148h32" stroke="#fff" stroke-width="4" opacity=".6"/><path d="M100 76V64" stroke="#333" stroke-width="3"/><path d="M100 22c12 16 14 26 14 32a14 14 0 0 1-28 0c0-6 2-16 14-32z" fill="#FFB800"/><path d="M100 40c6 8 6 12 6 16a6 6 0 0 1-12 0c0-4 0-8 6-16z" fill="#FFF3B0"/>`,
+ mask:`<path d="M24 80c20-14 52-14 76 0 24-14 56-14 76 0 0 46-24 70-46 70-16 0-22-16-30-16s-14 16-30 16c-22 0-46-24-46-70z" fill="#7B2FF7"/><ellipse cx="66" cy="98" rx="20" ry="13" fill="#fff"/><ellipse cx="134" cy="98" rx="20" ry="13" fill="#fff"/><path d="M24 80c-8-24 4-50 22-58M176 80c8-24-4-50-22-58" stroke="#E91E63" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="46" cy="22" r="8" fill="#FFD400"/><circle cx="154" cy="22" r="8" fill="#FFD400"/>`,
+ matza:`<rect x="34" y="34" width="132" height="132" rx="10" fill="#E9C990" transform="rotate(-8 100 100)"/><g transform="rotate(-8 100 100)" stroke="#B8894A" stroke-width="3">${[0,1,2,3,4].map(i=>`<path d="M48 ${56+i*22}h104"/>`).join("")}</g><g transform="rotate(-8 100 100)" fill="#9E6E30">${[...Array(20)].map((_,i)=>`<circle cx="${54+(i%5)*23}" cy="${66+Math.floor(i/5)*22}" r="2.5"/>`).join("")}</g>`,
+ flower:`${[0,1,2,3,4].map(i=>`<ellipse cx="100" cy="58" rx="24" ry="40" fill="#FF8FB1" transform="rotate(${i*72} 100 100)"/>`).join("")}<circle cx="100" cy="100" r="22" fill="#FFD400"/>`,
+ flag:`<rect x="20" y="40" width="160" height="116" rx="6" fill="#fff" stroke="#DDE3EE" stroke-width="3"/><rect x="20" y="54" width="160" height="16" fill="#0038B8"/><rect x="20" y="126" width="160" height="16" fill="#0038B8"/><path d="M100 76l20 34H80zM100 120l-20-34h40z" fill="none" stroke="#0038B8" stroke-width="5" stroke-linejoin="round"/>`,
+ fire:`${[...Array(16)].map((_,i)=>{const a=i*Math.PI/8;return `<path d="M${(100+20*Math.cos(a)).toFixed(1)} ${(100+20*Math.sin(a)).toFixed(1)}L${(100+80*Math.cos(a)).toFixed(1)} ${(100+80*Math.sin(a)).toFixed(1)}" stroke="${["#0047BB","#FFD400","#E30613","#00A3FF"][i%4]}" stroke-width="7" stroke-linecap="round"/>`}).join("")}<circle cx="100" cy="100" r="12" fill="#FFD400"/>`,
+ wheat:`<path d="M100 190V40" stroke="#C8962E" stroke-width="6" stroke-linecap="round"/>${[0,1,2,3,4].map(i=>`<ellipse cx="86" cy="${60+i*24}" rx="10" ry="18" fill="#E7B54A" transform="rotate(-30 86 ${60+i*24})"/><ellipse cx="114" cy="${60+i*24}" rx="10" ry="18" fill="#E7B54A" transform="rotate(30 114 ${60+i*24})"/>`).join("")}<ellipse cx="100" cy="40" rx="9" ry="18" fill="#E7B54A"/>`,
+ cheese:`<path d="M24 120L150 52l30 40v62H24z" fill="#FFC93C"/><path d="M24 120h156" stroke="#E0A800" stroke-width="5"/><path d="M24 120L150 52l30 40" fill="#FFE07A"/><circle cx="70" cy="140" r="10" fill="#E0A800"/><circle cx="130" cy="136" r="7" fill="#E0A800"/><circle cx="160" cy="146" r="5" fill="#E0A800"/><circle cx="100" cy="98" r="6" fill="#E0A800"/>`,
+ sun:`${[...Array(12)].map((_,i)=>`<path d="M100 14l8 22h-16z" fill="#FFB300" transform="rotate(${i*30} 100 100)"/>`).join("")}<circle cx="100" cy="100" r="48" fill="#FFD400"/><circle cx="84" cy="90" r="5" fill="#8A5A00"/><circle cx="116" cy="90" r="5" fill="#8A5A00"/><path d="M80 110c10 12 30 12 40 0" stroke="#8A5A00" stroke-width="5" fill="none" stroke-linecap="round"/>`,
+ melon:`<path d="M20 80a80 80 0 0 0 160 0z" fill="#2E9B48"/><path d="M30 80a70 70 0 0 0 140 0z" fill="#E8F5C8"/><path d="M38 80a62 62 0 0 0 124 0z" fill="#F03B4E"/>${[[70,96],[100,104],[130,96],[86,120],[114,120],[100,140]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="3.5" ry="6" fill="#222"/>`).join("")}`,
+ pencil:`<g transform="rotate(-40 100 100)"><rect x="40" y="84" width="110" height="32" fill="#FFC107"/><path d="M40 84h110M40 100h110M40 116h110" stroke="#E0A000" stroke-width="2"/><rect x="150" y="84" width="22" height="32" rx="4" fill="#F48FB1"/><rect x="146" y="84" width="8" height="32" fill="#B0BEC5"/><path d="M40 84L12 100l28 16z" fill="#F3D9B1"/><path d="M20 95L12 100l8 5z" fill="#333"/></g>`,
+ book:`<path d="M30 50c26-10 50-10 70 6 20-16 44-16 70-6v110c-26-10-50-10-70 6-20-16-44-16-70-6z" fill="#0047BB"/><path d="M40 56c20-6 40-6 56 6v92c-16-10-36-10-56-6zM160 56c-20-6-40-6-56 6v92c16-10 36-10 56-6z" fill="#fff"/><path d="M52 80h32M52 96h32M116 80h32M116 96h32M116 112h24" stroke="#90A4AE" stroke-width="4" stroke-linecap="round"/>`,
+ snow:`<g stroke="#5AB4FF" stroke-width="9" stroke-linecap="round">${[0,60,120].map(r=>`<path d="M100 20v160M100 44l-16-16M100 44l16-16M100 156l-16 16M100 156l16 16" transform="rotate(${r} 100 100)"/>`).join("")}</g>`,
+ mug:`<path d="M44 76h96v62a34 34 0 0 1-34 34H78a34 34 0 0 1-34-34z" fill="#C62828"/><path d="M140 92h12a20 20 0 0 1 0 40h-12" stroke="#C62828" stroke-width="10" fill="none"/><path d="M72 58c-8-10 8-16 0-28M98 58c-8-10 8-16 0-28M124 58c-8-10 8-16 0-28" stroke="#B0BEC5" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M60 108h64" stroke="#fff" stroke-width="6" opacity=".6"/>`,
+ bftag:`<path d="M30 70l50-40h90a10 10 0 0 1 10 10v120a10 10 0 0 1-10 10H80l-50-40z" fill="#111"/><circle cx="66" cy="100" r="10" fill="#FFD400"/><text x="132" y="122" font-family="Rubik,Arial" font-weight="900" font-size="64" fill="#FFD400" text-anchor="middle">%</text>`,
+ gift:`<rect x="34" y="80" width="132" height="96" rx="8" fill="#E30613"/><rect x="26" y="62" width="148" height="30" rx="6" fill="#FF3B3B"/><rect x="90" y="62" width="20" height="114" fill="#FFD400"/><path d="M100 62c-20-34-56-30-48-8 6 14 32 10 48 8zM100 62c20-34 56-30 48-8-6 14-32 10-48 8z" fill="#FFD400"/>`,
+ balloon:`<ellipse cx="80" cy="76" rx="36" ry="44" fill="#E30613"/><ellipse cx="128" cy="90" rx="32" ry="40" fill="#0047BB"/><path d="M80 120c4 20-6 40 10 70M128 130c-6 18 6 36-10 60" stroke="#555" stroke-width="2.5" fill="none"/><ellipse cx="68" cy="62" rx="8" ry="14" fill="#fff" opacity=".35"/>`};
+const motifSVG=k=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">${MOT[k]}</svg>`;
+function kitBgSVG(K){const r=rng(K.seed||7);let s=`<defs><linearGradient id="kg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${K.bg[0]}"/><stop offset="1" stop-color="${K.bg[1]}"/></linearGradient><radialGradient id="kr" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><rect width="400" height="560" fill="url(#kg)"/><rect width="400" height="560" fill="url(#kr)"/>`;
+  for(let i=0;i<14;i++){const x=r()*400,y=r()*560;s+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(2+r()*5).toFixed(1)}" fill="${K.dot||"#fff"}" opacity="${(.25+r()*.35).toFixed(2)}"/>`}
+  const spots=[[-30,-24,.7],[300,-30,.6],[-34,450,.75],[310,460,.7],[330,210,.38],[-26,240,.36]];
+  spots.forEach(([x,y,sc],i)=>{const m=K.m[i%K.m.length];s+=`<g transform="translate(${x} ${y}) rotate(${((r()*50)-25).toFixed(0)} ${100*sc} ${100*sc}) scale(${sc})" opacity="${K.mo||.9}">${MOT[m]}</g>`});
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" preserveAspectRatio="xMidYMid slice">${s}</svg>`}
+const KITS=[
+ {id:"rosh",n:"ראש השנה",bg:["#7A0C26","#B3123A"],c:["#B3123A","#F2B705","#2E7D32","#FFF4D6"],tc:"#FFF4D6",shc:"#7A0C26",m:["pom","apple","honey"],hl:["שנה טובה ומתוקה","מבצעי החג","לכבוד ראש השנה","שולחן חג במחיר מתוק","חג שמח!"],seed:3},
+ {id:"sukkot",n:"סוכות",bg:["#1E5E2A","#3E8E41"],c:["#2E7D32","#F5D000","#8D5A2B","#FFFFFF"],tc:"#FFF8D6",shc:"#1E5E2A",m:["palm","lemon"],hl:["חג סוכות שמח","מבצעי סוכות","לסוכה ולשולחן","מועדים לשמחה"],seed:5},
+ {id:"chanuka",n:"חנוכה",bg:["#0A2E6E","#1556C4"],c:["#0B4DA2","#F2C230","#FFFFFF","#F06EAA"],tc:"#F2C230",shc:"#0A2E6E",m:["donut","candle"],hl:["חג אורים שמח","מבצעי חנוכה","סופגניות במחיר מתוק","נס גדול במחירים"],seed:8},
+ {id:"purim",n:"פורים",bg:["#4A148C","#8E24AA"],c:["#7B2FF7","#E91E63","#FFD400","#FFFFFF"],tc:"#FFD400",shc:"#4A148C",m:["mask","balloon"],hl:["פורים שמח!","משלוחי מנות במבצע","ונהפוך הוא – מחירים!","שמחה ומבצעים"],seed:11},
+ {id:"pesach",n:"פסח",bg:["#DFF2D8","#A8DB9C"],c:["#2E7D32","#8E24AA","#F2B705","#FFFFFF"],tc:"#1B5E20",shc:"#FFFFFF",dot:"#2E7D32",m:["matza","flower"],hl:["חג פסח כשר ושמח","מבצעי פסח","הכל לליל הסדר","חג האביב"],seed:13},
+ {id:"atzmaut",n:"יום העצמאות",bg:["#0038B8","#3E7BFA"],c:["#0038B8","#FFFFFF","#E30613","#FFD400"],tc:"#FFFFFF",shc:"#001F66",m:["flag","fire"],hl:["חג עצמאות שמח","הכל לעל האש","מבצעי עצמאות","חוגגים ישראלי"],seed:17},
+ {id:"shavuot",n:"שבועות",bg:["#E8F4FF","#BBDDFB"],c:["#0B6BCB","#F2B705","#FFFFFF","#5B8C2A"],tc:"#0B4DA2",shc:"#FFFFFF",dot:"#0B6BCB",m:["cheese","wheat"],hl:["חג שבועות שמח","חגיגה של מוצרי חלב","מבצעי שבועות","לבן וטעים"],seed:19},
+ {id:"summer",n:"קיץ",bg:["#FF8A00","#FFC24D"],c:["#FF6A00","#00B8D9","#F03B4E","#FFFFFF"],tc:"#FFFFFF",shc:"#C04A00",m:["sun","melon"],hl:["קיץ של מבצעים","מתרעננים במחיר","חם? מחיר מקרר","מבצעי קיץ"],seed:23},
+ {id:"school",n:"חזרה ללימודים",bg:["#FFD54F","#FFB300"],c:["#0047BB","#E30613","#111111","#FFFFFF"],tc:"#0047BB",shc:"#FFFFFF",dot:"#0047BB",m:["pencil","book"],hl:["חוזרים ללימודים","הכל לתיק","ציוד במחיר מנצח","בהצלחה בשנה החדשה"],seed:29},
+ {id:"winter",n:"חורף",bg:["#0B1F4D","#2A5BB8"],c:["#0B1F4D","#5AB4FF","#C62828","#FFFFFF"],tc:"#FFFFFF",shc:"#5AB4FF",m:["snow","mug"],hl:["מתחממים במחיר","מבצעי חורף","חם בלב, זול בכיס","החורף כאן"],seed:31},
+ {id:"bf",n:"בלאק פריידיי",bg:["#000000","#1C1C1C"],c:["#111111","#FFD400","#FFFFFF","#E30613"],tc:"#FFD400",shc:"#000000",m:["bftag"],mo:.85,hl:["BLACK FRIDAY","הנחות ענק","סוף שבוע שחור","רק השבוע!"],seed:37},
+ {id:"party",n:"חגיגה כללית",bg:["#E30613","#FF4D5A"],c:["#E30613","#FFD400","#0047BB","#FFFFFF"],tc:"#FFFFFF",shc:"#8A0010",m:["gift","balloon"],hl:["חוגגים איתכם!","מבצע חגיגי","מתנה בכל קנייה","שווה לחגוג"],seed:41}];
+KITS.forEach(K=>{try{BGURI["lib:kit_"+K.id]=svgURI(kitBgSVG(K))}catch(e){}});
+STU.kit=STU.kit||"rosh";
+function kitPanel(){const K=KITS.find(k=>k.id===STU.kit)||KITS[0];
+  return `<h5>ערכות לחגים ועונות</h5><div class="kitg">${KITS.map(k=>`<button type="button" data-kit="${k.id}" aria-pressed="${k.id===K.id}"><i style="background-image:url('${BGURI["lib:kit_"+k.id]}')"></i><span>${k.n}</span></button>`).join("")}</div>
+   <div class="kitd"><h5>${K.n}</h5><button type="button" class="tbtn wide pri2" data-kitapply="full">✨ החלת הערכה על השלט</button><p class="sttip">רקע, כותרת בצבעי הערכה וקישוט בפינה. אפשר לבטל עם ↶.</p>
+   <div class="bgact"><button type="button" class="tbtn" data-kitapply="bg">רקע בלבד לשלט הזה</button><button type="button" class="tbtn" data-kitapply="bgall">רקע לכל השלטים במסך</button></div>
+   <h5>צבעי הערכה <small>(לרכיב הנבחר)</small></h5><div class="tsw">${K.c.map(c=>`<button type="button" data-kitc="${c}" style="background:${c}" title="${c}"></button>`).join("")}</div>
+   <h5>כותרות מוכנות</h5><div class="aihl">${K.hl.map(h=>`<button type="button" data-kithl="${esc(h)}">${esc(h)}</button>`).join("")}</div>
+   <h5>קישוטים</h5><div class="tstk">${K.m.map(m=>`<button type="button" data-kitst="${m}"><img src="${svgURI(motifSVG(m))}" alt=""></button>`).join("")}</div></div>`}
+function kitApply(mode){const K=KITS.find(k=>k.id===STU.kit);if(!K)return;const ref="lib:kit_"+K.id;
+  if(mode==="bg"||mode==="bgall"){setSignBg({bgi:ref,bgfit:"cover",bgov:""},mode==="bgall");toast(mode==="bgall"?"הרקע הוחל על כל השלטים במסך":"הרקע הוחל");return}
+  snapS();const sg=stSg(),k=stKey(),H=100/ASP[STU.l],A=stList();OV[k]=OV[k]||{};
+  const w=sg&&sg.querySelector('[data-e^=".word"]');
+  if(w&&getComputedStyle(w).visibility!=="hidden"){OV[k][w.dataset.e]=Object.assign(OV[k][w.dataset.e]||{},{text:K.hl[0],color:K.tc})}
+  else A.push({k:"txt",t:K.hl[0],x:8,y:+(H*.04).toFixed(1),fs:+Math.min(11,H*.08).toFixed(1),fw:"900",ff:"secular",c:K.tc,sh:"sticker",shc:K.shc,an:"pop",al:"center",nm:"כותרת "+K.n});
+  A.push({k:"img",src:svgURI(motifSVG(K.m[0])),x:1.5,y:+(H*.46).toFixed(1),w:Math.min(15,H*.13),nm:"קישוט "+K.n,an:"pop"});
+  const dark=relL(parseRGB(K.bg[1].replace(/^#(..)(..)(..)$/,(m,a,b,c)=>`rgb(${parseInt(a,16)},${parseInt(b,16)},${parseInt(c,16)})`)))<.3,blank=tk(BYID[STU.id])==="blank";
+  saveOV();setSignBg({bgi:ref,bgfit:"cover",bgov:dark&&!blank?.62:""});setTimeout(()=>{syncTw(stSg());stLayers()},80);toast(`ערכת ${K.n} הוחלה${dark&&!blank?" (הרקע הובהר כדי שהטקסטים יישארו קריאים)":""} · ↶ לביטול`)}
+
+/* ---------- icon library ---------- */
+const ICONS=[["cart","עגלה",`<path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>`],
+ ["basket","סל",`<path d="M3 10h18l-2 9a1 1 0 0 1-1 .8H6a1 1 0 0 1-1-.8z"/><path d="M8 10l4-6 4 6M9 14v3M12 14v3M15 14v3"/>`],
+ ["tag","תג מחיר",`<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/>`],
+ ["pct","אחוז",`<circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/><path d="M19 5L5 19"/>`],
+ ["gift","מתנה",`<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-2-4-6-4-6-1.5S10 8 12 8zM12 8c2-4 6-4 6-1.5S14 8 12 8z"/>`],
+ ["star","כוכב",`<path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/>`],
+ ["heart","לב",`<path d="M12 20s-7-4.4-9-9a4.5 4.5 0 0 1 9-2 4.5 4.5 0 0 1 9 2c-2 4.6-9 9-9 9z"/>`],
+ ["flame","חם",`<path d="M12 21c-4 0-7-2.7-7-6.5 0-3.5 3-5.5 3.5-9 2 1.5 3 3.2 3 5 1-1 1.8-2.5 1.8-4.5 3.2 2 5.7 5 5.7 8.5 0 3.8-3 6.5-7 6.5z"/>`],
+ ["bolt","מהיר",`<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>`],
+ ["snow","קפוא",`<path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 2 3-2M9 20l3-2 3 2"/>`],
+ ["sun","שמש",`<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>`],
+ ["leaf","טבעי",`<path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19l8-8"/>`],
+ ["drop","טיפה",`<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>`],
+ ["clock","שעון",`<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>`],
+ ["truck","משלוח",`<path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>`],
+ ["check","מאושר",`<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>`],
+ ["thumb","מומלץ",`<path d="M7 10v11H3V10zM7 10l4-8a2.5 2.5 0 0 1 3 3l-1 4h6a2 2 0 0 1 2 2.3l-1.3 7A2 2 0 0 1 17.7 20H7"/>`],
+ ["crown","פרימיום",`<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>`],
+ ["spark","חדש",`<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>`],
+ ["cutlery","ארוחה",`<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 1-3 4-3 7h3v11"/>`],
+ ["coffee","קפה",`<path d="M4 9h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11h2a2 2 0 0 1 0 4h-2M8 3v3M12 3v3"/>`],
+ ["bottle","שתייה",`<path d="M10 2h4v4l1.5 2.5V20a1.5 1.5 0 0 1-1.5 1.5h-4A1.5 1.5 0 0 1 8.5 20V8.5L10 6z"/><path d="M8.5 12h7"/>`],
+ ["milk","חלב",`<path d="M8 2h8v3l2 3v13H6V8l2-3z"/><path d="M6 12h12"/>`],
+ ["cheese","גבינה",`<path d="M3 10l14-6 4 6v9H3z"/><path d="M3 10h18"/><circle cx="8" cy="14.5" r="1.3"/><circle cx="15" cy="16" r="1"/>`],
+ ["egg","ביצים",`<path d="M12 3c3.5 0 6 6 6 10a6 6 0 0 1-12 0c0-4 2.5-10 6-10z"/>`],
+ ["bread","מאפה",`<path d="M4 11a4 4 0 0 1 2-7h12a4 4 0 0 1 2 7v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/>`],
+ ["apple","פירות",`<path d="M12 7c-2-1.5-7-1.5-7 4.5 0 5 3 9.5 5 9.5 1 0 1.3-.6 2-.6s1 .6 2 .6c2 0 5-4.5 5-9.5 0-6-5-6-7-4.5z"/><path d="M12 7c0-2 1-3.5 3-4"/>`],
+ ["carrot","ירקות",`<path d="M14.5 9.5L4 20.5l-.5-.5L9.8 7.3a3.2 3.2 0 0 1 4.7 2.2z"/><path d="M14 9c1.2-2.8 4-3.6 7-2.8M14.5 9.5c2.8-1.2 3.6-4 2.8-7"/>`],
+ ["grapes","ענבים",`<circle cx="9" cy="9" r="2.2"/><circle cx="14" cy="9" r="2.2"/><circle cx="11.5" cy="13" r="2.2"/><circle cx="7" cy="13" r="2.2"/><circle cx="16" cy="13" r="2.2"/><circle cx="11.5" cy="17.5" r="2.2"/><path d="M11.5 7V3l3-1"/>`],
+ ["fish","דגים",`<path d="M2 12c4-6 11-6 15 0-4 6-11 6-15 0zM17 12l5-4v8z"/><circle cx="7" cy="11" r=".8"/>`],
+ ["meat","בשר",`<path d="M15 3a6 6 0 0 1 6 6c0 4-4 7-8 6l-3 3a2 2 0 1 1-3 2 2 2 0 1 1-2-3l3-3c-1-4 2-11 7-11z"/>`],
+ ["grill","על האש",`<path d="M3 10h18a9 6 0 0 1-18 0zM8 16l-3 6M16 16l3 6M12 16v6M8 3c-1 2 1 3 0 5M12 3c-1 2 1 3 0 5M16 3c-1 2 1 3 0 5"/>`],
+ ["scale","שקילה",`<path d="M5 8h14l2 12H3z"/><circle cx="12" cy="5" r="2"/><path d="M12 12v3"/>`],
+ ["pin","מיקום",`<path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/>`],
+ ["phone","טלפון",`<path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/>`],
+ ["recycle","מחזור",`<path d="M7 7l3-4 3 4M10 3v7M20 15l-1 5-5-1M19 20l-6-3.5M4 15l5 1-1 5M9 16l-3.5 6"/><path d="M14 5.5L17 10M18 14l-2.5 4.5M7 18H3.5L6 13.5"/>`]];
+const ICO_ST={c:"#E30613",s:"line"};
+function icoSVG(i,c,s){const [,,p]=ICONS[i];c=c||ICO_ST.c;s=s||ICO_ST.s;
+  if(s==="line")return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+  const shape=s==="circle"?`<circle cx="12" cy="12" r="12" fill="${c}"/>`:`<rect width="24" height="24" rx="5.5" fill="${c}"/>`;const ic=(c==="#FFFFFF"||c==="#FFD400")?"#111":"#fff";
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">${shape}<g transform="translate(4.2 4.2) scale(.65)" fill="none" stroke="${ic}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${p}</g></svg>`}
+function icoPanel(){return `<h5>צבע</h5><div class="tsw">${["#E30613","#0047BB","#00843D","#111111","#FF7A00","#7B2FF7","#FFD400","#FFFFFF"].map(c=>`<button type="button" data-icoc="${c}" style="background:${c}" aria-pressed="${ICO_ST.c===c}" title="${c}"></button>`).join("")}<input type="color" id="icoCol" value="${ICO_ST.c}" aria-label="צבע אחר"></div>
+  <h5>סגנון</h5><div class="tpat">${[["line","קו"],["circle","עיגול מלא"],["square","ריבוע מעוגל"]].map(([k,n])=>`<button type="button" data-icos="${k}" aria-pressed="${ICO_ST.s===k}">${n}</button>`).join("")}</div>
+  <h5>אייקונים <small>(${ICONS.length})</small></h5><div class="icog">${ICONS.map(([k,n],i)=>`<button type="button" data-ico="${i}" title="${n}"><img src="${svgURI(icoSVG(i))}" alt=""><small>${n}</small></button>`).join("")}</div>
+  <p class="sttip">לחיצה מוסיפה את האייקון לשלט. האייקונים וקטוריים – חדים בכל גודל ובהדפסה.</p>`}
+
+/* tools tabs */
+const _stToolsDz=stTools;stTools=function(){_stToolsDz.apply(this,arguments);const T=$("stTools");if(!T)return;const tabs=T.querySelector(".sttabs");
+  if(tabs&&!tabs.querySelector('[data-tab="kit"]')){const lay=tabs.querySelector('[data-tab="lay"]');[["kit","חגים ועונות"],["ico","אייקונים"]].forEach(([k,n])=>{const b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.dataset.tab=k;b.setAttribute("aria-selected",STU.tab===k);b.textContent=n;tabs.insertBefore(b,lay)})}
+  const B=T.querySelector(".stbody");if(!B)return;if(STU.tab==="kit")B.innerHTML=kitPanel();else if(STU.tab==="ico")B.innerHTML=icoPanel()};
+
+/* ---------- readability & contrast checker ---------- */
+const parseRGB=s=>{const m=String(s||"").match(/rgba?\(([\d.]+)[, ]+([\d.]+)[, ]+([\d.]+)(?:[, /]+([\d.]+))?/);return m?[+m[1],+m[2],+m[3],m[4]!=null?+m[4]:1]:null};
+const relL=([r,g,b])=>{const f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(r)+.7152*f(g)+.0722*f(b)};
+const cRatio=(a,b)=>{const x=relL(a),y=relL(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const A11Y_MIN={port:3,land:3,l5:2.4,l6:1.8,stk:1.8,chk:1.8};
+async function a11yRun(){const sg=stSg();if(!sg||!window.htmlToImage)return null;STU.sel=null;stDraw();sg.querySelectorAll(".a11yf").forEach(e=>e.classList.remove("a11yf","lv-err","lv-warn"));
+  const R=sg.getBoundingClientRect(),mmPx=lawMM(STU.l)/R.width;let cv;try{cv=await window.htmlToImage.toCanvas(sg,{pixelRatio:1,cacheBust:false,style:{boxShadow:"none",margin:"0"}})}catch(e){return null}
+  const X=cv.getContext("2d"),k=cv.width/R.width,out=[];const A=stList();
+  const cand=[...sg.querySelectorAll("[data-e],.free")].filter(el=>{if(el.tagName==="IMG"||el.querySelector(":scope>img"))return false;const f=el.dataset.free!=null?A[+el.dataset.free]:null;if(f&&!isTxtK(f.k||"txt"))return false;
+    const cs=getComputedStyle(el);if(cs.visibility==="hidden"||cs.display==="none"||+cs.opacity<.2)return false;const t=(el.innerText||"").trim();return t.length>0&&el.offsetWidth>0});
+  const seen=new Set();
+  for(const el of cand){const t=(el.innerText||"").replace(/\s+/g," ").trim();const r=el.getBoundingClientRect();if(r.width<2||r.height<2)continue;const id=t+"|"+Math.round(r.left)+"|"+Math.round(r.top);if(seen.has(id))continue;seen.add(id);
+    const leaf=[el,...el.querySelectorAll("*")].filter(n=>n.childNodes.length&&[...n.childNodes].some(c=>c.nodeType===3&&c.textContent.trim())).sort((a,b)=>parseFloat(getComputedStyle(a).fontSize)-parseFloat(getComputedStyle(b).fontSize))[0]||el;
+    const cs=getComputedStyle(leaf),fs=parseFloat(cs.fontSize),mm=fs*.7*mmPx;let col=parseRGB(cs.webkitTextFillColor)||parseRGB(cs.color);const stroke=parseFloat(cs.webkitTextStrokeWidth)||0,shadow=cs.textShadow&&cs.textShadow!=="none";
+    const lbl=el.dataset.free!=null?((A[+el.dataset.free]||{}).nm||"טקסט חופשי"):(AILBL[(el.dataset.e||"").split("#")[0]]||"טקסט");
+    const issue={el,key:el.dataset.free!=null?{free:+el.dataset.free}:{e:el.dataset.e},lbl,t:t.slice(0,40),mm,list:[]};
+    let ratio=null;
+    if(col&&col[3]>.1){const x0=Math.max(0,Math.floor((r.left-R.left)*k)),y0=Math.max(0,Math.floor((r.top-R.top)*k)),w=Math.min(cv.width-x0,Math.ceil(r.width*k)),h=Math.min(cv.height-y0,Math.ceil(r.height*k));
+      if(w>1&&h>1){const d=X.getImageData(x0,y0,w,h).data,bg=[[],[],[]];const st=Math.max(1,Math.floor(Math.sqrt(w*h/4000)));
+        for(let yy=0;yy<h;yy+=st)for(let xx=0;xx<w;xx+=st){const q=(yy*w+xx)*4;if(d[q+3]<128)continue;const dd=Math.abs(d[q]-col[0])+Math.abs(d[q+1]-col[1])+Math.abs(d[q+2]-col[2]);if(dd>90){bg[0].push(d[q]);bg[1].push(d[q+1]);bg[2].push(d[q+2])}}
+        if(bg[0].length>8){const med=a=>{a.sort((p,q)=>p-q);return a[a.length>>1]};const B=[med(bg[0]),med(bg[1]),med(bg[2])];ratio=cRatio(col,B);issue.bg=B;
+          if(stroke>0){const sc=parseRGB(cs.webkitTextStrokeColor);if(sc)ratio=Math.max(ratio,cRatio(sc,B))}}}}
+    issue.ratio=ratio;issue.col=col;
+    if(ratio!=null&&ratio<3&&!shadow)issue.list.push({lv:"err",k:"contrast",m:`ניגודיות נמוכה (${ratio.toFixed(1)}:1) – קשה לקרוא`});
+    else if(ratio!=null&&ratio<4.5&&mm<6&&!shadow)issue.list.push({lv:"warn",k:"contrast",m:`ניגודיות גבולית (${ratio.toFixed(1)}:1) לטקסט קטן`});
+    const min=A11Y_MIN[STU.l]||2;if(mm<min*.75)issue.list.push({lv:"err",k:"size",m:`אותיות קטנות מאוד (${mm.toFixed(1)} מ״מ) – מומלץ לפחות ${min} מ״מ`,need:min/mm});
+    else if(mm<min)issue.list.push({lv:"warn",k:"size",m:`אותיות קטנות (${mm.toFixed(1)} מ״מ) – מומלץ לפחות ${min} מ״מ`,need:min/mm});
+    if(issue.list.length){out.push(issue);el.classList.add("a11yf",issue.list.some(x=>x.lv==="err")?"lv-err":"lv-warn")}}
+  return {out,total:seen.size}}
+const A11Y={res:null};
+async function openA11y(){let p=$("stA11y");if(!p){p=document.createElement("aside");p.id="stA11y";p.className="stai";$("studio").appendChild(p)}const ai=$("stAi");if(ai)ai.hidden=true;
+  p.hidden=false;p.innerHTML=`<div class="staih"><b>👁 בדיקת קריאות וניגודיות</b><button type="button" id="a11yX" title="סגירה">✕</button></div><div class="ailog"><div class="aim a think">בודק את השלט…</div></div>`;
+  const r=await a11yRun();A11Y.res=r;if(!r){p.querySelector(".ailog").innerHTML=`<div class="aim a err">הבדיקה לא הצליחה – נסו שוב</div>`;return}a11yRender()}
+function a11yRender(){const p=$("stA11y"),r=A11Y.res;if(!p||!r)return;const L=LAYS.find(x=>x.l===STU.l);const errs=r.out.filter(i=>i.list.some(x=>x.lv==="err")).length,warns=r.out.length-errs;
+  const score=Math.max(0,Math.round(100-errs*18-warns*7));const tone=score>=85?"ok":score>=60?"warn":"err";
+  p.querySelector(".ailog").outerHTML=`<div class="ailog"><div class="a11ys ${tone}"><b>${score}</b><span>ציון קריאות · ${L?L.n:""}<br><small>${r.total} טקסטים נבדקו · ${errs} בעיות · ${warns} הערות</small></span></div>
+    ${r.out.length?`<button type="button" class="tbtn wide pri2" id="a11yFixAll">🔧 תיקון אוטומטי של הכל</button>`:`<div class="aim a">✓ כל הטקסטים קריאים והניגודיות טובה לגודל הזה.</div>`}
+    ${r.out.map((i,n)=>`<div class="a11yi"><div class="a11yh"><b>${esc(i.lbl)}</b><small>${esc(i.t)}</small></div>${i.list.map(x=>`<p class="lv-${x.lv}">${x.lv==="err"?"⛔":"⚠"} ${x.m}</p>`).join("")}<div class="a11ya"><button type="button" class="tgb" data-a11ysel="${n}">בחירה</button><button type="button" class="tgb" data-a11yfix="${n}">תיקון</button></div></div>`).join("")}
+    <p class="sttip">הבדיקה מחשבת גובה אותיות במילימטרים לפי גודל ההדפסה, וניגודיות לפי תקן WCAG (מינימום 3:1 לכותרות, 4.5:1 לטקסט קטן). טקסט עם צל, זוהר או מסגרת לא נפסל על ניגודיות.</p></div>`}
+function a11yFix(i){if(!i)return;const sg=stSg();const el=i.key.free!=null?sg.querySelector(`.free[data-free="${i.key.free}"]`):sg.querySelector(`[data-e="${CSS.escape(i.key.e)}"]`);if(!el)return;STU.sel=el;const free=i.key.free!=null,f=free?stList()[i.key.free]:getOv(el);const patch={};
+  for(const x of i.list){if(x.k==="contrast"&&i.bg){const dark=[17,17,17],light=[255,255,255];const c=cRatio(dark,i.bg)>=cRatio(light,i.bg)?"#111111":"#FFFFFF";if(free){patch.c=c;patch.g1=null;patch.g2=null}else patch.color=c}
+    if(x.k==="size"&&x.need){const n=Math.min(2.2,x.need*1.05);if(free&&f.k!=="img"){patch.fs=+((+f.fs||5)*n).toFixed(2)}else if(!free)patch.s=+Math.min(2,(+f.s||1)*n).toFixed(2)}}
+  if(Object.keys(patch).length)setP(patch)}
+document.addEventListener("click",async e=>{const t=e.target;
+  if(t.closest("#stA11yB")){const p=$("stA11y");if(p&&!p.hidden){p.hidden=true;return}return openA11y()}
+  if(t.closest("#a11yX")){$("stA11y").hidden=true;stSg()&&stSg().querySelectorAll(".a11yf").forEach(x=>x.classList.remove("a11yf","lv-err","lv-warn"));return}
+  const s=t.closest("[data-a11ysel]");if(s){const i=A11Y.res.out[+s.dataset.a11ysel];const el=findSel(i.key);if(el){stSelect(el)}return}
+  const f=t.closest("[data-a11yfix]");if(f){a11yFix(A11Y.res.out[+f.dataset.a11yfix]);await new Promise(r=>setTimeout(r,300));return openA11y()}
+  if(t.closest("#a11yFixAll")){const L=A11Y.res.out.slice();for(const i of L){a11yFix(i);await new Promise(r=>setTimeout(r,60))}await new Promise(r=>setTimeout(r,300));return openA11y()}
+  if(t.closest("#stMockB"))return openMock();
+  const kb=t.closest("[data-kit]");if(kb){STU.kit=kb.dataset.kit;stTools();return}
+  const ka=t.closest("[data-kitapply]");if(ka)return kitApply(ka.dataset.kitapply);
+  const kc=t.closest("[data-kitc]");if(kc){if(!STU.sel){toast("בחרו קודם רכיב בשלט");return}const free=STU.sel.dataset.free!=null;setP(free?{c:kc.dataset.kitc,g1:null,g2:null}:{color:kc.dataset.kitc});return}
+  const kh=t.closest("[data-kithl]");if(kh){const K=KITS.find(k=>k.id===STU.kit),txt=kh.dataset.kithl,el=STU.sel;
+    if(el&&el.dataset.free!=null&&(stList()[+el.dataset.free]||{}).k==="txt")setP({t:txt});else if(el&&el.dataset.free==null&&el.tagName!=="IMG")setP({text:txt});
+    else{const P=placePos();addFree({k:"txt",t:txt,x:8,y:P.y,fs:+Math.min(10,P.H*.07).toFixed(1),fw:"900",ff:"secular",c:K.c[0],sh:"sticker",an:"pop"})}return}
+  const ks=t.closest("[data-kitst]");if(ks){const P=placePos();addFree({k:"img",src:svgURI(motifSVG(ks.dataset.kitst)),x:P.x,y:P.y,w:Math.min(22,P.H*.2),nm:"קישוט"});return}
+  const ic=t.closest("[data-icoc]");if(ic){ICO_ST.c=ic.dataset.icoc;stTools();return}
+  const is=t.closest("[data-icos]");if(is){ICO_ST.s=is.dataset.icos;stTools();return}
+  const io=t.closest("[data-ico]");if(io){const i=+io.dataset.ico,P=placePos();addFree({k:"img",src:svgURI(icoSVG(i)),x:P.x,y:P.y,w:Math.min(12,P.H*.1),nm:"אייקון "+ICONS[i][1]});return}
+});
+document.addEventListener("change",e=>{if(e.target.id==="icoCol"){ICO_ST.c=e.target.value.toUpperCase();stTools()}});
+
+/* header buttons */
+const _studioHTMLDz=studioHTML;studioHTML=function(){return _studioHTMLDz().replace('<button type="button" id="stLaw">','<button type="button" id="stA11yB" title="בדיקת גודל אותיות וניגודיות צבעים לפי גודל ההדפסה">👁 קריאות</button><button type="button" id="stMockB" title="איך השלט ייראה בסניף">🏪 הדמיה</button><button type="button" id="stLaw">')};
+const _closeStudioDz=closeStudio;closeStudio=function(){["stA11y"].forEach(id=>{const p=$(id);if(p)p.hidden=true});closeMock();return _closeStudioDz.apply(this,arguments)};
+
+/* ---------- in-store mockup ---------- */
+function mkProducts(x0,y0,w,h,seed){const r=rng(seed);let s="",x=x0;const C=["#E30613","#0047BB","#FFD400","#00843D","#FF7A00","#7B2FF7","#F5F5F5","#8D5A2B","#00A3FF","#E3006D"];
+  while(x<x0+w-20){const t=r(),pw=t<.4?34+r()*16:t<.75?26+r()*10:44+r()*20,ph=h*(.55+r()*.4),c=C[Math.floor(r()*C.length)],y=y0+h-ph;
+    if(t<.4)s+=`<rect x="${x.toFixed(0)}" y="${y.toFixed(0)}" width="${pw.toFixed(0)}" height="${ph.toFixed(0)}" rx="3" fill="${c}"/><rect x="${(x+4).toFixed(0)}" y="${(y+ph*.3).toFixed(0)}" width="${(pw-8).toFixed(0)}" height="${(ph*.3).toFixed(0)}" fill="#fff" opacity=".75"/>`;
+    else if(t<.75)s+=`<path d="M${(x+pw*.35).toFixed(0)} ${y.toFixed(0)}h${(pw*.3).toFixed(0)}v${(ph*.15).toFixed(0)}l${(pw*.35).toFixed(0)} ${(ph*.15).toFixed(0)}v${(ph*.7).toFixed(0)}h-${pw.toFixed(0)}v-${(ph*.7).toFixed(0)}l${(pw*.35).toFixed(0)} -${(ph*.15).toFixed(0)}z" fill="${c}"/><rect x="${x.toFixed(0)}" y="${(y+ph*.5).toFixed(0)}" width="${pw.toFixed(0)}" height="${(ph*.2).toFixed(0)}" fill="#fff" opacity=".7"/>`;
+    else s+=`<rect x="${x.toFixed(0)}" y="${(y+ph*.25).toFixed(0)}" width="${pw.toFixed(0)}" height="${(ph*.75).toFixed(0)}" rx="8" fill="${c}"/><ellipse cx="${(x+pw/2).toFixed(0)}" cy="${(y+ph*.25).toFixed(0)}" rx="${(pw/2).toFixed(0)}" ry="6" fill="${c}" opacity=".7"/>`;
+    x+=pw+3+r()*4}return s}
+const MOCKS=[
+ {id:"wall",n:"קיר בסניף",slot:[450,70,300,420],tape:1,svg:()=>`<defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1ECE4"/><stop offset="1" stop-color="#E2D9CC"/></linearGradient></defs><rect width="1200" height="800" fill="url(#w)"/><rect y="560" width="1200" height="240" fill="#C9CDD3"/><rect y="552" width="1200" height="12" fill="#9AA0A8"/>${[0,1].map(i=>`<rect x="${40+i*820}" y="300" width="300" height="420" fill="#B7BCC4"/><rect x="${40+i*820}" y="300" width="300" height="10" fill="#8B929C"/>${[0,1,2].map(j=>`<rect x="${40+i*820}" y="${420+j*110}" width="300" height="8" fill="#8B929C"/>${mkProducts(48+i*820,318+j*110,284,96,5+i*3+j)}`).join("")}`).join("")}`},
+ {id:"shelf",n:"מדף מוצרים",slot:[500,330,200,230],hang:1,svg:()=>`<rect width="1200" height="800" fill="#DDE1E6"/><rect x="60" y="20" width="1080" height="780" fill="#F4F5F7"/>${[0,1,2,3].map(j=>`${mkProducts(80,40+j*190,1040,160,11+j)}<rect x="60" y="${200+j*190}" width="1080" height="22" fill="#A9B0BA"/><rect x="60" y="${222+j*190}" width="1080" height="8" fill="#7D858F"/>`).join("")}`},
+ {id:"fridge",n:"דלת מקרר",slot:[470,170,260,340],glass:1,svg:()=>`<rect width="1200" height="800" fill="#2B3138"/>${[0,1,2].map(i=>`<rect x="${120+i*330}" y="40" width="300" height="720" rx="10" fill="#1A1F25" stroke="#9AA3AD" stroke-width="12"/>${[0,1,2,3,4].map(j=>`${mkProducts(140+i*330,60+j*140,260,120,21+i*5+j)}<rect x="${132+i*330}" y="${180+j*140}" width="276" height="6" fill="#596370"/>`).join("")}<rect x="${120+i*330}" y="40" width="300" height="720" rx="10" fill="#BFE6FF" opacity=".14"/><path d="M${150+i*330} 60l120 0-180 700h-0z" fill="#fff" opacity=".07"/>`).join("")}`},
+ {id:"stand",n:"סטנד רצפה",slot:[470,110,260,370],frame:1,svg:()=>`<defs><linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8BBA8"/><stop offset="1" stop-color="#A89880"/></linearGradient></defs><rect width="1200" height="800" fill="#EDEFF2"/><rect y="560" width="1200" height="240" fill="url(#fl)"/>${[0,1,2,3,4,5].map(i=>`<path d="M${i*240} 560L${i*240-200} 800" stroke="#9A8A72" stroke-width="2"/>`).join("")}${mkProducts(20,380,360,170,41)}${mkProducts(820,380,360,170,43)}<rect x="590" y="480" width="20" height="200" fill="#8C939C"/><ellipse cx="600" cy="690" rx="120" ry="18" fill="#6E757E"/><ellipse cx="600" cy="700" rx="160" ry="16" fill="#000" opacity=".12"/>`},
+ {id:"screen",n:"מסך דיגיטלי",slot:[290,150,620,350],screen:1,svg:()=>`<rect width="1200" height="800" fill="#E9E4DC"/><rect y="640" width="1200" height="160" fill="#CFC6B8"/><rect x="270" y="130" width="660" height="390" rx="14" fill="#111"/><rect x="590" y="520" width="20" height="40" fill="#333"/><rect x="500" y="556" width="200" height="10" rx="5" fill="#333"/>${mkProducts(30,470,220,170,51)}${mkProducts(950,470,220,170,53)}`},
+ {id:"photo",n:"הצילום שלי",slot:[420,160,360,460],photo:1,svg:()=>`<rect width="1200" height="800" fill="#D9DDE3"/><text x="600" y="400" font-family="Rubik,Arial" font-size="34" fill="#6B7280" text-anchor="middle">העלו צילום מהסניף</text>`}];
+const MK={id:"wall",img:null,ar:1,sc:1,rot:0,dx:0,dy:0,photo:null,shadow:true};
+async function openMock(){const sg=stSg();if(!sg||!window.htmlToImage){toast("ההדמיה לא זמינה בדפדפן הזה");return}STU.sel=null;stDraw();toast("מכין הדמיה…");
+  try{const c=await window.htmlToImage.toCanvas(sg,{pixelRatio:Math.min(3,1400/sg.offsetWidth),cacheBust:false,style:{boxShadow:"none",margin:"0"}});MK.img=c.toDataURL("image/png");MK.ar=c.width/c.height}catch(e){toast("לא הצלחתי לצלם את השלט");return}
+  MK.id=MK.photo&&MK.id==="photo"?"photo":(STU.l==="land"||STU.l==="chk")?"screen":(STU.l==="port")?"wall":"shelf";MK.dx=MK.dy=0;MK.sc=1;MK.rot=0;
+  let d=$("mock");if(!d){d=document.createElement("div");d.id="mock";d.className="phed mock";document.body.appendChild(d)}d.hidden=false;document.documentElement.classList.add("phopen");mockRender()}
+function closeMock(){const d=$("mock");if(d&&!d.hidden){d.hidden=true;document.documentElement.classList.remove("phopen")}}
+function mockRender(){const d=$("mock");if(!d)return;const M=MOCKS.find(m=>m.id===MK.id);let [sx,sy,sw,sh]=M.slot;
+  let w=sw,h=sw/MK.ar;if(h>sh){h=sh;w=sh*MK.ar}w*=MK.sc;h*=MK.sc;const x=sx+(sw-w)/2+MK.dx,y=(M.hang?sy:sy+(sh-h)/2)+MK.dy;
+  const pct=(v,t)=>(v/t*100).toFixed(3)+"%";
+  const bg=M.photo&&MK.photo?`<img class="mkph" src="${MK.photo}" alt="">`:`<svg class="mkbg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">${M.svg()}</svg>`;
+  const deco=M.tape?`<i class="mktape" style="left:${pct(x+w/2-40,1200)};top:${pct(y-14,800)}"></i>`:M.frame?`<i class="mkframe" style="left:${pct(x-12,1200)};top:${pct(y-12,800)};width:${pct(w+24,1200)};height:${pct(h+24,800)}"></i>`:M.hang?`<i class="mkclip" style="left:${pct(x+w/2-14,1200)};top:${pct(y-18,800)}"></i>`:"";
+  d.innerHTML=`<header class="phhd"><button type="button" class="phx" id="mkX">✕ סגירה</button><b>הדמיה בסניף</b><span class="phsp"></span><button type="button" class="pri" id="mkDl">⬇ הורדת ההדמיה</button></header>
+   <aside class="phside"><div class="phbody"><h5>מיקום</h5><div class="mkscn">${MOCKS.map(m=>`<button type="button" data-mk="${m.id}" aria-pressed="${m.id===MK.id}">${m.n}</button>`).join("")}</div>
+    ${M.photo?`<label class="tbtn wide">העלאת צילום מהסניף…<input type="file" id="mkPh" accept="image/*" hidden></label><p class="sttip">גררו את השלט על הצילום למיקום הרצוי.</p>`:`<p class="sttip">אפשר לגרור את השלט ולשנות את גודלו.</p>`}
+    <label class="phsl"><span>גודל השלט<output>${Math.round(MK.sc*100)}%</output></span><input type="range" id="mkSc" min="20" max="250" value="${Math.round(MK.sc*100)}"></label>
+    <label class="phsl"><span>סיבוב<output>${MK.rot}°</output></span><input type="range" id="mkRot" min="-20" max="20" value="${MK.rot}"></label>
+    <label class="toggle sm"><input type="checkbox" id="mkSh"${MK.shadow?" checked":""}> צל מתחת לשלט</label>
+    <button type="button" class="tbtn wide" id="mkReset">החזרה למיקום ברירת המחדל</button>
+    <p class="sttip">ההדמיה ממחישה גודל, צבעים וקריאות מרחוק. השלט מצולם מהגודל שפתוח בסטודיו.</p></div></aside>
+   <main class="phmain"><div class="mkst" id="mkSt"><div class="mkin">${bg}${deco&&!M.frame?"":deco}<img class="mksign${MK.shadow?" sh":""}${M.screen?" mkscr":""}" id="mkSign" src="${MK.img}" alt="" style="left:${pct(x,1200)};top:${pct(y,800)};width:${pct(w,1200)};rotate:${MK.rot}deg">${M.frame?"":deco}${M.glass?`<i class="mkglass" style="left:${pct(x-30,1200)};top:${pct(y-30,800)};width:${pct(w+60,1200)};height:${pct(h+60,800)}"></i>`:""}</div></div></main>`}
+let mkDrag=null;
+document.addEventListener("pointerdown",e=>{const s=e.target.closest&&e.target.closest("#mkSign");if(!s)return;e.preventDefault();const st=$("mkSt").getBoundingClientRect();mkDrag={x:e.clientX,y:e.clientY,dx:MK.dx,dy:MK.dy,k:1200/st.width};s.setPointerCapture&&s.setPointerCapture(e.pointerId)});
+document.addEventListener("pointermove",e=>{if(!mkDrag)return;MK.dx=mkDrag.dx+(e.clientX-mkDrag.x)*mkDrag.k;MK.dy=mkDrag.dy+(e.clientY-mkDrag.y)*mkDrag.k;const s=$("mkSign"),M=MOCKS.find(m=>m.id===MK.id);if(!s)return;
+  let [sx,sy,sw,sh]=M.slot;let w=sw,h=sw/MK.ar;if(h>sh){h=sh;w=sh*MK.ar}w*=MK.sc;h*=MK.sc;s.style.left=((sx+(sw-w)/2+MK.dx)/1200*100)+"%";s.style.top=(((M.hang?sy:sy+(sh-h)/2)+MK.dy)/800*100)+"%";$("mock").querySelectorAll(".mktape,.mkclip,.mkframe,.mkglass").forEach(n=>n.style.display="none")});
+document.addEventListener("pointerup",()=>{if(mkDrag){mkDrag=null;mockRender()}});
+document.addEventListener("click",async e=>{if(!e.target.closest("#mock"))return;const t=e.target;
+  if(t.closest("#mkX"))return closeMock();
+  const m=t.closest("[data-mk]");if(m){MK.id=m.dataset.mk;MK.dx=MK.dy=0;MK.sc=1;MK.rot=0;return mockRender()}
+  if(t.closest("#mkReset")){MK.dx=MK.dy=0;MK.sc=1;MK.rot=0;return mockRender()}
+  if(t.closest("#mkDl")){const b=t.closest("#mkDl");b.disabled=true;try{const blob=await window.htmlToImage.toBlob($("mkSt").firstElementChild,{pixelRatio:2,cacheBust:false});await saveBlob(blob,`${safe(STATE[STU.id].name)} - הדמיה ${MOCKS.find(x=>x.id===MK.id).n}.png`);toast("ההדמיה נשמרה")}catch(err){if(!err||err.code!=="cancelled")toast("לא הצלחתי לשמור את ההדמיה")}finally{b.disabled=false}}});
+document.addEventListener("input",e=>{if(!e.target.closest||!e.target.closest("#mock"))return;const i=e.target;if(i.id==="mkSc"){MK.sc=+i.value/100;mockRender()}if(i.id==="mkRot"){MK.rot=+i.value;mockRender()}});
+document.addEventListener("change",async e=>{const i=e.target;if(!i.closest||!i.closest("#mock"))return;if(i.id==="mkSh"){MK.shadow=i.checked;mockRender()}
+  if(i.id==="mkPh"&&i.files[0]){try{const im=await loadImg(i.files[0]),k=Math.min(1,2400/Math.max(im.naturalWidth,im.naturalHeight)),c=mkCanvas(im.naturalWidth*k,im.naturalHeight*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);MK.photo=c.toDataURL("image/jpeg",.9);mockRender()}catch(err){toast("לא הצלחתי לקרוא את הצילום")}}});
+document.addEventListener("keydown",e=>{const d=$("mock");if(d&&!d.hidden&&e.key==="Escape"){e.stopPropagation();closeMock()}},true);
+
+
+/* =====================================================================
+   IMPORT PRODUCT IMAGE FROM A LINK  (needs /api/fetch – Cloudflare Pages Function)
+   ===================================================================== */
+const UIMP={api:"/api/fetch",ok:null};
+async function urlApiOk(){if(UIMP.ok!=null)return UIMP.ok;if(!/^https?:$/.test(location.protocol)){UIMP.ok=false;return false}
+  try{const r=await fetch(UIMP.api+"?mode=ping",{cache:"no-store"});const j=r.ok?await r.json():null;UIMP.ok=!!(j&&j.ok)}catch(e){UIMP.ok=false}return UIMP.ok}
+const looksImg=u=>/\.(jpe?g|png|webp|avif|gif|bmp)(\?|#|$)/i.test(u)||/^data:image\//i.test(u);
+async function urlToBlob(u){
+  if(/^data:image\//i.test(u)){const r=await fetch(u);return r.blob()}
+  if(await urlApiOk()){const r=await fetch(UIMP.api+"?mode=img&url="+encodeURIComponent(u));if(r.ok){const b=await r.blob();if(b.type.startsWith("image/"))return b}
+    let e={};try{e=await r.json()}catch(x){}throw {code:e.error||"upstream",status:e.status}}
+  const r=await fetch(u,{mode:"cors"});if(!r.ok)throw {code:"upstream",status:r.status};const b=await r.blob();if(!b.type.startsWith("image/"))throw {code:"not_image"};return b}
+const UERR={bad_url:"הקישור לא תקין – העתיקו את הכתובת המלאה (מתחילה ב־https://)",upstream:"האתר לא אפשר להוריד את הדף או התמונה",unreachable:"לא הצלחתי להגיע לאתר",not_image:"הקישור לא מוביל לתמונה",not_html:"הקישור לא מוביל לדף מוצר",too_large:"התמונה גדולה מדי (מעל 15MB)",forbidden:"הבקשה נחסמה",noapi:"ייבוא מקישור עובד באתר הציבורי שלכם (Cloudflare) אחרי העלאת קובץ השרת. כאן – שמרו את התמונה במחשב והעלו אותה כקובץ."};
+const uerr=e=>{const c=(e&&e.code)||"";if(c==="upstream"&&(e.status===403||e.status===401||e.status===429))return "האתר חוסם הורדה אוטומטית ("+e.status+"). פתחו את התמונה באתר, לחצו עליה מקש ימני ← \"העתקת כתובת התמונה\" והדביקו כאן, או שמרו אותה והעלו כקובץ.";return UERR[c]||(e&&e.message&&!/fetch/i.test(e.message)?e.message:"לא הצלחתי לייבא – נסו קישור ישיר לתמונה, או שמרו והעלו כקובץ")};
+function openUrlImport(onPick,opt){opt=opt||{};closeImport();const d=document.createElement("div");d.className="imp";d.id="impDlg";d.setAttribute("role","dialog");d.setAttribute("aria-label","ייבוא תמונה מקישור");
+  d.innerHTML=`<div class="impc uimp"><div class="imph"><h3>🔗 ייבוא תמונה מקישור</h3><button type="button" class="iclose" id="impX" aria-label="סגירה" style="display:block">✕</button></div>
+   <p class="imps">הדביקו קישור לדף המוצר באתר (המערכת תמצא את תמונות המוצר), או קישור ישיר לתמונה.</p>
+   <div class="uirow"><input type="url" id="uiUrl" dir="ltr" placeholder="https://..." autocomplete="off"><button type="button" class="tbtn pri" id="uiGo">חיפוש</button></div>
+   <label class="chk"><input type="checkbox" id="uiRm"${RMBG?" checked":""}> הסרת רקע לבן אוטומטית</label>
+   <div id="uiMsg" class="uimsg" role="status"></div><div id="uiTitle"></div><div class="uig" id="uiGrid"></div>
+   <p class="imps">השתמשו בתמונות שמותר לכם להשתמש בהן – מאתר החברה, מהספק או מהיצרן.</p></div>`;
+  document.body.appendChild(d);setTimeout(()=>$("uiUrl").focus(),30);const S={title:"",busy:false};
+  const msg=(t,err)=>{const m=$("uiMsg");m.textContent=t||"";m.classList.toggle("err",!!err)};
+  const pick=async(u,btn)=>{if(S.busy)return;S.busy=true;btn&&btn.classList.add("busy");msg("מוריד ומעבד את התמונה…");
+    try{const b=await urlToBlob(u);const o=await prepImage(b,{keepBg:!$("uiRm").checked});const nm=$("uiName")&&$("uiName").checked?S.title:"";closeImport();onPick(o,nm);toast("התמונה יובאה")}
+    catch(e){msg(uerr(e),true)}finally{S.busy=false;btn&&btn.classList.remove("busy")}};
+  const go=async()=>{let u=$("uiUrl").value.trim();if(!u)return;if(!/^(https?:|data:)/i.test(u))u="https://"+u;$("uiGrid").innerHTML="";$("uiTitle").innerHTML="";
+    if(looksImg(u))return pick(u);
+    if(!(await urlApiOk())){msg(UERR.noapi,true);return}
+    msg("מחפש תמונות בדף…");try{const r=await fetch(UIMP.api+"?mode=page&url="+encodeURIComponent(u));const j=await r.json();if(!r.ok)throw {code:j.error,status:j.status};
+      if(!j.images||!j.images.length){msg("לא נמצאו תמונות בדף. נסו קישור ישיר לתמונה (מקש ימני על התמונה ← העתקת כתובת התמונה).",true);return}
+      S.title=j.title||"";msg(`נמצאו ${j.images.length} תמונות – לחצו על התמונה הרצויה`);
+      if(S.title&&opt.name)$("uiTitle").innerHTML=`<label class="chk"><input type="checkbox" id="uiName"> לעדכן גם את שם המוצר: <b>${esc(S.title)}</b></label>`;
+      $("uiGrid").innerHTML=j.images.map((x,i)=>`<button type="button" data-ui="${i}" title="${esc(x)}"><img src="${esc(x)}" alt="" loading="lazy" referrerpolicy="no-referrer"></button>`).join("");
+      $("uiGrid").querySelectorAll("img").forEach((im,i)=>{im.onerror=()=>{if(!im.dataset.p){im.dataset.p=1;im.src=UIMP.api+"?mode=img&url="+encodeURIComponent(j.images[i])}else im.closest("button").remove()};im.onload=()=>{if(im.naturalWidth<120&&im.naturalHeight<120)im.closest("button").remove();else im.closest("button").dataset.sz=im.naturalWidth+"×"+im.naturalHeight}});
+      S.list=j.images}catch(e){msg(uerr(e),true)}};
+  d.addEventListener("click",e=>{if(e.target===d||e.target.closest("#impX")){closeImport();return}if(e.target.closest("#uiGo"))return go();const b=e.target.closest("[data-ui]");if(b)pick(S.list[+b.dataset.ui],b)});
+  d.addEventListener("keydown",e=>{if(e.target.id==="uiUrl"&&e.key==="Enter"){e.preventDefault();go()}if(e.key==="Escape")closeImport()});
+  d.addEventListener("paste",e=>{if(e.target.id==="uiUrl")setTimeout(go,30)})}
+document.addEventListener("click",e=>{const t=e.target;
+  if(t.closest("#urlImgProd")){const id=cur;openUrlImport((o,nm)=>{Object.assign(STATE[id],{up:o.url,upInfo:o});if(nm)STATE[id].name=nm.slice(0,60);persistState();if(id===cur)buildForm();refreshItem(id)},{name:true});return}
+  if(t.closest("#stUrlImg")){openUrlImport(o=>{const P=placePos();addFree({k:"img",src:o.url,x:P.x,y:P.y,w:Math.min(45,P.H*.4)})});return}
+  if(t.closest("#stUrlRep")){const key=selKey();openUrlImport(o=>{STU.sel=findSel(key)||STU.sel;setP({src:o.url})});return}});
 
 renderSections();buildForm();refitFonts();
 function logoUI(){if(!$("logoLbl"))return;$("logoLbl").textContent=BRAND.logo?"הלוגו נטען ✓ (לחיצה להחלפה)":"העלאת קובץ הלוגו הרשמי (PNG שקוף או SVG)";$("logoClr").hidden=!BRAND.logo}
