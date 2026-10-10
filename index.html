@@ -5256,6 +5256,135 @@ html:not(.hasai) .aionly{display:none!important}
 .uig button.busy{opacity:.5}
 .uig img{width:100%;height:100%;object-fit:contain}
 .uig button[data-sz]::after{content:attr(data-sz);position:absolute;bottom:3px;left:4px;font-size:10.5px;background:rgba(0,0,0,.6);color:#fff;border-radius:4px;padding:0 4px}
+
+/* =====================================================================
+   V2 SHELL – dark professional, workflow steps
+   ===================================================================== */
+html.v2[data-theme="dark"]{--bg:#0F1115;--panel:#16191F;--fg:#ECEEF3;--muted:#8B92A3;--line:#262A33;--accent:#5B9BFF;--accent-soft:#1A2540;--stage-a:#1B1E25;--stage-b:#121419;--card:#1E222A;
+  --v-bar:#0B0C10;--v-rail:#0B0C10;--v-raise:#1E222A;--v-hov:#232833;--v-line2:#333946;--v-fg2:#C3C8D3;color-scheme:dark}
+html.v2[data-theme="light"]{--bg:#F3F4F7;--panel:#FFFFFF;--fg:#14161B;--muted:#626A7B;--line:#E2E5EB;--accent:#2563EB;--accent-soft:#E6EEFF;--card:#fff;
+  --v-bar:#0B0C10;--v-rail:#FFFFFF;--v-raise:#EEF1F6;--v-hov:#F2F4F8;--v-line2:#D5D9E1;--v-fg2:#3A4150}
+html.v2{--abh:58px;--rail:92px;--v-cta1:#FF3B47;--v-cta2:#D3000F}
+html.v2 body{background:var(--bg)}
+html.v2 .dash{grid-template-columns:var(--rail) minmax(0,1fr) 400px!important;grid-template-rows:var(--abh) 1fr!important;grid-template-areas:"bar bar bar" "rail main panel"!important;background:var(--bg)}
+html.v2 .abar{grid-area:bar!important;background:var(--v-bar)!important;border-bottom:1px solid #1C1F27;box-shadow:none!important;gap:18px!important;padding:0 18px!important}
+html.v2 .abar .aact{display:none!important}
+html.v2 #work{grid-area:main}
+html.v2 #insp{grid-area:panel;top:var(--abh)!important;height:calc(100vh - var(--abh))!important;background:var(--panel);border-inline-start:1px solid var(--line)}
+/* brand */
+html.v2 .abrand b{display:inline!important;color:#fff;letter-spacing:-.01em}
+html.v2 .abrand .bmark{background:linear-gradient(135deg,var(--v-cta1),#7B2FF7)!important;box-shadow:0 4px 16px rgba(255,59,71,.35)}
+/* format tabs */
+html.v2 .abar .nav{gap:4px!important;background:#15171D;border:1px solid #23262F;border-radius:12px;padding:4px!important;flex:0 1 auto!important;margin-inline:auto!important}
+html.v2 .abar .nav::before{content:"גודל השלט";align-self:center;font:600 12px var(--f-display);color:#6F7687;padding:0 8px 0 6px;white-space:nowrap}
+html.v2 .abar .nav button{color:#A9B0BF!important;border-radius:9px!important;padding:6px 11px!important}
+html.v2 .abar .nav button:hover{background:#20232B!important;color:#fff!important}
+html.v2 .abar .nav button[aria-current="true"]{background:linear-gradient(180deg,#2A2F3A,#22262F)!important;color:#fff!important;box-shadow:inset 0 0 0 1px #3A404D,0 2px 8px rgba(0,0,0,.35)}
+html.v2 .abar .nav button[aria-current="true"] .nc{background:var(--v-cta1)!important}
+html.v2 .abar .nav .nc{background:#262A33!important;color:#C3C8D3!important}
+html.v2 .abar .nav .ni{border-color:currentColor!important}
+.v2user{display:flex;align-items:center;gap:8px;flex:none}
+.v2user .vbtn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:10px;color:#C3C8D3;font:600 13px var(--f-display);background:#15171D;border:1px solid #23262F}
+.v2user .vbtn:hover{color:#fff;border-color:#3A404D}
+.v2user .vbtn svg{width:16px;height:16px}
+/* rail */
+.srail{grid-area:rail;position:sticky;top:var(--abh);height:calc(100vh - var(--abh));z-index:30;display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:16px 8px 12px;background:var(--v-rail);border-inline-start:0;border-inline-end:1px solid var(--line);direction:rtl}
+.srail .stp{all:unset;box-sizing:border-box;position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 4px 10px;border-radius:14px;cursor:pointer;color:var(--muted);font-family:var(--f-display);text-align:center}
+.srail .stp svg{width:24px;height:24px}
+.srail .stp b{font-size:12.5px;font-weight:700;line-height:1.15}
+.srail .stp .sn{position:absolute;top:6px;inset-inline-end:8px;width:16px;height:16px;border-radius:50%;font:700 10px/16px var(--f-display);background:var(--v-raise);color:var(--muted)}
+.srail .stp:hover{background:var(--v-hov);color:var(--fg)}
+.srail .stp[aria-current="step"]{background:var(--v-raise);color:var(--fg);box-shadow:inset 0 0 0 1px var(--v-line2)}
+.srail .stp[aria-current="step"] .sn{background:var(--v-cta1);color:#fff}
+.srail .stp[aria-current="step"]::before{content:"";position:absolute;inset-inline-start:-8px;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(var(--v-cta1),#7B2FF7)}
+.srail .stp[aria-current="step"] svg{color:var(--v-cta1)}
+.srail .slink{width:2px;height:12px;background:var(--line);align-self:center;border-radius:2px}
+.srail .rsp{flex:1}
+.srail .rsep{height:1px;background:var(--line);margin:6px 8px}
+.srail .ritem,.srail details.menu>summary.abtn,.srail label.abtn.tg,.srail #helpBtn{all:unset;box-sizing:border-box;display:flex!important;flex-direction:column;align-items:center;gap:4px;width:100%;padding:9px 2px;border-radius:12px;cursor:pointer;color:var(--muted);font:600 11.5px var(--f-display);text-align:center;height:auto!important;background:none!important;list-style:none}
+.srail details.menu>summary::-webkit-details-marker{display:none}
+.srail .ritem:hover,.srail details.menu>summary.abtn:hover,.srail label.abtn.tg:hover,.srail #helpBtn:hover{background:var(--v-hov)!important;color:var(--fg)}
+.srail details[open]>summary.abtn{background:var(--v-raise)!important;color:var(--fg)}
+.srail .abtn svg,.srail .ritem svg{width:20px;height:20px}
+.srail .abtn span,.srail .abtn.tg span{display:block!important;font-size:11.5px}
+.srail label.abtn.tg input{margin-bottom:2px}
+.srail #helpBtn{font-size:11.5px}
+.srail #helpBtn::before{content:"?";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.6px solid currentColor;font:800 13px var(--f-display)}
+.srail #helpBtn{font-size:0}.srail #helpBtn::after{content:"עזרה";font:600 11.5px var(--f-display)}
+.srail details.menu{position:relative;width:100%}
+.srail .mpop{top:auto!important;bottom:0!important;right:calc(100% + 12px)!important;left:auto!important;min-width:270px;background:var(--panel)!important;color:var(--fg)!important;border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.5)!important;z-index:60!important}
+.srail .mpop button,.srail .mpop label{color:var(--fg)}
+/* step hint */
+.v2hint{display:flex;align-items:center;gap:14px;margin:14px 0 4px;padding:14px 16px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--v-cta1) 14%,var(--panel)),var(--panel) 60%);border:1px solid var(--line)}
+.v2hint .hn{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font:800 18px var(--f-display);color:#fff;background:linear-gradient(135deg,var(--v-cta1),#7B2FF7);box-shadow:0 6px 18px rgba(255,59,71,.3)}
+.v2hint .ht{flex:1;min-width:0}
+.v2hint .ht b{display:block;font:700 16px var(--f-display);color:var(--fg)}
+.v2hint .ht span{display:block;font-size:13.5px;color:var(--muted);margin-top:2px;line-height:1.45}
+.v2hint .ha{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.vb{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:11px;font:600 13.5px var(--f-display);color:var(--fg);background:var(--v-raise);border:1px solid var(--v-line2);white-space:nowrap}
+.vb:hover{border-color:var(--accent)}
+.vb.cta{color:#fff;background:linear-gradient(135deg,var(--v-cta1),var(--v-cta2));border-color:transparent;box-shadow:0 6px 18px rgba(255,59,71,.28)}
+.vb.cta:hover{filter:brightness(1.08)}
+.vb.wide{width:100%;justify-content:center}
+.vb svg{width:16px;height:16px}
+.vb:disabled{opacity:.5;cursor:default}
+/* main header */
+html.v2 .mhead{background:color-mix(in srgb,var(--bg) 90%,transparent)!important;border-bottom:1px solid var(--line)}
+html.v2 .mhead h1{font-size:22px}
+html.v2 .search{background:var(--panel)!important;border-color:var(--line)!important}
+html.v2 .item{background:var(--panel);border:1px solid var(--line);border-radius:16px}
+html.v2 .item:hover{border-color:var(--v-line2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+html.v2 .item.sel{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft),0 10px 30px rgba(0,0,0,.25)}
+html.v2 .fchip{background:var(--panel)!important;border-color:var(--line)!important;color:var(--fg)!important}
+html.v2 .fchip.on{border-color:var(--accent)!important;box-shadow:inset 0 0 0 1px var(--accent)}
+html.v2 .apv button{background:var(--v-raise)!important;color:var(--fg)!important;border-color:var(--v-line2)!important}html.v2 .apv button[aria-pressed="true"]{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important}
+/* steps: visibility */
+html.v2:not([data-step="export"]) .item .selbox,html.v2:not([data-step="export"]) .item .cap .dl,
+html.v2:not([data-step="export"]) #mhead #selAll,html.v2:not([data-step="export"]) #mhead #selInfo,html.v2:not([data-step="export"]) #mhead #allBtn,html.v2:not([data-step="export"]) #mhead #sheetBtn{display:none!important}
+html.v2[data-step="export"] #mhead #newBlank{display:none!important}
+html.v2 #insp{display:flex}
+html.v2 #insp>.ihead{order:0}html.v2 #selTitle{order:1}html.v2 #apv{order:2}html.v2 #stage{order:3}
+html.v2 #insp>.iact3{order:5}html.v2 #insp>.v2x{order:6}html.v2 #iact{order:4}html.v2 #iss{order:7}html.v2 #form{order:8}html.v2 #insBar{order:9}html.v2 #insp>.lawc{order:10}html.v2 #lawBtn{order:11}html.v2 #insp>.iact2{order:12}
+html.v2[data-step="products"] #iact,html.v2[data-step="products"] #checkAllBtn,html.v2[data-step="products"] #vidBtn,html.v2[data-step="products"] #apv,html.v2[data-step="products"] .v2x{display:none!important}
+html.v2[data-step="export"] #form,html.v2[data-step="export"] .lawc,html.v2[data-step="export"] #lawBtn,html.v2[data-step="export"] .iact2,html.v2[data-step="export"] #studioBtn,html.v2[data-step="export"] #checkAllBtn,html.v2[data-step="export"] #insBar{display:none!important}
+html.v2 #insp>.iact3{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+html.v2 #studioBtn{grid-column:1/-1;height:46px;font-size:15px!important;color:#fff!important;background:linear-gradient(135deg,var(--v-cta1),var(--v-cta2))!important;border:0!important;box-shadow:0 8px 22px rgba(255,59,71,.28);border-radius:12px!important;justify-content:center}
+html.v2[data-step="export"] #vidBtn{grid-column:1/-1}
+html.v2 #iact button,html.v2 #iact #setBtn,html.v2 #iact #capBtn{border-radius:11px!important}
+/* design step: docked drawer */
+@media (min-width:1321px){
+html.v2[data-step="design"] #insp{display:none!important}
+html.v2[data-step="design"] #ddraw{grid-area:panel;position:sticky!important;top:var(--abh)!important;right:auto!important;bottom:auto!important;width:auto!important;height:calc(100vh - var(--abh));box-shadow:none!important;z-index:20!important;border-inline-start:1px solid var(--line)}
+html.v2[data-step="design"] #dscrim{display:none!important}
+html.v2[data-step="design"] #ddClose{display:none!important}
+html.v2[data-step="design"] .ddraw .tgal{grid-template-columns:repeat(2,1fr)!important}
+}
+.v2sel{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:14px;background:var(--v-raise);border:1px solid var(--v-line2)}
+.v2sel small{color:var(--muted);font-size:12px}.v2sel b{font:700 15px var(--f-display)}
+.v2sel .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+/* export block */
+.v2x{display:flex;flex-direction:column;gap:10px}
+.v2x .xc{padding:14px;border-radius:14px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.v2x h4{margin:0;font:700 14px var(--f-display);color:var(--fg);display:flex;align-items:center;gap:6px}
+.v2x p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
+.v2x .row{display:flex;gap:8px;flex-wrap:wrap}.v2x .row .vb{flex:1;justify-content:center}
+.v2x .xn{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:99px;background:var(--accent);color:#fff;font:700 12px var(--f-display)}
+html.v2[data-step="export"] #iact::before{content:"הורדת השלט הזה";display:block;width:100%;font:700 14px var(--f-display);color:var(--fg);margin-bottom:2px}
+html.v2[data-step="export"] #iact{padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+/* responsive */
+@media (max-width:1320px){html.v2 .dash{grid-template-columns:var(--rail) minmax(0,1fr)!important;grid-template-areas:"bar bar" "rail main"!important}}
+@media (max-width:980px){html.v2{--rail:76px}.v2hint{flex-wrap:wrap}.v2hint .ha{width:100%;justify-content:flex-start}html.v2 .abar .nav::before{display:none}}
+@media (max-width:640px){html.v2 .dash{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"bar" "main"!important;grid-template-rows:auto 1fr!important;padding-bottom:72px}
+  .srail{position:fixed;top:auto;bottom:0;left:0;right:0;height:64px;flex-direction:row;padding:6px;border:0;border-top:1px solid var(--line);z-index:45;overflow-x:auto}
+  .srail .stp{flex:1;padding:6px 2px;min-width:64px}.srail .stp::before{display:none}.srail .slink,.srail .rsp,.srail .rsep{display:none}
+  .srail .ritem,.srail details.menu>summary.abtn,.srail label.abtn.tg,.srail #helpBtn{width:auto;min-width:56px}
+  .srail .mpop{bottom:calc(100% + 8px)!important;right:0!important}
+  html.v2 .abar .nav{margin-inline:0!important}.v2user{display:none}}
+.v2tour{max-width:560px}
+.v2steps{margin:6px 0 12px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:s}
+.v2steps li{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;background:var(--v-raise,#f3f4f7);border:1px solid var(--line)}
+.v2steps b{font:700 15px var(--f-display)}.v2steps span{font-size:13.5px;color:var(--muted)}
+html.v2 .impc{background:var(--panel);color:var(--fg)}
 </style>
 </head>
 <body>
@@ -7706,6 +7835,78 @@ document.addEventListener("click",e=>{const t=e.target;
   if(t.closest("#stUrlRep")){const key=selKey();openUrlImport(o=>{STU.sel=findSel(key)||STU.sel;setP({src:o.url})});return}});
 
 renderSections();buildForm();refitFonts();
+
+/* =====================================================================
+   V2 SHELL – workflow steps (products → design → export)
+   ===================================================================== */
+(function v2Shell(){const H=document.documentElement;H.classList.add("v2");
+  let th="dark";try{th=localStorage.getItem("signUiTheme")||"dark"}catch(e){}H.dataset.theme=th;
+  const ic=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+  const STEPS=[{k:"products",n:"מוצרים",i:'<path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/>'},
+    {k:"design",n:"עיצוב",i:'<circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.4-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/>'},
+    {k:"export",n:"הדפסה וייצוא",i:'<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/>'}];
+  const rail=document.createElement("nav");rail.className="srail";rail.id="srail";rail.setAttribute("aria-label","שלבי עבודה");
+  rail.innerHTML=STEPS.map((s,i)=>`${i?'<i class="slink"></i>':""}<button type="button" class="stp" data-step="${s.k}"><span class="sn">${i+1}</span>${ic(s.i)}<b>${s.n}</b></button>`).join("")+`<span class="rsp"></span><span class="rsep"></span>`;
+  const root=$("root");root.insertBefore(rail,$("ddraw"));
+  /* move secondary actions from the top bar into the rail */
+  const aact=document.querySelector(".abar .aact");
+  aact.querySelectorAll("details.menu").forEach(d=>rail.appendChild(d));
+  const tg=aact.querySelector("label.abtn.tg");if(tg){tg.querySelector("span").textContent="עריכה מהירה";tg.title="הזזה ושינוי של רכיבים ישירות על השלטים (E)";rail.appendChild(tg)}
+  const thb=document.createElement("button");thb.type="button";thb.className="ritem";thb.id="v2Theme";rail.appendChild(thb);
+  const hb=$("helpBtn");if(hb)rail.appendChild(hb);
+  const setThemeBtn=()=>{const d=H.dataset.theme==="dark";thb.innerHTML=(d?ic('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'):ic('<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>'))+(d?"מצב בהיר":"מצב כהה")};setThemeBtn();
+  thb.addEventListener("click",()=>{H.dataset.theme=H.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem("signUiTheme",H.dataset.theme)}catch(e){}setThemeBtn()});
+  /* top-bar quick help */
+  const u=document.createElement("div");u.className="v2user";u.innerHTML=`<button type="button" class="vbtn" id="v2Tour">${ic('<circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>')}איך עובדים?</button>`;document.querySelector(".abar").appendChild(u);
+  /* hint bar */
+  const hint=document.createElement("div");hint.className="v2hint";hint.id="v2Hint";$("work").insertBefore(hint,$("kpis"));
+  /* design: selected-sign card inside the drawer */
+  const dsel=document.createElement("section");dsel.className="v2sel";dsel.id="v2DSel";const ddh=$("ddraw").querySelector(".ddh");ddh.after(dsel);
+  /* export block inside the inspector */
+  const xb=document.createElement("div");xb.className="v2x";xb.id="v2X";$("insp").appendChild(xb);
+  const HINT={products:{t:"שלב 1 · מוצרים",d:"בחרו שלט מהרשימה ועדכנו בפאנל משמאל את שם המוצר, המחיר, המבצע והתמונה. השינויים מופיעים מיד בכל הגדלים.",a:`<button type="button" class="vb" data-px="impBtn">${ic('<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/>')}ייבוא מאקסל</button><button type="button" class="vb" data-px="newBlank">${ic('<path d="M12 5v14M5 12h14"/>')}שלט ריק</button><button type="button" class="vb cta" data-go="design">הבא: עיצוב ←</button>`},
+    design:{t:"שלב 2 · עיצוב",d:"בחרו פריסה, דגש וערכת צבע – העיצוב חל על כל השלטים. לעיצוב אישי של שלט אחד: \"פתיחה בעורך העיצוב\".",a:`<button type="button" class="vb" data-go="products">→ מוצרים</button><button type="button" class="vb cta" data-go="export">הבא: הדפסה וייצוא ←</button>`},
+    export:{t:"שלב 3 · הדפסה וייצוא",d:"סמנו בתיבה הקטנה את השלטים להדפסה – או השאירו בלי סימון כדי לייצא את כולם. שלט בודד מורידים מהפאנל משמאל.",a:`<button type="button" class="vb" data-go="design">→ עיצוב</button><button type="button" class="vb cta" data-px="allBtn" id="v2AllHint">${ic('<path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v3h16v-3"/>')}<span>ייצוא</span></button>`}};
+  let STEP="products";
+  function renderHint(){const h=HINT[STEP];hint.innerHTML=`<span class="hn">${STEPS.findIndex(s=>s.k===STEP)+1}</span><div class="ht"><b>${h.t}</b><span>${h.d}</span></div><div class="ha">${h.a}</div>`;syncLabels()}
+  function renderDSel(){const s=STATE[cur];dsel.innerHTML=`<small>השלט הנבחר</small><b>${esc(s?s.name:"")}</b><button type="button" class="vb cta wide" data-px="studioBtn">🎨 פתיחה בעורך העיצוב</button><div class="row"><button type="button" class="vb" data-px="checkAllBtn">🧪 בדיקה בכל הגדלים</button><button type="button" class="vb" data-px="lawBtn">⚖ בדיקת תקן</button></div>`}
+  function renderX(){const n=typeof SEL!=="undefined"?SEL.size:0,x=actSec();
+    xb.innerHTML=`<div class="xc"><h4>כמה שלטים יחד ${n?`<span class="xn">${n}</span>`:""}</h4><p>${n?`נבחרו ${n} שלטים לייצוא.`:`לא נבחרו שלטים – הייצוא יכלול את כל ${x.items.filter(t=>!t.idle).length} השלטים המוצגים.`}</p>
+      <button type="button" class="vb cta wide" data-px="allBtn" id="v2All">${ic('<path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v3h16v-3"/>')}<span>ייצוא</span></button>
+      <div class="row"><button type="button" class="vb" data-px="selAll">בחירת הכל</button>${n?`<button type="button" class="vb" data-px="selClr">ניקוי הבחירה</button>`:""}${$("sheetBtn")?`<button type="button" class="vb" data-px="sheetBtn">דף A4 לגזירה</button>`:""}</div>
+      ${$("showBtn")?`<button type="button" class="vb wide" data-px="showBtn">▶ הקרנה כמצגת במסך מלא</button>`:""}</div>
+      <div class="xc"><h4>שמירה ושיתוף</h4><p>שמירת קובץ עם כל השינויים – לגיבוי או להעברה לעמית.</p><div class="row"><button type="button" class="vb" data-px="saveHtml">💾 שמירה כקובץ</button><button type="button" class="vb" data-px="verBtn">🕘 גרסאות</button></div></div>`;syncLabels()}
+  function syncLabels(){const a=$("allBtn");const t=a?a.textContent.trim():"ייצוא";document.querySelectorAll("#v2All span,#v2AllHint span").forEach(s=>s.textContent=t)}
+  function setStep(k,quiet){STEP=k;H.dataset.step=k;rail.querySelectorAll(".stp").forEach(b=>b.setAttribute("aria-current",b.dataset.step===k?"step":"false"));
+    if(k==="design"){_openD();renderDSel()}else if(!$("ddraw").hidden){_closeD()}
+    if(k==="export")renderX();renderHint();try{localStorage.setItem("signStep",k)}catch(e){}
+    if(!quiet)window.scrollTo({top:0,behavior:"smooth"})}
+  const _openD=openDesign,_closeD=closeDesign;
+  openDesign=function(){if(STEP!=="design")setStep("design",true);else _openD()};
+  closeDesign=function(){if(STEP==="design"&&innerWidth>1320)return;_closeD();if(STEP==="design"&&innerWidth<=1320){}};
+  const _rs=renderSections;renderSections=function(){_rs.apply(this,arguments);if(STEP==="export")renderX();syncLabels()};
+  const _bf=buildForm;buildForm=function(){_bf.apply(this,arguments);if(STEP==="design")renderDSel()};
+  document.addEventListener("click",e=>{const t=e.target;const st=t.closest(".srail .stp");if(st){setStep(st.dataset.step);return}
+    const g=t.closest("[data-go]");if(g){setStep(g.dataset.go);return}
+    const p=t.closest("[data-px]");if(p){const el=$(p.dataset.px);if(el){el.click()}else toast("הפעולה לא זמינה בגודל הזה");return}
+    if(t.closest("#v2Tour")){openTour();return}});
+  document.addEventListener("change",e=>{if(e.target.matches&&e.target.matches("[data-sel]")&&STEP==="export")setTimeout(renderX,30)});
+  document.addEventListener("click",e=>{if(STEP==="export"&&e.target.closest("#selAll,#selClr"))setTimeout(renderX,30)},true);
+  document.addEventListener("click",e=>{if(STEP==="export"&&e.target.closest("[data-px='selAll'],[data-px='selClr']"))setTimeout(renderX,60)});
+  /* quick tour */
+  function openTour(){closeImport();const d=document.createElement("div");d.className="imp";d.id="impDlg";d.setAttribute("role","dialog");
+    d.innerHTML=`<div class="impc v2tour"><div class="imph"><h3>איך עובדים בסטודיו עיצוב</h3><button type="button" class="iclose" id="impX" style="display:block" aria-label="סגירה">✕</button></div>
+     <ol class="v2steps"><li><b>בוחרים גודל</b><span>בסרגל העליון: A4, A5, מדבקות, דיגיטל או בודק מחיר.</span></li>
+     <li><b>1 · מוצרים</b><span>לוחצים על שלט ומעדכנים שם, מחיר, מבצע ותמונה. אפשר לייבא רשימה מאקסל.</span></li>
+     <li><b>2 · עיצוב</b><span>פריסה וצבעים לכל השלטים. לעיצוב אישי – "פתיחה בעורך העיצוב" (או לחיצה כפולה על שלט).</span></li>
+     <li><b>3 · הדפסה וייצוא</b><span>מסמנים שלטים ומייצאים ל־PDF / PNG, או מורידים שלט בודד.</span></li></ol>
+     <p class="imps">הכל נשמר אוטומטית בדפדפן. לגיבוי: "קובץ" ← "שמירה כ־HTML" בסרגל הצד.</p><div class="impa"><button type="button" class="vb cta" id="v2TourGo">מתחילים</button></div></div>`;
+    document.body.appendChild(d);d.addEventListener("click",e=>{if(e.target===d||e.target.closest("#impX,#v2TourGo")){closeImport();try{localStorage.setItem("signTour","1")}catch(x){}}})}
+  let s0="products";try{s0=localStorage.getItem("signStep")||"products"}catch(e){}if(!HINT[s0])s0="products";
+  setStep(s0,true);
+  try{if(!localStorage.getItem("signTour"))setTimeout(openTour,700)}catch(e){}
+})();
+
 function logoUI(){if(!$("logoLbl"))return;$("logoLbl").textContent=BRAND.logo?"הלוגו נטען ✓ (לחיצה להחלפה)":"העלאת קובץ הלוגו הרשמי (PNG שקוף או SVG)";$("logoClr").hidden=!BRAND.logo}
 $("logoUp")&&$("logoUp").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const im=new Image();im.onload=()=>{BRAND.logo=rd.result;BRAND.ratio=im.naturalWidth&&im.naturalHeight?+(im.naturalWidth/im.naturalHeight).toFixed(3):3;try{localStorage.setItem("rlLogo",BRAND.logo);localStorage.setItem("rlLogoR",BRAND.ratio)}catch(err){}logoUI();renderSections()};im.onerror=()=>toast("לא הצלחתי לקרוא את קובץ הלוגו");im.src=rd.result};rd.readAsDataURL(f)});
 $("logoClr")&&$("logoClr").addEventListener("click",()=>{BRAND.logo=null;try{localStorage.removeItem("rlLogo")}catch(err){}$("logoUp").value="";logoUI();renderSections()});
